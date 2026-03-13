@@ -1,0 +1,129 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{frontmatter.title}</title>
+    <meta name="description" content={frontmatter.description}>
+    <link rel="canonical" href={Astro.url.pathname}>
+    
+    <!-- Schema.org structured data -->
+    {frontmatter.schema && (
+        <script type="application/ld+json" set:html={JSON.stringify(frontmatter.schema)} />
+    )}
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #2a2a2a;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+        
+        .cta-button:hover {
+            background-color: #0052a3;
+        }
+        
+        .disclosure {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-left: 4px solid #0066cc;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .methodology {
+            background-color: #fafafa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .methodology ol {
+            margin-left: 1.5rem;
+        }
+        
+        .faq {
+            margin-top: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-answer {
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <slot />
+    </article>
+</body>
+</html>

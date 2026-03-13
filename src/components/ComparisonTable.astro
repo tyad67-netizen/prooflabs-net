@@ -1,0 +1,71 @@
+---
+interface Card {
+  name: string;
+  signUpBonus: string;
+  rewardsRate: string;
+  annualFee: string;
+  bestFor: string;
+  affiliateLink?: string;
+}
+
+interface Props {
+  cards: Card[];
+}
+
+const { cards } = Astro.props;
+---
+
+<div class="comparison-table">
+  <h2>Quick Comparison: Top 3 Cards</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Card</th>
+        <th>Sign-Up Bonus</th>
+        <th>Rewards Rate</th>
+        <th>Annual Fee</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      {cards.map((card) => (
+        <tr>
+          <td><strong>{card.name}</strong></td>
+          <td>{card.signUpBonus}</td>
+          <td>{card.rewardsRate}</td>
+          <td>{card.annualFee}</td>
+          <td>{card.bestFor}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .comparison-table {
+    margin: 2rem 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  tr:hover {
+    background-color: #fafafa;
+  }
+</style>

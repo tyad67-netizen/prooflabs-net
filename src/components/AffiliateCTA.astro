@@ -1,0 +1,49 @@
+---
+interface Props {
+  cardName: string;
+  affiliateLink: string;
+  buttonText?: string;
+}
+
+const { cardName, affiliateLink, buttonText = "Apply Now" } = Astro.props;
+---
+
+<div class="affiliate-cta">
+  <a href={affiliateLink} class="cta-button" rel="nofollow sponsored" target="_blank">
+    {buttonText} →
+  </a>
+  <p class="cta-subtext">See if you're pre-approved for {cardName}</p>
+</div>
+
+<style>
+  .affiliate-cta {
+    margin: 1.5rem 0;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #667eea;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .cta-subtext {
+    color: white;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+</style>
