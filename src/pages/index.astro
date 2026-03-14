@@ -93,10 +93,10 @@ const featuredArticles = [
         </p>
         
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="/best-credit-cards" style="display: inline-flex; align-items: center; justify-content: center; padding: 1.125rem 2.5rem; background: white; color: #0284c7; border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; text-decoration: none; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 50px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.2)';">
+          <a href="/best-credit-cards" style="display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 3rem; background: white; color: #0284c7; border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; text-decoration: none; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 50px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.2)';">
             Browse All Cards →
           </a>
-          <a href="/methodology" style="display: inline-flex; align-items: center; justify-content: center; padding: 1.125rem 2.5rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; border: 2px solid rgba(255,255,255,0.3); border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)';" onmouseout="this.style.background='rgba(255,255,255,0.15)';">
+          <a href="/methodology" style="display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 3rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; border: 2px solid rgba(255,255,255,0.3); border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)';" onmouseout="this.style.background='rgba(255,255,255,0.15)';">
             Our Methodology
           </a>
         </div>
@@ -132,7 +132,7 @@ const featuredArticles = [
       {featuredArticles.map(article => (
         <a href={article.href} style="background: white; border-radius: 1.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; overflow: hidden; text-decoration: none; color: inherit; transition: all 0.3s; display: flex; flex-direction: column;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'; this.style.transform='translateY(0)';">
           <!-- Image -->
-          <div style="position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);">
+          <div style="position: relative; height: 240px; overflow: hidden; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);">
             <img src={article.image} alt={article.title} style="width: 100%; height: 100%; object-fit: cover;" />
             <span style={`position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background: ${article.badgeColor}; color: white; font-size: 0.75rem; font-weight: 700; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;`}>
               {article.badge}
