@@ -13,6 +13,11 @@ interface Props {
 }
 
 const { cards } = Astro.props;
+
+// Helper to format comma-separated text as bullet list
+function formatAsList(text: string): string[] {
+  return text.split(',').map(item => item.trim()).filter(item => item.length > 0);
+}
 ---
 
 <div class="comparison-table">
@@ -32,8 +37,14 @@ const { cards } = Astro.props;
         <tr>
           <td><strong>{card.name}</strong></td>
           <td>{card.signUpBonus}</td>
-          <td>{card.rewardsRate}</td>
-          <td>{card.annualFee}</td>
+          <td>
+            <ul class="rewards-list">
+              {formatAsList(card.rewardsRate).map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </td>
+          <td><strong>{card.annualFee}</strong></td>
           <td>{card.bestFor}</td>
         </tr>
       ))}
@@ -63,9 +74,21 @@ const { cards } = Astro.props;
   td {
     padding: 12px;
     border-bottom: 1px solid #eee;
+    vertical-align: top;
   }
   
   tr:hover {
     background-color: #fafafa;
+  }
+  
+  .rewards-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    list-style-type: disc;
+  }
+  
+  .rewards-list li {
+    margin: 0.3rem 0;
+    line-height: 1.4;
   }
 </style>
