@@ -26,14 +26,13 @@ const footerLinks = {
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Brand -->
       <div class="col-span-1">
-        <div class="flex items-center space-x-2 mb-4">
-          <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-xl">P</span>
-          </div>
-          <span class="text-2xl font-display font-bold text-white">ProofLabs</span>
-        </div>
-        <p class="text-sm text-gray-400">
+        <img src="/logo.svg" alt="ProofLabs" style="height: 40px; margin-bottom: 1rem; filter: brightness(0) invert(1);" />
+        <p class="text-sm text-gray-400 mb-4">
           Data-driven credit card reviews and comparisons to help you make informed financial decisions.
+        </p>
+        <p class="text-xs text-gray-500">
+          © {currentYear} ProofLabs Editorial Team.<br/>
+          All recommendations are based on independent analysis.
         </p>
       </div>
       
@@ -54,14 +53,19 @@ const footerLinks = {
       ))}
     </div>
     
-    <!-- Bottom Bar -->
-    <div class="mt-12 pt-8 border-t border-gray-800 text-sm text-gray-400">
-      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <p>© {currentYear} ProofLabs. All rights reserved.</p>
-        <p class="text-center md:text-right max-w-2xl">
-          <strong class="text-gray-300">Affiliate Disclosure:</strong> We may earn a commission when you click links to credit card offers. 
-          This does not influence our reviews or rankings.
-        </p>
+    <!-- Disclosure -->
+    <div class="mt-12 pt-8 border-t border-gray-800">
+      <div style="background: rgba(255,255,255,0.05); border-radius: 0.75rem; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+          <svg style="width: 1.5rem; height: 1.5rem; color: #60a5fa; flex-shrink: 0; margin-top: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <p style="font-size: 0.875rem; color: #d1d5db; line-height: 1.6;">
+              <strong style="color: #e5e7eb;">Affiliate Disclosure:</strong> ProofLabs may earn a commission when you apply for credit cards through links on this site. This compensation helps support our research and editorial work. Our reviews and rankings are based on objective analysis and are not influenced by affiliate relationships. We prioritize accuracy and reader value in all our recommendations.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

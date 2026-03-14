@@ -1,58 +1,70 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const stats = [
+  { value: '200+', label: 'Credit Cards Analyzed' },
+  { value: '50K+', label: 'Monthly Readers' },
+  { value: '15', label: 'Years Combined Experience' },
+];
+
 const categories = [
   {
     title: 'Cash Back',
-    description: 'Maximize your everyday spending with top cashback rewards',
+    description: 'Earn money back on everyday purchases',
     icon: '💵',
     href: '/categories/cash-back',
-    gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+    color: '#10b981'
   },
   {
     title: 'Travel Rewards',
-    description: 'Earn points and miles for your next adventure',
+    description: 'Points and miles for your adventures',
     icon: '✈️',
     href: '/categories/travel',
-    gradient: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)'
+    color: '#3b82f6'
   },
   {
     title: 'Balance Transfer',
-    description: 'Pay down debt with 0% APR introductory offers',
+    description: '0% APR offers to pay down debt',
     icon: '⚖️',
     href: '/categories/balance-transfer',
-    gradient: 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)'
+    color: '#a855f7'
   },
   {
     title: 'Groceries & Gas',
-    description: 'Extra rewards on your most frequent purchases',
+    description: 'Extra rewards on frequent purchases',
     icon: '🛒',
     href: '/categories/groceries',
-    gradient: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)'
+    color: '#f97316'
   },
 ];
 
 const featuredArticles = [
   {
     title: 'Best Credit Card for Rent Payments',
-    description: 'Earn rewards on your biggest monthly expense',
+    description: 'Turn your biggest monthly expense into rewards. We analyzed 20+ cards to find the best options for earning on rent.',
     href: '/credit-cards/best-credit-card-for-rent-payments',
     badge: 'Most Popular',
-    badgeColor: '#0284c7'
+    badgeColor: '#0284c7',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop',
+    lastUpdated: '2026-03-14'
   },
   {
     title: 'Best Credit Card for Groceries',
-    description: 'Maximize cashback on everyday grocery shopping',
+    description: 'Maximize cashback on grocery shopping with cards offering up to 6% back at supermarkets.',
     href: '/credit-cards/best-credit-card-for-groceries',
     badge: 'Editor\'s Pick',
-    badgeColor: '#10b981'
+    badgeColor: '#10b981',
+    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=250&fit=crop',
+    lastUpdated: '2026-03-14'
   },
   {
     title: 'Best Credit Card for Online Shopping',
-    description: 'Get rewarded for every online purchase',
+    description: 'Get rewarded for every online purchase with cards designed for e-commerce spending.',
     href: '/credit-cards/best-credit-card-for-online-shopping',
     badge: 'Trending',
-    badgeColor: '#f97316'
+    badgeColor: '#f97316',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop',
+    lastUpdated: '2026-03-14'
   },
 ];
 ---
@@ -62,110 +74,188 @@ const featuredArticles = [
   description="Find the best credit card for your needs with our comprehensive, data-driven reviews and comparisons. Compare rewards, fees, and benefits."
 >
   <!-- Hero Section -->
-  <section style="background: linear-gradient(135deg, #0284c7 0%, #075985 100%); color: white;">
-    <div class="container-custom" style="padding: 7rem 0;">
-      <div style="max-width: 56rem;">
-        <h1 style="font-size: 3.75rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1;">
-          Find Your Perfect Credit Card
+  <section style="background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #0ea5e9 100%); color: white; position: relative; overflow: hidden;">
+    <!-- Background pattern -->
+    <div style="position: absolute; inset: 0; opacity: 0.1; background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    
+    <div class="container-custom" style="padding: 6rem 0 8rem; position: relative; z-index: 1;">
+      <div style="max-width: 56rem; margin: 0 auto; text-align: center;">
+        <div style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 9999px; font-size: 0.875rem; font-weight: 600; margin-bottom: 2rem;">
+          ✓ Updated Daily · 200+ Cards Analyzed
+        </div>
+        
+        <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em;">
+          Find Your Perfect<br/>Credit Card
         </h1>
-        <p style="font-size: 1.5rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 42rem;">
-          Data-driven reviews and comparisons to help you choose the right card for your spending habits and goals.
+        
+        <p style="font-size: 1.375rem; color: rgba(255,255,255,0.95); margin-bottom: 2.5rem; max-width: 46rem; margin-left: auto; margin-right: auto; line-height: 1.6;">
+          Data-driven reviews and comparisons to help you choose the right card for your spending habits and financial goals.
         </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="/best-credit-cards" style="display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; background: white; color: #0284c7; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.2s;">
-            Browse All Cards
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/best-credit-cards" style="display: inline-flex; align-items: center; justify-content: center; padding: 1.125rem 2.5rem; background: white; color: #0284c7; border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; text-decoration: none; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 50px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.2)';">
+            Browse All Cards →
           </a>
-          <a href="/methodology" style="display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; background: rgba(255,255,255,0.1); color: white; border: 2px solid white; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.2s;">
+          <a href="/methodology" style="display: inline-flex; align-items: center; justify-content: center; padding: 1.125rem 2.5rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; border: 2px solid rgba(255,255,255,0.3); border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)';" onmouseout="this.style.background='rgba(255,255,255,0.15)';">
             Our Methodology
           </a>
+        </div>
+        
+        <!-- Stats -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-top: 4rem; padding: 2rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 1rem; border: 1px solid rgba(255,255,255,0.2);">
+          {stats.map(stat => (
+            <div style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem;">{stat.value}</div>
+              <div style="font-size: 0.875rem; color: rgba(255,255,255,0.8); font-weight: 500;">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
   <!-- Featured Articles -->
-  <section class="container-custom" style="padding: 4rem 0;">
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">
-        Featured Comparisons
+  <section class="container-custom" style="padding: 5rem 0;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <div style="display: inline-block; padding: 0.5rem 1rem; background: #eff6ff; color: #0284c7; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; margin-bottom: 1rem;">
+        FEATURED REVIEWS
+      </div>
+      <h2 style="font-size: 2.75rem; font-weight: 900; margin-bottom: 1rem; color: #111827;">
+        Our Most Popular Comparisons
       </h2>
-      <p style="font-size: 1.25rem; color: #6b7280; max-width: 42rem; margin: 0 auto;">
-        Our most popular credit card reviews, updated regularly with current offers and rates
+      <p style="font-size: 1.25rem; color: #6b7280; max-width: 42rem; margin: 0 auto; line-height: 1.6;">
+        Updated regularly with current offers, rates, and real-world value analysis
       </p>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
       {featuredArticles.map(article => (
-        <a href={article.href} style="background: white; border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.2s;" onmouseover="this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)'; this.style.transform='translateY(0)';">
-          {article.badge && (
-            <span style={`display: inline-block; padding: 0.375rem 0.875rem; background: ${article.badgeColor}; color: white; font-size: 0.875rem; font-weight: 600; border-radius: 9999px; margin-bottom: 1rem;`}>
+        <a href={article.href} style="background: white; border-radius: 1.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; overflow: hidden; text-decoration: none; color: inherit; transition: all 0.3s; display: flex; flex-direction: column;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'; this.style.transform='translateY(0)';">
+          <!-- Image -->
+          <div style="position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);">
+            <img src={article.image} alt={article.title} style="width: 100%; height: 100%; object-fit: cover;" />
+            <span style={`position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background: ${article.badgeColor}; color: white; font-size: 0.75rem; font-weight: 700; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;`}>
               {article.badge}
             </span>
-          )}
-          <h3 style="font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 0.75rem;">
-            {article.title}
-          </h3>
-          <p style="color: #6b7280; margin-bottom: 1.5rem;">
-            {article.description}
-          </p>
-          <div style="display: flex; align-items: center; color: #0284c7; font-weight: 600;">
-            Read Review
-            <svg style="width: 1.25rem; height: 1.25rem; margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+          </div>
+          
+          <!-- Content -->
+          <div style="padding: 1.75rem; flex: 1; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 0.75rem; line-height: 1.3;">
+              {article.title}
+            </h3>
+            <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6; flex: 1;">
+              {article.description}
+            </p>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+              <div style="display: flex; align-items: center; color: #0284c7; font-weight: 700;">
+                Read Review
+                <svg style="width: 1.25rem; height: 1.25rem; margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </div>
+              <div style="font-size: 0.75rem; color: #9ca3af;">
+                Updated {new Date(article.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+              </div>
+            </div>
           </div>
         </a>
       ))}
     </div>
   </section>
 
-  <!-- Categories Grid -->
-  <section style="background: #f9fafb; padding: 4rem 0;">
+  <!-- Trust & Methodology Preview -->
+  <section style="background: #f9fafb; padding: 5rem 0;">
     <div class="container-custom">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">
-          Browse by Category
-        </h2>
-        <p style="font-size: 1.25rem; color: #6b7280; max-width: 42rem; margin: 0 auto;">
-          Find cards tailored to your specific needs and spending patterns
-        </p>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-        {categories.map(category => (
-          <a href={category.href} style="background: white; border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)';">
-            <div style={`width: 4rem; height: 4rem; border-radius: 1rem; background: ${category.gradient}; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem;`}>
-              {category.icon}
+      <div style="max-width: 72rem; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <h2 style="font-size: 2.75rem; font-weight: 900; margin-bottom: 1rem; color: #111827;">
+            Why Trust ProofLabs?
+          </h2>
+          <p style="font-size: 1.25rem; color: #6b7280; max-width: 48rem; margin: 0 auto; line-height: 1.6;">
+            Our comprehensive methodology evaluates every aspect of credit card value
+          </p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div style="background: white; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+            <div style="width: 3rem; height: 3rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+              <svg style="width: 1.75rem; height: 1.75rem; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
             </div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem;">
-              {category.title}
-            </h3>
-            <p style="color: #6b7280; font-size: 0.875rem;">
-              {category.description}
-            </p>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #111827; margin-bottom: 0.75rem;">Data-Driven Analysis</h3>
+            <p style="color: #6b7280; line-height: 1.6;">We analyze rewards rates, annual fees, sign-up bonuses, and calculate real-world value for different spending patterns.</p>
+          </div>
+          
+          <div style="background: white; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+            <div style="width: 3rem; height: 3rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 0.75rem; display: flex; align-items: center; justify-center; margin-bottom: 1.5rem;">
+              <svg style="width: 1.75rem; height: 1.75rem; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #111827; margin-bottom: 0.75rem;">Independent Reviews</h3>
+            <p style="color: #6b7280; line-height: 1.6;">Our rankings are based on objective criteria, not advertising relationships. We prioritize reader value above all else.</p>
+          </div>
+          
+          <div style="background: white; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+            <div style="width: 3rem; height: 3rem; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); border-radius: 0.75rem; display: flex; align-items: center; justify-center; margin-bottom: 1.5rem;">
+              <svg style="width: 1.75rem; height: 1.75rem; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #111827; margin-bottom: 0.75rem;">Updated Daily</h3>
+            <p style="color: #6b7280; line-height: 1.6;">Credit card offers change frequently. We monitor and update our reviews daily to reflect current rates and bonuses.</p>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="/methodology" style="display: inline-flex; align-items: center; padding: 1rem 2rem; background: #0284c7; color: white; border-radius: 0.75rem; font-weight: 700; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
+            Read Our Full Methodology
+            <svg style="width: 1.25rem; height: 1.25rem; margin-left: 0.75rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
           </a>
-        ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Section -->
-  <section class="container-custom" style="padding: 4rem 0;">
-    <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 1.5rem; padding: 3rem 2rem;">
-      <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">
-          Why Trust ProofLabs?
-        </h2>
-        <p style="font-size: 1.125rem; color: #374151; margin-bottom: 2rem; line-height: 1.7;">
-          We analyze hundreds of credit cards using a comprehensive methodology that evaluates rewards rates, annual fees, sign-up bonuses, and real-world value. Every recommendation is backed by data, not advertising dollars.
-        </p>
-        <a href="/methodology" style="color: #0284c7; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; font-size: 1.125rem;">
-          Learn about our methodology
-          <svg style="width: 1.25rem; height: 1.25rem; margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+  <!-- Categories Grid -->
+  <section class="container-custom" style="padding: 5rem 0;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <div style="display: inline-block; padding: 0.5rem 1rem; background: #eff6ff; color: #0284c7; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; margin-bottom: 1rem;">
+        BROWSE BY CATEGORY
       </div>
+      <h2 style="font-size: 2.75rem; font-weight: 900; margin-bottom: 1rem; color: #111827;">
+        Find Cards for Your Needs
+      </h2>
+      <p style="font-size: 1.25rem; color: #6b7280; max-width: 42rem; margin: 0 auto;">
+        Compare cards tailored to specific spending patterns and goals
+      </p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+      {categories.map(category => (
+        <a href={category.href} style="background: white; border-radius: 1.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.3s; display: flex; flex-direction: column; align-items: flex-start;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
+          <div style={`width: 4rem; height: 4rem; border-radius: 1rem; background: ${category.color}; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.25rem; box-shadow: 0 4px 12px ${category.color}40;`}>
+            {category.icon}
+          </div>
+          <h3 style="font-size: 1.375rem; font-weight: 800; color: #111827; margin-bottom: 0.5rem;">
+            {category.title}
+          </h3>
+          <p style="color: #6b7280; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1.25rem;">
+            {category.description}
+          </p>
+          <div style="display: flex; align-items: center; color: #0284c7; font-weight: 700; font-size: 0.9375rem; margin-top: auto;">
+            Explore Cards
+            <svg style="width: 1.125rem; height: 1.125rem; margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+      ))}
     </div>
   </section>
 </BaseLayout>

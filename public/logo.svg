@@ -1,0 +1,9 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield icon -->
+  <path d="M20 8L12 12V22C12 28 16 32 20 34C24 32 28 28 28 22V12L20 8Z" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+  <path d="M18 20L19.5 22L23 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- ProofLabs text -->
+  <text x="38" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#111827">ProofLabs</text>
+  <text x="38" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="500" fill="#6b7280" letter-spacing="0.5">DATA-DRIVEN CREDIT REVIEWS</text>
+</svg>
