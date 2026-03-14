@@ -14,5 +14,10 @@
   "dependencies": {
     "@astrojs/mdx": "^5.0.0",
     "astro": "^6.0.4"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/postcss": "^4.2.1",
+    "tailwindcss": "^4.2.1"
   }
 }

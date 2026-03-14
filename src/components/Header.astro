@@ -1,0 +1,67 @@
+---
+const navLinks = [
+  { label: 'Best Cards', href: '/best-credit-cards' },
+  { label: 'Categories', href: '/categories' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'Methodology', href: '/methodology' },
+  { label: 'About', href: '/about' },
+];
+---
+
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <nav class="container-custom py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-xl">P</span>
+        </div>
+        <span class="text-2xl font-display font-bold text-gray-900">ProofLabs</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navLinks.map(link => (
+          <a 
+            href={link.href}
+            class="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-gray-700 hover:text-primary-600"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="width" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+      {navLinks.map(link => (
+        <a 
+          href={link.href}
+          class="block py-2 text-gray-700 hover:text-primary-600 font-medium"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

@@ -1,17 +1,172 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const categories = [
+  {
+    title: 'Cash Back',
+    description: 'Maximize your everyday spending with top cashback rewards',
+    icon: '💵',
+    href: '/categories/cash-back',
+    color: 'from-green-500 to-emerald-600'
+  },
+  {
+    title: 'Travel Rewards',
+    description: 'Earn points and miles for your next adventure',
+    icon: '✈️',
+    href: '/categories/travel',
+    color: 'from-blue-500 to-cyan-600'
+  },
+  {
+    title: 'Balance Transfer',
+    description: 'Pay down debt with 0% APR introductory offers',
+    icon: '⚖️',
+    href: '/categories/balance-transfer',
+    color: 'from-purple-500 to-pink-600'
+  },
+  {
+    title: 'Groceries & Gas',
+    description: 'Extra rewards on your most frequent purchases',
+    icon: '🛒',
+    href: '/categories/groceries',
+    color: 'from-orange-500 to-red-600'
+  },
+];
+
+const featuredArticles = [
+  {
+    title: 'Best Credit Card for Rent Payments',
+    description: 'Earn rewards on your biggest monthly expense',
+    href: '/credit-cards/best-credit-card-for-rent-payments',
+    badge: 'Most Popular'
+  },
+  {
+    title: 'Best Credit Card for Groceries',
+    description: 'Maximize cashback on everyday grocery shopping',
+    href: '/credit-cards/best-credit-card-for-groceries',
+    badge: 'Editor\'s Pick'
+  },
+  {
+    title: 'Best Credit Card for Online Shopping',
+    description: 'Get rewarded for every online purchase',
+    href: '/credit-cards/best-credit-card-for-online-shopping',
+    badge: 'Trending'
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="ProofLabs - Data-Driven Credit Card Reviews & Comparisons"
+  description="Find the best credit card for your needs with our comprehensive, data-driven reviews and comparisons. Compare rewards, fees, and benefits."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+    <div class="container-custom py-20 md:py-28">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6">
+          Find Your Perfect Credit Card
+        </h1>
+        <p class="text-xl md:text-2xl text-primary-100 mb-8 max-w-2xl">
+          Data-driven reviews and comparisons to help you choose the right card for your spending habits and goals.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/best-credit-cards" class="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Browse All Cards
+          </a>
+          <a href="/methodology" class="btn-secondary border-white text-white hover:bg-white/10">
+            Our Methodology
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Articles -->
+  <section class="container-custom py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+        Featured Comparisons
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Our most popular credit card reviews, updated regularly with current offers and rates
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {featuredArticles.map(article => (
+        <a href={article.href} class="card group">
+          <div class="p-6">
+            {article.badge && (
+              <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full mb-4">
+                {article.badge}
+              </span>
+            )}
+            <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+              {article.title}
+            </h3>
+            <p class="text-gray-600 mb-4">
+              {article.description}
+            </p>
+            <div class="flex items-center text-primary-600 font-medium">
+              Read Review
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Categories Grid -->
+  <section class="bg-gray-100 py-16">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+          Browse by Category
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Find cards tailored to your specific needs and spending patterns
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {categories.map(category => (
+          <a href={category.href} class="card group hover:scale-105 transition-transform">
+            <div class="p-6">
+              <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-3xl mb-4`}>
+                {category.icon}
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                {category.title}
+              </h3>
+              <p class="text-gray-600 text-sm">
+                {category.description}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="container-custom py-16">
+    <div class="bg-primary-50 rounded-2xl p-8 md:p-12">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-display font-bold mb-4">
+          Why Trust ProofLabs?
+        </h2>
+        <p class="text-lg text-gray-700 mb-8">
+          We analyze hundreds of credit cards using a comprehensive methodology that evaluates rewards rates, annual fees, sign-up bonuses, and real-world value. Every recommendation is backed by data, not advertising dollars.
+        </p>
+        <a href="/methodology" class="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center">
+          Learn about our methodology
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

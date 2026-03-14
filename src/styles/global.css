@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lexend', 'Inter', system-ui, sans-serif;
+}
+
+/* Component Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-center: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+}
+
+.btn-primary {
+  background-color: rgb(2, 132, 199);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: rgb(3, 105, 161);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: rgb(3, 105, 161);
+  border: 2px solid rgb(2, 132, 199);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(240, 249, 255);
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(229, 231, 235);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

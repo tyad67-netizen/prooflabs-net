@@ -1,0 +1,68 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  'Credit Cards': [
+    { label: 'Best Cash Back Cards', href: '/categories/cash-back' },
+    { label: 'Best Travel Cards', href: '/categories/travel' },
+    { label: 'Best Balance Transfer', href: '/categories/balance-transfer' },
+    { label: 'All Reviews', href: '/reviews' },
+  ],
+  'Resources': [
+    { label: 'Methodology', href: '/methodology' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Contact', href: '/contact' },
+  ],
+  'Legal': [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Affiliate Disclosure', href: '/disclosure' },
+  ],
+};
+---
+
+<footer class="bg-gray-900 text-gray-300 mt-20">
+  <div class="container-custom py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand -->
+      <div class="col-span-1">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xl">P</span>
+          </div>
+          <span class="text-2xl font-display font-bold text-white">ProofLabs</span>
+        </div>
+        <p class="text-sm text-gray-400">
+          Data-driven credit card reviews and comparisons to help you make informed financial decisions.
+        </p>
+      </div>
+      
+      <!-- Link Columns -->
+      {Object.entries(footerLinks).map(([category, links]) => (
+        <div>
+          <h4 class="font-semibold text-white mb-4">{category}</h4>
+          <ul class="space-y-2">
+            {links.map(link => (
+              <li>
+                <a href={link.href} class="text-sm hover:text-primary-400 transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="mt-12 pt-8 border-t border-gray-800 text-sm text-gray-400">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <p>© {currentYear} ProofLabs. All rights reserved.</p>
+        <p class="text-center md:text-right max-w-2xl">
+          <strong class="text-gray-300">Affiliate Disclosure:</strong> We may earn a commission when you click links to credit card offers. 
+          This does not influence our reviews or rankings.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
