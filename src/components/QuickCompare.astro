@@ -1,0 +1,161 @@
+---
+import cardsData from '../data/cards.json';
+
+interface Props {
+  cardIds: string[];
+  category: string;
+  highlight?: string;
+}
+
+const { cardIds, category, highlight } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  groceries: 'Groceries',
+  gas: 'Gas',
+  dining: 'Dining',
+  online: 'Online Shopping',
+  travel: 'Travel',
+  streaming: 'Streaming',
+  rent: 'Rent',
+  other: 'Everything Else',
+};
+
+const categoryLabel = categoryLabels[category] || category;
+
+const cards = cardsData.filter(card => cardIds.includes(card.id));
+
+const getCardRateForCategory = (card: any) => {
+  const rate = card.rewardRates.find((r: any) => r.category === category);
+  if (rate) {
+    if (rate.unit === 'cashback') {
+      return `${(rate.rate * 100).toFixed(0)}% cash back`;
+    } else if (rate.unit === 'point') {
+      const pointsPercent = rate.rate;
+      const cashValue = pointsPercent * (rate.pointValue || 0.01);
+      return `${pointsPercent}x points (~${(cashValue * 100).toFixed(1)}% value)`;
+    }
+  }
+  const otherRate = card.rewardRates.find((r: any) => r.category === 'other');
+  if (otherRate) {
+    if (otherRate.unit === 'cashback') {
+      return `${(otherRate.rate * 100).toFixed(1)}% cash back`;
+    } else if (otherRate.unit === 'point') {
+      const cashValue = otherRate.rate * (otherRate.pointValue || 0.01);
+      return `${otherRate.rate}x points (~${(cashValue * 100).toFixed(1)}% value)`;
+    }
+  }
+  return '—';
+};
+
+const getNetValueForCategory = (card: any, monthlySpend: number = 400) => {
+  const annualSpend = monthlySpend * 12;
+  const rate = card.rewardRates.find((r: any) => r.category === category);
+  let reward = 0;
+  
+  if (rate) {
+    let applicableAmount = annualSpend;
+    if (rate.cap && rate.capPeriod === 'year') {
+      applicableAmount = Math.min(annualSpend, rate.cap);
+    }
+    if (rate.unit === 'cashback') {
+      reward = applicableAmount * rate.rate;
+    } else if (rate.unit === 'point') {
+      reward = applicableAmount * rate.rate * (rate.pointValue || 0.01);
+    }
+  } else {
+    const otherRate = card.rewardRates.find((r: any) => r.category === 'other');
+    if (otherRate) {
+      if (otherRate.unit === 'cashback') {
+        reward = annualSpend * otherRate.rate;
+      } else if (otherRate.unit === 'point') {
+        reward = annualSpend * otherRate.rate * (otherRate.pointValue || 0.01);
+      }
+    }
+  }
+  
+  const netValue = reward - card.annualFee;
+  return netValue;
+};
+
+const formatCurrency = (amount: number) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(amount);
+};
+---
+
+<div style="background-color: var(--color-surface); border: 2px solid var(--color-accent); border-radius: var(--radius-lg); padding: 1.5rem; margin: 2rem 0; box-shadow: var(--shadow-md); position: relative; overflow: hidden;">
+  <!-- Mascot peeking over the top -->
+  <div style="position: absolute; top: -20px; right: 20px; font-size: 2.5rem; transform: rotate(10deg);">
+    🦔
+  </div>
+  <!-- MASCOT: Proof peeking over comparison -->
+
+  <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--color-text); margin-bottom: 1rem;">
+    Quick Comparison: {categoryLabel}
+  </h3>
+
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr style="border-bottom: 2px solid var(--color-border);">
+          <th style="text-align: left; padding: 0.75rem; font-weight: 700; color: var(--color-text);">Card</th>
+          <th style="text-align: left; padding: 0.75rem; font-weight: 700; color: var(--color-text);">{categoryLabel} Rate</th>
+          <th style="text-align: center; padding: 0.75rem; font-weight: 700; color: var(--color-text);">Annual Fee</th>
+          <th style="text-align: right; padding: 0.75rem; font-weight: 700; color: var(--color-text);">Net Value*</th>
+          <th style="text-align: center; padding: 0.75rem;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {cards.map(card => {
+          const isHighlight = highlight === card.id;
+          return (
+            <tr style={`border-bottom: 1px solid var(--color-border-light); ${isHighlight ? 'background-color: #f0fdf4;' : ''}`}>
+              <td style="padding: 0.75rem;">
+                <div style="font-weight: 700; color: var(--color-text);">
+                  {card.name}
+                  {isHighlight && (
+                    <span style="display: inline-block; margin-left: 0.5rem; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.5rem; background-color: #fef3c7; color: #92400e; border-radius: var(--radius-sm); border: 1px solid #f59e0b;">
+                      Tyler's Pick
+                    </span>
+                  )}
+                </div>
+                <div style="font-size: 0.875rem; color: var(--color-text-muted);">
+                  {card.issuer}
+                </div>
+              </td>
+              <td style="padding: 0.75rem; font-size: 0.9375rem; color: var(--color-text-muted);">
+                {getCardRateForCategory(card)}
+              </td>
+              <td style="text-align: center; padding: 0.75rem; font-weight: 600; color: var(--color-text);">
+                {formatCurrency(card.annualFee)}
+              </td>
+              <td style="text-align: right; padding: 0.75rem; font-weight: 700; color: var(--color-success); font-size: 1.125rem;">
+                {formatCurrency(getNetValueForCategory(card))}
+              </td>
+              <td style="text-align: center; padding: 0.75rem;">
+                <a
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.875rem; font-weight: 600; color: white; background-color: var(--color-accent); border-radius: var(--radius-sm); text-decoration: none; transition: background 0.2s;"
+                  onmouseover="this.style.backgroundColor='#e67e22'"
+                  onmouseout="this.style.backgroundColor='var(--color-accent)'"
+                >
+                  Apply
+                </a>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--color-text-light);">
+    * Net value assumes $400/month spending in this category. Actual value varies with your spending.
+  </div>
+</div>

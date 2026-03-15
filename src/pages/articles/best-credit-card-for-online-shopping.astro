@@ -6,6 +6,7 @@ import FAQSection from '../../components/FAQSection.astro';
 import MascotTip from '../../components/MascotTip.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
+import QuickCompare from '../../components/QuickCompare.astro';
 
 const relatedArticles = [];
 ---
@@ -27,6 +28,12 @@ Finding the right credit card for online shopping can significantly impact your 
 We analyzed 20+ credit cards to find the best options for online shopping in 2026. Our data-driven approach evaluates sign-up bonuses, rewards rates, annual fees, and real-world value to help you make an informed decision.
 
 **Bottom line:** Amazon Prime Rewards Visa Signature Card tops our rankings for online shopping with 5% back on Amazon and Whole Foods, 2% on gas/restaurants/drugstores, 1% on everything else, but the best card for you depends on your specific spending patterns and goals.
+
+<QuickCompare
+  cardIds={['amazon-prime-rewards', 'discover-it-cashback', 'citi-double-cash']}
+  category="online"
+  highlight="amazon-prime-rewards"
+/>
 
 <ComparisonTable cards={[
   {
