@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const reviews = [
+  { title: 'Best Credit Card for Groceries', href: '/credit-cards/best-credit-card-for-groceries' },
+  { title: 'Best Credit Card for Gas', href: '/credit-cards/best-credit-card-for-gas' },
+  { title: 'Best Credit Card for Online Shopping', href: '/credit-cards/best-credit-card-for-online-shopping' },
+];
+---
+
+<BaseLayout
+  title="Best Balance Transfer Credit Cards of 2026 | ProofLabs"
+  description="Find the best balance transfer credit cards with 0% intro APR offers. Pay down debt faster with our independent reviews."
+>
+  <div class="container-custom" style="padding: 8rem 0 6rem;">
+    <div style="max-width: 56rem; margin: 0 auto;">
+      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: #111827;">
+        Best Balance Transfer Credit Cards
+      </h1>
+      
+      <p style="font-size: 1.25rem; color: #6b7280; line-height: 1.6; margin-bottom: 3rem;">
+        Balance transfer credit cards offer 0% intro APR periods that let you pay down existing debt without accruing interest. Find cards with the longest intro periods and lowest transfer fees.
+      </p>
+      
+      <div style="background: #eff6ff; border-left: 4px solid #0284c7; padding: 2rem; margin-bottom: 4rem; border-radius: 0.5rem;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #0369a1;">
+          What to Look For
+        </h2>
+        <ul style="color: #0369a1; padding-left: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;">Rewards rates (flat-rate vs. category bonuses)</li>
+          <li style="margin-bottom: 0.5rem;">Annual fees (break-even analysis)</li>
+          <li style="margin-bottom: 0.5rem;">Sign-up bonuses and requirements</li>
+          <li style="margin-bottom: 0.5rem;">Redemption flexibility</li>
+        </ul>
+      </div>
+      
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #111827;">
+        Cash Back Card Reviews
+      </h2>
+      
+      <div style="display: grid; gap: 1rem;">
+        {reviews.map(review => (
+          <a href={review.href} style="background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='white';">
+            <span style="font-size: 1.125rem; font-weight: 600; color: #111827;">{review.title}</span>
+            <svg style="width: 1.25rem; height: 1.25rem; color: #0284c7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
