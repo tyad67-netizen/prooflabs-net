@@ -1,0 +1,25 @@
+---
+interface Props {
+  author?: string;
+  date?: string;
+}
+
+const { author = 'Tyler', date } = Astro.props;
+---
+
+<div class="author-byline" style="display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-top: 1px solid #E8E0D8; border-bottom: 1px solid #E8E0D8; margin: 2rem 0;">
+  <div class="mascot-spot" style="font-size: 2rem;">
+    <span class="mascot-emoji">🦔</span>
+    <!-- MASCOT: Proof wearing tiny lab coat, professional pose -->
+  </div>
+  <div>
+    <div style="font-weight: 700; color: #2C2420;">
+      {author}, Founder of ProofLabs
+    </div>
+    {date && (
+      <div style="font-size: 0.875rem; color: #7A6F66;">
+        {date}
+      </div>
+    )}
+  </div>
+</div>
