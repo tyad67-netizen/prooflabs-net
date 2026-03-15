@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MascotTip from '../components/MascotTip.astro';
+---
+
+<BaseLayout
+  title="How ProofLabs Makes Money | ProofLabs"
+  description="ProofLabs earns affiliate commissions when you apply for financial products through our links. Here's exactly how it works and why it doesn't affect our rankings."
+>
+  <div class="container-custom" style="padding: 8rem 0 6rem;">
+    <div style="max-width: 48rem; margin: 0 auto;">
+      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 2rem; color: var(--color-text);">
+        How ProofLabs Makes Money
+      </h1>
+      
+      <div style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-muted);">
+        <p style="margin-bottom: 2rem; font-size: 1.25rem; color: var(--color-text); font-weight: 600;">
+          Short version: affiliate commissions. When you click a link to a credit card on this site and get approved, I may earn a commission from the card issuer. This is how I keep the site running and the content free.
+        </p>
+        
+        <p style="margin-bottom: 2rem;">
+          Here's what that means — and doesn't mean — for you.
+        </p>
+        
+        <h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">
+          What Are Affiliate Commissions?
+        </h2>
+        
+        <p style="margin-bottom: 1.5rem;">
+          When I link to a credit card application page, that link contains a tracking code. If you apply and are approved through that link, the card issuer pays ProofLabs a referral fee.
+        </p>
+        
+        <p style="margin-bottom: 2rem;">
+          <strong>You pay nothing extra</strong> — the card terms, APR, and rewards are exactly the same whether you apply through my link or go directly to the issuer's website.
+        </p>
+        
+        <h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">
+          Does This Affect My Rankings?
+        </h2>
+        
+        <p style="margin-bottom: 1.5rem;">
+          <strong>No.</strong> My rankings are based on net annual value to you — the math I show in my <a href="/methodology" style="color: var(--color-secondary); text-decoration: underline;">methodology</a>. Commission rates vary between card issuers, and I don't factor them into rankings.
+        </p>
+        
+        <MascotTip>
+          <strong>Real example:</strong> the Costco Anywhere Visa is my #1 pick for gas. It's not a particularly high-commission card. But it gives 4% back on gas, and that math wins. I'd rather recommend the right card and earn your trust than recommend the wrong card and earn a slightly bigger commission.
+        </MascotTip>
+        
+        <p style="margin-bottom: 2rem;">
+          If the best card for a category has no affiliate program at all, I still recommend it and link to the issuer's site directly. You'll see <code>&lt;!-- TODO: affiliate link --&gt;</code> comments in my code — those are cards where I haven't set up affiliate tracking yet, but I'm recommending them anyway because they're the best option.
+        </p>
+        
+        <h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">
+          What Types of Products Earn Commissions?
+        </h2>
+        
+        <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
+          <li style="margin-bottom: 1rem;">
+            <strong>Credit cards</strong> — Commission when you're approved for a card through my link
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <strong>Savings accounts</strong> — Some HYSA providers pay for account sign-ups
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <strong>Investing platforms</strong> — Some brokerages pay for new account referrals
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <strong>Rakuten</strong> — I earn a referral bonus when you sign up through my link (and you get a bonus too)
+          </li>
+        </ul>
+        
+        <h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">
+          What Does NOT Earn Commissions?
+        </h2>
+        
+        <p style="margin-bottom: 2rem;">
+          My strategy guides, methodology breakdowns, and educational content don't directly earn commissions. They exist to help you make better decisions — which builds trust, which means you're more likely to use my affiliate links when you're ready to apply. It's a long game, and I'm fine with that.
+        </p>
+        
+        <h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">
+          The Bottom Line
+        </h2>
+        
+        <p style="margin-bottom: 1.5rem;">
+          I make money when you make good financial decisions through my links. Our incentives are aligned: the better my recommendations are, the more you trust me, the more likely you are to apply through my links. If I start recommending bad cards for higher commissions, you'll leave and I'll earn nothing.
+        </p>
+        
+        <p style="margin-bottom: 2rem;">
+          That's why I show my work on every recommendation. You can check the math yourself.
+        </p>
+        
+        <div style="background-color: var(--color-secondary-bg); border-left: 4px solid #0284c7; padding: 2rem; margin: 3rem 0; border-radius: var(--radius-md);">
+          <p style="margin: 0; font-weight: 600; color: var(--color-secondary-dark);">
+            Questions? <a href="/about" style="color: var(--color-secondary); text-decoration: underline;">Contact me</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
