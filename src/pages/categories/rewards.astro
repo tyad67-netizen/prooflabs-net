@@ -3,30 +3,62 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = "Best Rewards Credit Cards";
 const description = "Top rewards credit cards for maximizing points and cashback across all spending categories. Real value calculations and stack recommendations.";
+
+const reviews = [
+  { title: 'Best Credit Card for Groceries', href: '/credit-cards/best-credit-card-for-groceries', live: true },
+  { title: 'Best Credit Card for Gas', href: '/credit-cards/best-credit-card-for-gas', live: true },
+  { title: 'Best Credit Card for Online Shopping', href: '/credit-cards/best-credit-card-for-online-shopping', live: true },
+  { title: 'Best Credit Card for Dining', href: '/credit-cards/best-credit-card-for-dining', live: false },
+  { title: 'Best Credit Card for Streaming', href: '/credit-cards/best-credit-card-for-streaming', live: false },
+  { title: 'Best Flat Rate Cash Back Card', href: '/credit-cards/best-flat-rate-cash-back-card', live: false },
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <div style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 4rem 1rem;">
-    <div style="max-width: 42rem; text-align: center;">
-      <div class="mascot-spot mascot-researching" aria-hidden="true" style="margin: 0 auto 2rem; font-size: 4rem;">
-        <span class="mascot-emoji">🦔</span>
-      </div>
-      
-      <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-text);">
+<BaseLayout
+  title={`${title} of 2026 | ProofLabs`}
+  description={description}
+>
+  <div class="container-custom" style="padding: 8rem 0 6rem;">
+    <div style="max-width: 56rem; margin: 0 auto;">
+      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--color-text);">
         {title}
       </h1>
       
-      <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+      <p style="font-size: 1.25rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 3rem;">
         {description}
       </p>
       
-      <p style="color: var(--color-text-light); margin-bottom: 2.5rem;">
-        This guide is being researched and written by Tyler using real spending data.
-      </p>
+      <div style="background-color: var(--color-secondary-bg); border-left: 4px solid #0284c7; padding: 2rem; margin-bottom: 4rem; border-radius: var(--radius-md);">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-secondary-dark);">
+          What to Look For
+        </h2>
+        <ul style="color: var(--color-secondary-dark); padding-left: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;">Rewards rates across spending categories</li>
+          <li style="margin-bottom: 0.5rem;">Annual fee vs. rewards value</li>
+          <li style="margin-bottom: 0.5rem;">Redemption flexibility (cashback vs points)</li>
+          <li style="margin-bottom: 0.5rem;">How cards work together in a stack</li>
+        </ul>
+      </div>
       
-      <a href="/" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-md); font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
-        ← Back to Home
-      </a>
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: var(--color-text);">
+        Rewards Card Reviews
+      </h2>
+      
+      <div style="display: grid; gap: 1rem;">
+        {reviews.map(review => (
+          <a href={review.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='white';">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="font-size: 1.125rem; font-weight: 600; color: var(--color-text);">{review.title}</span>
+              {!review.live && (
+                <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-secondary); background-color: var(--color-secondary-bg); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm);">Coming Soon</span>
+              )}
+            </div>
+            <svg style="width: 1.25rem; height: 1.25rem; color: var(--color-secondary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </BaseLayout>
