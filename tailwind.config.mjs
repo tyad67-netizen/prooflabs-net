@@ -34,7 +34,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Lexend', 'Inter', 'sans-serif'],
+				display: ['Roboto Slab', 'Georgia', 'serif'],
 			},
 			borderRadius: {
 				'4xl': '2rem',

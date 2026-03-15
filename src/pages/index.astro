@@ -76,7 +76,7 @@ const featuredArticles = [
   <!-- Hero Section -->
   <section style="background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #0ea5e9 100%); color: white; position: relative; overflow: hidden;">
     <!-- Background pattern -->
-    <div style="position: absolute; inset: 0; opacity: 0.1; background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    <div style="position: absolute; inset: 0; opacity: 0.15; background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
     
     <div class="container-custom" style="padding: 6rem 0 8rem; position: relative; z-index: 1;">
       <div style="max-width: 56rem; margin: 0 auto; text-align: center;">
@@ -85,11 +85,11 @@ const featuredArticles = [
         </div>
         
         <h1 style="font-size: 3.25rem; font-weight: 900; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em;">
-          Find Your Perfect<br/>Credit Card
+          Unbiased Credit Card<br/>Reviews & Comparisons
         </h1>
         
         <p style="font-size: 1.375rem; color: rgba(255,255,255,0.95); margin-bottom: 2.5rem; max-width: 46rem; margin-left: auto; margin-right: auto; line-height: 1.6;">
-          Compare 200+ cards with unbiased, data-driven reviews to find your perfect match.
+          Independent analysis of 200+ credit cards to help you make informed decisions.
         </p>
         
         <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
@@ -102,9 +102,9 @@ const featuredArticles = [
         </div>
         
         <!-- Stats -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-top: 4rem; padding: 2rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 1rem; border: 1px solid rgba(255,255,255,0.2);">
-          {stats.map(stat => (
-            <div style="text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin-top: 4rem; padding: 2rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 1rem; border: 1px solid rgba(255,255,255,0.2);">
+          {stats.map((stat, index) => (
+            <div style={`text-align: center; padding: 0 2rem; ${index < stats.length - 1 ? 'border-right: 1px solid rgba(255,255,255,0.2);' : ''}`}>
               <div style="font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem;">{stat.value}</div>
               <div style="font-size: 0.875rem; color: rgba(255,255,255,0.8); font-weight: 500;">{stat.label}</div>
             </div>
