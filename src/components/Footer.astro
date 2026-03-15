@@ -30,9 +30,15 @@ const footerLinks = {
         <p class="text-sm text-gray-400 mb-4">
           Data-driven credit card reviews and comparisons to help you make informed financial decisions.
         </p>
-        <p class="text-xs text-gray-500">
-          © {currentYear} ProofLabs Editorial Team.<br/>
-          All recommendations are based on independent analysis.
+        <p class="text-xs text-gray-500" style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>
+            © {currentYear} ProofLabs Editorial Team.<br/>
+            All recommendations are based on independent analysis.
+          </span>
+          <span class="mascot-spot mascot-footer" aria-hidden="true" style="font-size: 1.2rem;">
+            <span class="mascot-emoji">🦔</span>
+            <!-- MASCOT: Proof sleeping, curled up -->
+          </span>
         </p>
       </div>
       
@@ -55,7 +61,7 @@ const footerLinks = {
     
     <!-- Disclosure -->
     <div class="mt-12 pt-8 border-t border-gray-800">
-      <div style="background: rgba(255,255,255,0.05); border-radius: 0.75rem; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+      <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
         <div style="display: flex; align-items: flex-start; gap: 1rem;">
           <svg style="width: 1.5rem; height: 1.5rem; color: #60a5fa; flex-shrink: 0; margin-top: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

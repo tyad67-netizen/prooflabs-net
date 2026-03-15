@@ -52,27 +52,27 @@ const featuredReviews = [
 >
   <div class="container-custom" style="padding: 8rem 0 6rem;">
     <div style="max-width: 56rem; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
-      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: #111827;">
+      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--color-text);">
         Best Credit Cards of 2026
       </h1>
-      <p style="font-size: 1.25rem; color: #6b7280; line-height: 1.6;">
+      <p style="font-size: 1.25rem; color: var(--color-text-muted); line-height: 1.6;">
         Independent reviews and data-driven comparisons of 200+ credit cards
       </p>
     </div>
     
     <!-- Categories -->
     <div style="margin-bottom: 6rem;">
-      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #111827;">
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: var(--color-text);">
         Browse by Category
       </h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
         {categories.map(category => (
-          <a href={category.href} style="background: white; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-            <div style={`width: 3rem; height: 3rem; border-radius: 0.75rem; background: ${category.color}; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;`}></div>
-            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; color: #111827;">
+          <a href={category.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 2rem; text-decoration: none; color: inherit; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            <div style={`width: 3rem; height: 3rem; border-radius: var(--radius-md); background: ${category.color}; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;`}></div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text);">
               {category.title}
             </h3>
-            <p style="color: #6b7280; line-height: 1.6;">
+            <p style="color: var(--color-text-muted); line-height: 1.6;">
               {category.description}
             </p>
           </a>
@@ -82,14 +82,14 @@ const featuredReviews = [
     
     <!-- Featured Reviews -->
     <div>
-      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #111827;">
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: var(--color-text);">
         Featured Reviews
       </h2>
       <div style="display: grid; gap: 1rem;">
         {featuredReviews.map(review => (
-          <a href={review.href} style="background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='white';">
-            <span style="font-size: 1.125rem; font-weight: 600; color: #111827;">{review.title}</span>
-            <svg style="width: 1.25rem; height: 1.25rem; color: #0284c7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <a href={review.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='white';">
+            <span style="font-size: 1.125rem; font-weight: 600; color: var(--color-text);">{review.title}</span>
+            <svg style="width: 1.25rem; height: 1.25rem; color: var(--color-secondary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
           </a>

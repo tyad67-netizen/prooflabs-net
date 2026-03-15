@@ -3,6 +3,8 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import MascotTip from '../../components/MascotTip.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
 
 const relatedArticles = [];
 ---
@@ -14,7 +16,8 @@ const relatedArticles = [];
   category="credit-cards"
   relatedArticles={relatedArticles}
 >
-# Best Credit Card for Groceries in 2026
+
+<AuthorByline date="March 15, 2026" />
 
 **Last updated:** 2026-03-13 | **Cards analyzed:** 20
 
@@ -60,28 +63,19 @@ We analyzed 20+ credit cards to find the best options for groceries in 2026. Our
 
 **Why it wins:**
 
-The American Express Blue Cash Everyday stands out for groceries with its 3% at US supermarkets (up to $6K/year), 3% on gas, 3% on online retail, 1% on everything else rewards structure. American Express designed this card to maximize value on everyday spending while offering flexibility for redemptions.
+No annual fee and 3% back at US supermarkets up to $6,000/year. The math: $500/month in groceries × 3% = $15/month = $180/year, completely free. If your grocery bill stays under $6K/year, this gives you the best value without paying for rewards you won't fully use. The $200 sign-up bonus after $2,000 spend is basically a free month of groceries.
 
-**Key strength:** 3% back at US supermarkets (up to $6,000/year)
+**Real-world scenario:** Spending $500/month on groceries
 
-With a sign-up bonus of $200 after $2,000 spend in 6 months, new cardholders can earn substantial rewards from the start. The $0 annual fee makes this accessible to most cardholders.
-
-The card carries a 19.24%-29.99% variable APR, which is competitive for premium cards.
-
-**Profit calculation:**
-
-**Real-world scenario:** Spending $800/month on groceries
-
-- Monthly rewards: $24.00
-- Annual rewards: $288.00
+- Monthly rewards: $15.00
+- Annual rewards: $180.00
 - Annual fee: $0
-- **Net annual value: $288.00**
-
-This calculation assumes 9,600 annual spend on groceries. Adjust based on your actual spending patterns.
+- **Net annual value: $180.00**
 
 <AffiliateCTA 
   cardName="American Express Blue Cash Everyday" 
-  affiliateLink="{{AMEX_BLUE_CASH_EVERYDAY_LINK}}"
+  <!-- TODO: Replace with affiliate tracking URL once affiliate program accounts are approved -->
+  affiliateLink="https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
   buttonText="Check American Express Blue Cash Everyday"
 />
 
@@ -95,30 +89,25 @@ This calculation assumes 9,600 annual spend on groceries. Adjust based on your a
 
 **Why it's competitive:**
 
-The Blue Cash Preferred from American Express stands out for groceries with its 6% at US supermarkets (up to $6K/year), 6% on streaming, 3% on gas and transit, 1% on everything else rewards structure. American Express designed this card to maximize value on everyday spending while offering flexibility for redemptions.
+6% at supermarkets up to $6K/year — double the Everyday card's rate. But there's a $95 annual fee. Break-even math: you need about $165/month in grocery spending for the extra 3% to cover the fee. If you spend $300+/month on groceries, this card nets you about $481/year vs the Everyday's $288. That $95 fee pays for itself three times over.
 
-**Key strength:** 6% back at US supermarkets (up to $6,000/year)
+**Real-world scenario:** Spending $500/month on groceries
 
-With a sign-up bonus of $350 back after $3,000 spend in 6 months, new cardholders can earn substantial rewards from the start. The $95 annual fee is justified by the rewards potential for regular users.
-
-The card carries a 19.24%-29.99% variable APR, which is competitive for premium cards.
-
-**Profit calculation:**
-
-**Real-world scenario:** Spending $800/month on groceries
-
-- Monthly rewards: $48.00
-- Annual rewards: $576.00
+- Monthly rewards: $30.00
+- Annual rewards: $360.00
 - Annual fee: $95
-- **Net annual value: $481.00**
-
-This calculation assumes 9,600 annual spend on groceries. Adjust based on your actual spending patterns.
+- **Net annual value: $265.00**
 
 <AffiliateCTA 
   cardName="Blue Cash Preferred from American Express" 
-  affiliateLink="{{AMEX_BLUE_CASH_PREFERRED_LINK}}"
+  <!-- TODO: Replace with affiliate tracking URL once affiliate program accounts are approved -->
+  affiliateLink="https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/"
   buttonText="Check Blue Cash Preferred from American Express"
 />
+
+<MascotTip type="pick">
+<p>If you spend $300+ a month on groceries, the Blue Cash Preferred is a no-brainer despite the $95 fee. The extra 3% (vs the Everyday card) pays for itself and nets you an extra $193/year.</p>
+</MascotTip>
 
 ### 3. American Express Gold Card - Best Perks
 
@@ -130,28 +119,22 @@ This calculation assumes 9,600 annual spend on groceries. Adjust based on your a
 
 **Why it made the list:**
 
-The American Express Gold Card stands out for groceries with its 4x on dining and groceries (up to $25K/year), 3x on flights, 1x on everything else rewards structure. American Express designed this card to maximize value on everyday spending while offering flexibility for redemptions.
+4x points on groceries up to $25K/year with no category cap anxiety. The $325 annual fee is steep, but factor in the $120 dining credit ($10/month) and 4x on dining, and the effective cost drops to around $205. This only makes sense if you also eat out frequently and can use Amex transfer partners for travel. For pure grocery cashback, the Blue Cash cards win.
 
-**Key strength:** $120 dining credit ($10/month)
+**Real-world scenario:** Spending $500/month on groceries (points valued at 1¢ each)
 
-With a sign-up bonus of 60,000 points after $6,000 spend in 6 months, new cardholders can earn substantial rewards from the start. The $325 annual fee is justified by the rewards potential for regular users.
-
-The card carries a N/A (charge card, pay in full monthly) APR, which is standard for charge cards that require full monthly payment.
-
-**Profit calculation:**
-
-**Real-world scenario:** Spending $800/month on groceries
-
-- Monthly rewards: $32.00
-- Annual rewards: $384.00
+- Monthly rewards: $20.00
+- Annual rewards: $240.00
+- Dining credit: $120.00
 - Annual fee: $325
-- **Net annual value: $59.00**
+- **Net annual value: $35.00** (only worth it if you maximize dining + travel redemption)
 
 This calculation assumes 9,600 annual spend on groceries. Adjust based on your actual spending patterns.
 
 <AffiliateCTA 
   cardName="American Express Gold Card" 
-  affiliateLink="{{AMEX_GOLD_LINK}}"
+  <!-- TODO: Replace with affiliate tracking URL once affiliate program accounts are approved -->
+  affiliateLink="https://www.americanexpress.com/us/credit-cards/card/gold-card/"
   buttonText="Check American Express Gold Card"
 />
 
@@ -170,6 +153,10 @@ We evaluate credit cards across 5 criteria:
 Scores are calculated using publicly available data from issuer websites and aggregated user reports. Last updated: 2026-03-13.
 
 </div>
+
+<MascotTip type="tip">
+<p>Stack your grocery card with Rakuten. When supermarkets run cashback offers on Rakuten (usually 2-5%), you're earning rewards twice on the same purchase. I've pulled 8% total on Whole Foods orders before (3% card + 5% Rakuten).</p>
+</MascotTip>
 
 <FAQSection faqs={[
   {

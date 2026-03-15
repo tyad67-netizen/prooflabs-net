@@ -1,0 +1,48 @@
+---
+interface Props {
+  type?: 'tip' | 'warning' | 'pick';
+  title?: string;
+}
+
+const { type = 'tip', title } = Astro.props;
+
+const config = {
+  tip: {
+    emoji: '💡',
+    defaultTitle: "Tyler's Tip",
+    bgColor: '#FFF5E6',
+    borderColor: '#E8913A'
+  },
+  warning: {
+    emoji: '⚠️',
+    defaultTitle: "Tyler's Warning",
+    bgColor: '#FEF2F2',
+    borderColor: '#D45B3F'
+  },
+  pick: {
+    emoji: '🦔',
+    defaultTitle: "Tyler's Pick",
+    bgColor: '#E8F5EE',
+    borderColor: '#2D5F4A'
+  }
+};
+
+const { emoji, defaultTitle, bgColor, borderColor } = config[type];
+---
+
+<div class="mascot-tip" style={`background: ${bgColor}; border-left: 4px solid ${borderColor}; padding: 1.5rem; margin: 2rem 0; border-radius: var(--radius-md);`}>
+  <div style="display: flex; align-items: flex-start; gap: 1rem;">
+    <div class="mascot-spot" style="font-size: 1.5rem; flex-shrink: 0;">
+      <span class="mascot-emoji">{emoji}</span>
+      <!-- MASCOT: Proof's face as avatar icon for {type} callout -->
+    </div>
+    <div style="flex: 1;">
+      <strong style={`color: ${borderColor}; font-size: 1.125rem; display: block; margin-bottom: 0.5rem;`}>
+        {title || defaultTitle}
+      </strong>
+      <div style="color: #2C2420; line-height: 1.6;">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

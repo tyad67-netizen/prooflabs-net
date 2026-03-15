@@ -13,7 +13,7 @@ const { articles } = Astro.props;
 ---
 
 <section style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid #e5e7eb;">
-  <h2 style="font-size: 1.875rem; font-weight: 800; margin-bottom: 2rem; color: #111827;">
+  <h2 style="font-size: 1.875rem; font-weight: 800; margin-bottom: 2rem; color: var(--color-text);">
     Related Articles
   </h2>
   
@@ -21,17 +21,17 @@ const { articles } = Astro.props;
     {articles.map(article => (
       <a 
         href={article.url}
-        style="display: block; background: white; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.05);"
+        style="display: block; background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 1.5rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.05);"
         onmouseover="this.style.borderColor='#0284c7'; this.style.boxShadow='0 4px 12px rgba(2,132,199,0.15)'; this.style.transform='translateY(-2px)';"
         onmouseout="this.style.borderColor='#e5e7eb'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.05)'; this.style.transform='translateY(0)';"
       >
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #111827;">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text);">
           {article.title}
         </h3>
-        <p style="font-size: 0.9375rem; color: #6b7280; line-height: 1.6; margin: 0;">
+        <p style="font-size: 0.9375rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
           {article.description}
         </p>
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: #0284c7; font-size: 0.875rem; font-weight: 600;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: var(--color-secondary); font-size: 0.875rem; font-weight: 600;">
           <span>Read more</span>
           <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

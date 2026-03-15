@@ -61,16 +61,16 @@ function formatAsList(text: string): string[] {
     font-size: 1.75rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    color: #111827;
+    color: var(--color-text);
   }
   
   table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 1rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.06);
   }
@@ -80,7 +80,7 @@ function formatAsList(text: string): string[] {
     font-weight: 700;
     padding: 1rem;
     text-align: left;
-    color: #0369a1;
+    color: var(--color-secondary-dark);
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -91,7 +91,7 @@ function formatAsList(text: string): string[] {
     padding: 1.25rem 1rem;
     border-bottom: 1px solid #f3f4f6;
     vertical-align: top;
-    color: #374151;
+    color: var(--color-text-muted);
   }
   
   tbody tr:last-child td {
@@ -99,11 +99,11 @@ function formatAsList(text: string): string[] {
   }
   
   tbody tr:hover {
-    background-color: #f9fafb;
+    background-color: var(--color-bg-alt);
   }
   
   td strong {
-    color: #111827;
+    color: var(--color-text);
     font-weight: 700;
   }
   
@@ -121,7 +121,7 @@ function formatAsList(text: string): string[] {
   
   .rewards-list li:before {
     content: "•";
-    color: #0284c7;
+    color: var(--color-secondary);
     font-weight: bold;
     position: absolute;
     left: -1.25rem;
