@@ -1,14 +1,22 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+
+interface RelatedArticle {
+  title: string;
+  url: string;
+  description: string;
+}
 
 interface Props {
   title: string;
   description: string;
   lastUpdated: string;
   category?: string;
+  relatedArticles?: RelatedArticle[];
 }
 
-const { title, description, lastUpdated, category = 'Credit Cards' } = Astro.props;
+const { title, description, lastUpdated, category = 'Credit Cards', relatedArticles = [] } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -64,6 +72,11 @@ const { title, description, lastUpdated, category = 'Credit Cards' } = Astro.pro
               <strong>Editorial Disclosure:</strong> ProofLabs may earn a commission when you apply for credit cards through links in this article. Our reviews and rankings are determined by our editorial team using our published <a href="/methodology" style="color: #0284c7; text-decoration: underline;">methodology</a> and are not influenced by affiliate relationships.
             </p>
           </div>
+
+          <!-- Related Articles -->
+          {relatedArticles.length > 0 && (
+            <RelatedArticles articles={relatedArticles} />
+          )}
         </article>
 
         <!-- Sidebar (Table of Contents) -->
