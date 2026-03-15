@@ -1,30 +1,31 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+const title = "Best Rewards Credit Cards";
+const description = "Top rewards credit cards for maximizing points and cashback across all spending categories. Real value calculations and stack recommendations.";
+
 const reviews = [
   { title: 'Best Credit Card for Groceries', href: '/credit-cards/best-credit-card-for-groceries', live: true },
   { title: 'Best Credit Card for Gas', href: '/credit-cards/best-credit-card-for-gas', live: true },
   { title: 'Best Credit Card for Online Shopping', href: '/credit-cards/best-credit-card-for-online-shopping', live: true },
   { title: 'Best Credit Card for Dining', href: '/credit-cards/best-credit-card-for-dining', live: false },
-  { title: 'Best Credit Card for Amazon', href: '/credit-cards/best-credit-card-for-amazon', live: false },
-  { title: 'Best Credit Card for Costco', href: '/credit-cards/best-credit-card-for-costco', live: false },
-  { title: 'Best No Annual Fee Credit Card', href: '/credit-cards/best-credit-card-no-annual-fee', live: false },
+  { title: 'Best Credit Card for Streaming', href: '/credit-cards/best-credit-card-for-streaming', live: false },
   { title: 'Best Flat Rate Cash Back Card', href: '/credit-cards/best-flat-rate-cash-back-card', live: false },
 ];
 ---
 
 <BaseLayout
-  title="Best Cash Back Credit Cards of 2026 | ProofLabs"
-  description="Find the best cash back credit cards with our independent reviews and comparisons. Maximize rewards on everyday purchases."
+  title={`${title} of 2026 | ProofLabs`}
+  description={description}
 >
   <div class="container-custom" style="padding: 8rem 0 6rem;">
     <div style="max-width: 56rem; margin: 0 auto;">
       <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--color-text);">
-        Best Cash Back Credit Cards
+        {title}
       </h1>
       
       <p style="font-size: 1.25rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 3rem;">
-        Cash back credit cards offer straightforward rewards—earn a percentage back on purchases with no points to track or redeem. Our reviews help you find cards with the highest rates for your spending patterns.
+        {description}
       </p>
       
       <div style="background-color: var(--color-secondary-bg); border-left: 4px solid #0284c7; padding: 2rem; margin-bottom: 4rem; border-radius: var(--radius-md);">
@@ -32,15 +33,15 @@ const reviews = [
           What to Look For
         </h2>
         <ul style="color: var(--color-secondary-dark); padding-left: 1.5rem;">
-          <li style="margin-bottom: 0.5rem;">Rewards rates (flat-rate vs. category bonuses)</li>
-          <li style="margin-bottom: 0.5rem;">Annual fees (break-even analysis)</li>
-          <li style="margin-bottom: 0.5rem;">Sign-up bonuses and requirements</li>
-          <li style="margin-bottom: 0.5rem;">Redemption flexibility</li>
+          <li style="margin-bottom: 0.5rem;">Rewards rates across spending categories</li>
+          <li style="margin-bottom: 0.5rem;">Annual fee vs. rewards value</li>
+          <li style="margin-bottom: 0.5rem;">Redemption flexibility (cashback vs points)</li>
+          <li style="margin-bottom: 0.5rem;">How cards work together in a stack</li>
         </ul>
       </div>
       
       <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: var(--color-text);">
-        Cash Back Card Reviews
+        Rewards Card Reviews
       </h2>
       
       <div style="display: grid; gap: 1rem;">
