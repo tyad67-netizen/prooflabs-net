@@ -1,51 +1,68 @@
 ---
 const navLinks = [
-  { label: 'Best Cards', href: '/best-credit-cards' },
-  { label: 'Categories', href: '/categories' },
-  { label: 'Reviews', href: '/reviews' },
-  { label: 'Methodology', href: '/methodology' },
+  { label: 'Find Cards', href: '/find-cards' },
+  { label: 'Cash Back', href: '/categories/cash-back', hasDropdown: true },
+  { label: 'Travel', href: '/categories/travel', hasDropdown: true },
+  { label: 'Balance Transfer', href: '/categories/balance-transfer', hasDropdown: true },
   { label: 'About', href: '/about' },
 ];
 ---
 
-<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-  <nav class="container-custom py-4">
-    <div class="flex items-center justify-between">
+<header style="background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
+  <nav class="container-custom" style="padding: 1.25rem 0;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
       <!-- Logo -->
       <a href="/" style="display: flex; align-items: center; text-decoration: none;">
         <img src="/logo.svg" alt="ProofLabs" style="height: 60px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));" />
       </a>
       
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div style="display: none;" class="md:flex" style="align-items: center; gap: 2.5rem;">
         {navLinks.map(link => (
           <a 
             href={link.href}
-            class="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+            style="color: #374151; font-weight: 500; font-size: 0.9375rem; text-decoration: none; transition: color 0.2s; white-space: nowrap;"
+            onmouseover="this.style.color='#0284c7';"
+            onmouseout="this.style.color='#374151';"
           >
             {link.label}
           </a>
         ))}
+        
+        <!-- Search Icon -->
+        <button 
+          style="padding: 0.625rem; color: #6b7280; border-radius: 0.5rem; transition: all 0.2s; border: 1px solid #e5e7eb; background: white;"
+          onmouseover="this.style.background='#f9fafb'; this.style.borderColor='#d1d5db';"
+          onmouseout="this.style.background='white'; this.style.borderColor='#e5e7eb';"
+          aria-label="Search cards"
+        >
+          <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
       </div>
       
       <!-- Mobile Menu Button -->
       <button 
         id="mobile-menu-btn"
-        class="md:hidden p-2 text-gray-700 hover:text-primary-600"
+        style="display: block; padding: 0.5rem; color: #374151;"
+        class="md:hidden"
         aria-label="Toggle menu"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="width" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+    <div id="mobile-menu" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
       {navLinks.map(link => (
         <a 
           href={link.href}
-          class="block py-2 text-gray-700 hover:text-primary-600 font-medium"
+          style="display: block; padding: 0.75rem 0; color: #374151; font-weight: 500; text-decoration: none; transition: color 0.2s;"
+          onmouseover="this.style.color='#0284c7';"
+          onmouseout="this.style.color='#374151';"
         >
           {link.label}
         </a>
@@ -59,6 +76,20 @@ const navLinks = [
   const menu = document.getElementById('mobile-menu');
   
   btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+    if (menu) {
+      const isHidden = menu.style.display === 'none';
+      menu.style.display = isHidden ? 'block' : 'none';
+    }
   });
 </script>
+
+<style>
+  @media (min-width: 768px) {
+    .md\:flex {
+      display: flex !important;
+    }
+    .md\:hidden {
+      display: none !important;
+    }
+  }
+</style>
