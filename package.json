@@ -24,6 +24,7 @@
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/postcss": "^4.2.1",
+    "jsdom": "^29.0.0",
     "tailwindcss": "^4.2.1"
   }
 }
