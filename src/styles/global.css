@@ -1,66 +1,197 @@
-@import "tailwindcss";
+/* ==============================================
+   PROOFLABS WARM THEME — "Proof the Hedgehog"
+   ============================================== */
 
-/* Base Styles */
+/* ---------- Design Tokens ---------- */
+:root {
+  /* Primary — Warm Amber/Golden */
+  --color-primary: #E8913A;
+  --color-primary-light: #F5BC6E;
+  --color-primary-dark: #C77520;
+  --color-primary-bg: #FFF5E6;
+
+  /* Secondary — Deep Forest Green */
+  --color-secondary: #2D5F4A;
+  --color-secondary-light: #3D7A60;
+  --color-secondary-dark: #1E4434;
+  --color-secondary-bg: #E8F5EE;
+
+  /* Accent — Warm Coral (CTAs, urgency) */
+  --color-accent: #D45B3F;
+  --color-accent-light: #E8755C;
+  --color-accent-dark: #B54930;
+
+  /* Neutrals — Warm tones, not blue-gray */
+  --color-bg: #FDF8F3;
+  --color-bg-alt: #F7F0E8;
+  --color-surface: #FFFFFF;
+  --color-text: #2C2420;
+  --color-text-muted: #7A6F66;
+  --color-text-light: #A89E95;
+  --color-border: #E8E0D8;
+  --color-border-light: #F0EBE5;
+
+  /* Semantic */
+  --color-success: #4CAF7D;
+  --color-success-bg: #E8F5EE;
+  --color-warning: #E8913A;
+  --color-error: #D45B3F;
+
+  /* Typography */
+  --font-heading: 'Nunito', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows — warm-toned, not blue/gray */
+  --shadow-sm: 0 1px 4px rgba(44, 36, 32, 0.06);
+  --shadow-md: 0 2px 12px rgba(44, 36, 32, 0.08);
+  --shadow-lg: 0 4px 24px rgba(44, 36, 32, 0.12);
+  --shadow-glow: 0 0 20px rgba(232, 145, 58, 0.15);
+}
+
+/* ---------- Global Resets ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Subtle warm grain texture on background */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='6.5' numOctaves='6' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E");
+}
+
+/* ---------- Typography ---------- */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lexend', 'Inter', system-ui, sans-serif;
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  line-height: 1.2;
+  font-weight: 700;
 }
 
-/* Component Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-center: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: all 0.2s;
+h1 { font-size: 2.25rem; margin-bottom: 16px; }
+h2 { font-size: 1.65rem; margin-top: 40px; margin-bottom: 12px; }
+h3 { font-size: 1.3rem; margin-top: 32px; margin-bottom: 8px; }
+
+p { margin-bottom: 16px; }
+
+a {
+  color: var(--color-secondary);
+  text-decoration-color: var(--color-secondary-light);
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
 }
 
-.btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+a:hover { color: var(--color-secondary-dark); }
+
+strong { font-weight: 600; }
+
+/* Tabular numbers for dollar amounts */
+.money, .value-amount, td:nth-child(n) {
+  font-variant-numeric: tabular-nums;
 }
 
-.btn-primary {
-  background-color: rgb(2, 132, 199);
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: rgb(3, 105, 161);
-}
-
-.btn-secondary {
-  background-color: white;
-  color: rgb(3, 105, 161);
-  border: 2px solid rgb(2, 132, 199);
-}
-
-.btn-secondary:hover {
-  background-color: rgb(240, 249, 255);
-}
-
+/* ---------- Cards / Containers ---------- */
 .card {
-  background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid rgb(229, 231, 235);
-  overflow: hidden;
-  transition: box-shadow 0.2s;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--color-shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 91, 63, 0.3);
+  color: #fff;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--color-secondary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary-dark);
+  color: #fff;
+}
+
+/* ---------- Mascot System ---------- */
+.mascot-spot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.mascot-emoji {
+  line-height: 1;
+}
+
+/* Mascot contexts */
+.mascot-researching .mascot-emoji {
+  font-size: 4rem;
 }
 
 .container-custom {
