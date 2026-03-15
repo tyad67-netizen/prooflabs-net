@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const calendar = [
+  {
+    week: "Week 1-2: Foundation Content (P1)",
+    articles: [
+      { url: "/strategies/secret-sauce", title: "How I Earn $3,500+/Year in Rewards", primaryKW: "credit card rewards strategy", words: 2500, priority: "P1", status: "TODO", notes: "THE flagship piece. Tyler's complete system." },
+      { url: "/strategies/how-to-pay-rent-with-credit-card", title: "How to Pay Rent with a Credit Card (and Earn Points)", primaryKW: "pay rent with credit card", words: 2000, priority: "P1", status: "TODO", notes: "BILT expertise, massive search volume." },
+      { url: "/credit-cards/best-credit-card-for-rent", title: "Best Credit Card for Rent 2026", primaryKW: "best credit card for rent", words: 1800, priority: "P1", status: "TODO", notes: "BILT 2.0 vs BILT Cash vs alternatives." },
+      { url: "/strategies/credit-card-stacking", title: "Credit Card Stacking: How to Maximize Rewards with Multiple Cards", primaryKW: "credit card stacking", words: 2000, priority: "P1", status: "TODO", notes: "Tyler's 3-card system explained." },
+    ]
+  },
+  {
+    week: "Week 3-4: Expand Credit Card Coverage (P1)",
+    articles: [
+      { url: "/credit-cards/best-credit-card-for-dining", title: "Best Credit Card for Dining 2026", primaryKW: "best credit card for dining", words: 1800, priority: "P1", status: "TODO" },
+      { url: "/credit-cards/best-credit-card-for-costco", title: "Best Credit Card for Costco 2026", primaryKW: "best credit card for Costco", words: 1500, priority: "P1", status: "TODO", notes: "Tyler's Costco expertise." },
+      { url: "/credit-cards/best-credit-card-no-annual-fee", title: "Best No Annual Fee Credit Card 2026", primaryKW: "best no annual fee credit card", words: 1800, priority: "P1", status: "TODO" },
+      { url: "/credit-cards/best-flat-rate-cash-back-card", title: "Best Flat Rate Cash Back Card 2026", primaryKW: "best flat rate cash back card", words: 1500, priority: "P1", status: "TODO" },
+      { url: "/credit-cards/best-3-card-stack-2026", title: "Best 3-Card Stack 2026", primaryKW: "best credit card combo", words: 2000, priority: "P1", status: "TODO", notes: "THE unique content piece." },
+    ]
+  },
+  {
+    week: "Week 5-6: Banking Vertical (P1)",
+    articles: [
+      { url: "/banking/best-high-yield-savings-2026", title: "Best High Yield Savings Account 2026", primaryKW: "best high yield savings account", words: 2000, priority: "P1", status: "TODO", notes: "Tyler uses all platforms." },
+      { url: "/banking/robinhood-vs-sofi-vs-wealthfront-savings", title: "Robinhood vs SoFi vs Wealthfront Savings 2026", primaryKW: "Robinhood vs SoFi savings", words: 1800, priority: "P1", status: "TODO", notes: "Tyler uses all three." },
+      { url: "/banking/robinhood-savings-review", title: "Robinhood Savings Review 2026", primaryKW: "Robinhood savings review", words: 1200, priority: "P1", status: "TODO" },
+      { url: "/banking/sofi-savings-review", title: "SoFi Savings Review 2026", primaryKW: "SoFi savings review", words: 1200, priority: "P1", status: "TODO" },
+      { url: "/banking/wealthfront-savings-review", title: "Wealthfront Savings Review 2026", primaryKW: "Wealthfront savings review", words: 1200, priority: "P1", status: "TODO" },
+    ]
+  },
+  {
+    week: "Week 7-8: Cashback Stacking & Comparisons (P1)",
+    articles: [
+      { url: "/strategies/cashback-stacking", title: "How to Stack Cashback: Rakuten + Credit Cards + Browser Extensions", primaryKW: "cashback stacking", words: 2000, priority: "P1", status: "TODO" },
+      { url: "/strategies/rakuten-guide", title: "Rakuten Guide: How I Earned $1,000 in Cashback", primaryKW: "Rakuten review", words: 1500, priority: "P1", status: "TODO" },
+      { url: "/credit-cards/amex-blue-cash-everyday-vs-amex-blue-cash-preferred", title: "Amex Blue Cash Everyday vs Amex Blue Cash Preferred", primaryKW: "blue cash everyday vs preferred", words: 1500, priority: "P1", status: "TODO" },
+      { url: "/credit-cards/chase-freedom-unlimited-vs-citi-double-cash", title: "Chase Freedom Unlimited vs Citi Double Cash", primaryKW: "chase freedom unlimited vs citi double cash", words: 1500, priority: "P1", status: "TODO" },
+    ]
+  },
+  {
+    week: "Week 9-10: Investing Vertical (P2)",
+    articles: [
+      { url: "/investing/best-free-investing-platforms", title: "Best Free Investing Platforms 2026", primaryKW: "best free investing platform", words: 1800, priority: "P2", status: "TODO" },
+      { url: "/investing/robinhood-vs-webull-vs-schwab", title: "Robinhood vs Webull vs Schwab 2026", primaryKW: "Robinhood vs Webull", words: 1800, priority: "P2", status: "TODO" },
+      { url: "/investing/robinhood-review", title: "Robinhood Review 2026", primaryKW: "Robinhood review 2026", words: 1200, priority: "P2", status: "TODO" },
+      { url: "/investing/platform-bonuses", title: "Best Investing Sign-Up Bonuses 2026", primaryKW: "investing sign up bonus", words: 1500, priority: "P2", status: "TODO" },
+    ]
+  },
+  {
+    week: "Week 11-12: TOFU + Remaining Content (P2-P3)",
+    articles: [
+      { url: "/learn/what-is-cash-back", title: "What Is Cash Back on a Credit Card?", primaryKW: "what is cash back credit card", words: 1000, priority: "P3", status: "TODO" },
+      { url: "/learn/how-credit-scores-work", title: "How Credit Scores Work", primaryKW: "how credit scores work", words: 1200, priority: "P3", status: "TODO" },
+      { url: "/learn/credit-card-stacking-explained", title: "Credit Card Stacking Explained", primaryKW: "credit card stacking explained", words: 1000, priority: "P3", status: "TODO" },
+      { url: "/credit-cards/best-credit-card-for-amazon", title: "Best Credit Card for Amazon 2026", primaryKW: "best credit card for Amazon", words: 1500, priority: "P2", status: "TODO" },
+      { url: "/credit-cards/best-credit-card-for-streaming", title: "Best Credit Card for Streaming Services 2026", primaryKW: "best credit card for streaming", words: 1200, priority: "P2", status: "TODO" },
+      { url: "/strategies/bilt-points-guide", title: "BILT Points Guide: Earn 30,000+ Points Per Year", primaryKW: "BILT points guide", words: 1500, priority: "P2", status: "TODO", notes: "Tyler's 30K points/year expertise." },
+      { url: "/crypto/best-crypto-platforms", title: "Best Crypto Platforms 2026", primaryKW: "best crypto platform", words: 1500, priority: "P2", status: "TODO" },
+      { url: "/crypto/coinbase-vs-robinhood-crypto", title: "Coinbase vs Robinhood Crypto 2026", primaryKW: "Coinbase vs Robinhood crypto", words: 1200, priority: "P2", status: "TODO" },
+    ]
+  },
+];
+---
+
+<BaseLayout
+  title="90-Day Content Calendar - Admin | ProofLabs"
+  description="Internal content calendar for ProofLabs — 90-day publishing plan organized by week and priority."
+>
+  <div class="container-custom" style="padding: 8rem 0 6rem;">
+    <div style="max-width: 72rem; margin: 0 auto;">
+      <div style="background-color: #fef3c7; border: 2px solid #f59e0b; border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 700; color: #92400e; margin-bottom: 0.5rem;">
+          🔒 Internal Page - Not Public
+        </h2>
+        <p style="color: #78350f; margin: 0;">
+          This page is for Tyler and Vi only. It's not linked from the public navigation.
+        </p>
+      </div>
+
+      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--color-text);">
+        90-Day Content Calendar
+      </h1>
+      
+      <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 3rem;">
+        Complete publishing plan for ProofLabs. 30 articles organized by priority and week. P1 = highest affiliate value and Tyler's unique expertise.
+      </p>
+
+      {calendar.map((phase, idx) => (
+        <div style="margin-bottom: 4rem;">
+          <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--color-text); border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem;">
+            {phase.week}
+          </h2>
+          
+          <div style="display: grid; gap: 1.5rem;">
+            {phase.articles.map((article, articleIdx) => (
+              <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                  <div style="flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                      <span style={`font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); background-color: ${article.priority === 'P1' ? '#dbeafe' : article.priority === 'P2' ? '#fef3c7' : '#f3f4f6'}; color: ${article.priority === 'P1' ? '#1e40af' : article.priority === 'P2' ? '#92400e' : '#374151'};`}>
+                        {article.priority}
+                      </span>
+                      <span style="font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); background-color: #f3f4f6; color: #6b7280;">
+                        {article.status}
+                      </span>
+                      <span style="font-size: 0.875rem; color: var(--color-text-light);">
+                        {article.words} words
+                      </span>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">
+                      {articleIdx + 1 + (idx > 0 ? calendar.slice(0, idx).reduce((sum, p) => sum + p.articles.length, 0) : 0)}. {article.title}
+                    </h3>
+                    <code style="font-size: 0.875rem; color: var(--color-secondary); background-color: var(--color-secondary-bg); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); display: inline-block; margin-bottom: 0.5rem;">
+                      {article.url}
+                    </code>
+                    <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                      <strong>Primary keyword:</strong> {article.primaryKW}
+                    </p>
+                    {article.notes && (
+                      <p style="font-size: 0.875rem; color: var(--color-text-light); font-style: italic;">
+                        {article.notes}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <hr style="border: 0; border-top: 2px solid var(--color-border); margin: 4rem 0;" />
+
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: var(--color-text);">
+        Content Templates
+      </h2>
+
+      <div style="display: grid; gap: 2rem;">
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text);">
+            "Best X for Y" Roundup Template
+          </h3>
+          <ol style="color: var(--color-text-muted); padding-left: 1.5rem; line-height: 1.8;">
+            <li>H1: Best Credit Card for [Category] in 2026</li>
+            <li>Author byline + last updated date</li>
+            <li>Bold "Bottom Line" summary (2-3 sentences, names the winner)</li>
+            <li>Quick comparison table (top 3 cards: Card Name | Rewards Rate | Annual Fee | Best For)</li>
+            <li>Tyler's Tip mascot callout (personal experience with this category)</li>
+            <li>Detailed analysis for each card (Why it wins / competitive / made the list)</li>
+            <li>Profit calculation with real spending scenarios</li>
+            <li>Methodology section (brief, links to /methodology)</li>
+            <li>FAQ section (5 questions, unique answers, FAQ schema)</li>
+            <li>Related articles (2-3 links to comparisons, educational content, other categories)</li>
+          </ol>
+        </div>
+
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text);">
+            Head-to-Head Comparison Template
+          </h3>
+          <ol style="color: var(--color-text-muted); padding-left: 1.5rem; line-height: 1.8;">
+            <li>H1: [Card A] vs [Card B]</li>
+            <li>Author byline + last updated</li>
+            <li>"Choose [Card A] if…" / "Choose [Card B] if…" decision box</li>
+            <li>Side-by-side comparison table (every spec)</li>
+            <li>Category-by-category spending scenario breakdown</li>
+            <li>Tyler's Pick mascot callout (which one Tyler would choose and why)</li>
+            <li>FAQ section</li>
+          </ol>
+        </div>
+
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text);">
+            Individual Review Template
+          </h3>
+          <ol style="color: var(--color-text-muted); padding-left: 1.5rem; line-height: 1.8;">
+            <li>H1: [Card Name] Review 2026</li>
+            <li>Author byline + last updated</li>
+            <li>Pros/Cons box</li>
+            <li>Key specs table</li>
+            <li>Who this card is for / Who it's NOT for</li>
+            <li>Rewards structure deep dive with math</li>
+            <li>Tyler's experience (if he uses/has used the card)</li>
+            <li>Comparison to alternatives</li>
+            <li>FAQ section</li>
+          </ol>
+        </div>
+
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text);">
+            Strategy Guide Template
+          </h3>
+          <ol style="color: var(--color-text-muted); padding-left: 1.5rem; line-height: 1.8;">
+            <li>H1: How to [Strategy]</li>
+            <li>Author byline</li>
+            <li>Tyler's result callout ("I earned $X/year using this strategy")</li>
+            <li>Step-by-step numbered guide</li>
+            <li>Tools/apps needed</li>
+            <li>Real example with Tyler's numbers</li>
+            <li>Common mistakes section</li>
+            <li>MascotTip callouts throughout</li>
+            <li>Related strategies and card recommendations</li>
+          </ol>
+        </div>
+      </div>
+
+      <div style="background-color: var(--color-secondary-bg); border-left: 4px solid #0284c7; padding: 2rem; margin-top: 3rem; border-radius: var(--radius-md);">
+        <p style="margin: 0; font-weight: 600; color: var(--color-secondary-dark);">
+          <strong>Note:</strong> All articles should show Tyler's real numbers, personal experience, and math. This is what separates ProofLabs from NerdWallet/Bankrate.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
