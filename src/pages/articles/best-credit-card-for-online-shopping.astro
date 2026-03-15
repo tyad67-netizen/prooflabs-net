@@ -3,6 +3,8 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import MascotTip from '../../components/MascotTip.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
 
 const relatedArticles = [];
 ---
@@ -14,6 +16,8 @@ const relatedArticles = [];
   category="credit-cards"
   relatedArticles={relatedArticles}
 >
+
+<AuthorByline date="March 15, 2026" />
 
 **Last updated:** 2026-03-13 | **Cards analyzed:** 20
 
@@ -75,6 +79,10 @@ We analyzed 20+ credit cards to find the best options for online shopping in 202
   buttonText="Check Amazon Prime Rewards Visa Signature Card"
 />
 
+<MascotTip type="tip">
+<p>Always check Rakuten before buying anything online. I regularly catch 10-15% cashback offers on brands I was buying anyway. Stack that on top of the Amazon card's 5% and you're pulling 15-20% total.</p>
+</MascotTip>
+
 ### 2. Discover it Cash Back - Best for cashback
 
 **Key specs:**
@@ -99,6 +107,10 @@ The Cashback Match is genuinely incredible for year one — Discover doubles ALL
   affiliateLink="https://www.discover.com/credit-cards/cash-back/it-card.html"
   buttonText="Check Discover it Cash Back"
 />
+
+<MascotTip type="tip">
+<p>Discover it's rotating categories include Amazon and Target in certain quarters. If you time your big purchases (like back-to-school or holiday shopping) to those quarters, the year-one doubling means you're effectively getting 10% back. That's legitimately free money.</p>
+</MascotTip>
 
 ### 3. Citi Double Cash - Best Value
 

@@ -3,6 +3,8 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import MascotTip from '../../components/MascotTip.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
 
 const relatedArticles = [];
 ---
@@ -14,6 +16,8 @@ const relatedArticles = [];
   category="credit-cards"
   relatedArticles={relatedArticles}
 >
+
+<AuthorByline date="March 15, 2026" />
 
 **Last updated:** 2026-03-13 | **Cards analyzed:** 20
 
@@ -101,6 +105,10 @@ No annual fee and 3% back at US supermarkets up to $6,000/year. The math: $500/m
   buttonText="Check Blue Cash Preferred from American Express"
 />
 
+<MascotTip type="pick">
+<p>If you spend $300+ a month on groceries, the Blue Cash Preferred is a no-brainer despite the $95 fee. The extra 3% (vs the Everyday card) pays for itself and nets you an extra $193/year.</p>
+</MascotTip>
+
 ### 3. American Express Gold Card - Best Perks
 
 **Key specs:**
@@ -145,6 +153,10 @@ We evaluate credit cards across 5 criteria:
 Scores are calculated using publicly available data from issuer websites and aggregated user reports. Last updated: 2026-03-13.
 
 </div>
+
+<MascotTip type="tip">
+<p>Stack your grocery card with Rakuten. When supermarkets run cashback offers on Rakuten (usually 2-5%), you're earning rewards twice on the same purchase. I've pulled 8% total on Whole Foods orders before (3% card + 5% Rakuten).</p>
+</MascotTip>
 
 <FAQSection faqs={[
   {
