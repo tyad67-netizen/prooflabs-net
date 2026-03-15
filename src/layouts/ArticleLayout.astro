@@ -1,129 +1,141 @@
 ---
-const { frontmatter } = Astro.props;
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lastUpdated: string;
+  category?: string;
+}
+
+const { title, description, lastUpdated, category = 'Credit Cards' } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{frontmatter.title}</title>
-    <meta name="description" content={frontmatter.description}>
-    <link rel="canonical" href={Astro.url.pathname}>
-    
-    <!-- Schema.org structured data -->
-    {frontmatter.schema && (
-        <script type="application/ld+json" set:html={JSON.stringify(frontmatter.schema)} />
-    )}
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<BaseLayout title={title} description={description}>
+  <!-- Breadcrumbs -->
+  <div style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
+    <div class="container-custom" style="padding: 1rem 0;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #6b7280;">
+        <a href="/" style="color: #0284c7; text-decoration: none;">Home</a>
+        <span>→</span>
+        <a href="/best-credit-cards" style="color: #0284c7; text-decoration: none;">{category}</a>
+        <span>→</span>
+        <span style="color: #111827;">{title}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Content -->
+  <div class="container-custom" style="padding: 4rem 0 6rem;">
+    <div style="max-width: 72rem; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1fr 280px; gap: 4rem;">
+        <!-- Main Content -->
+        <article>
+          <!-- Header -->
+          <header style="margin-bottom: 3rem;">
+            <h1 style="font-size: 2.75rem; font-weight: 900; margin-bottom: 1rem; color: #111827; line-height: 1.2;">
+              {title}
+            </h1>
+            
+            <div style="display: flex; align-items: center; gap: 2rem; padding: 1rem 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; margin-top: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: #6b7280; font-size: 0.875rem;">
+                <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span>ProofLabs Editorial Team</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: #6b7280; font-size: 0.875rem;">
+                <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>Last updated: {lastUpdated}</span>
+              </div>
+            </div>
+          </header>
+
+          <!-- Article Body -->
+          <div style="font-size: 1.125rem; line-height: 1.8; color: #374151;">
+            <slot />
+          </div>
+          
+          <!-- Disclosure -->
+          <div style="background: #eff6ff; border-left: 4px solid #0284c7; padding: 1.5rem; margin-top: 4rem; border-radius: 0.5rem;">
+            <p style="margin: 0; font-size: 0.875rem; color: #0369a1; line-height: 1.6;">
+              <strong>Editorial Disclosure:</strong> ProofLabs may earn a commission when you apply for credit cards through links in this article. Our reviews and rankings are determined by our editorial team using our published <a href="/methodology" style="color: #0284c7; text-decoration: underline;">methodology</a> and are not influenced by affiliate relationships.
+            </p>
+          </div>
+        </article>
+
+        <!-- Sidebar (Table of Contents) -->
+        <aside style="position: sticky; top: 2rem; align-self: start;">
+          <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem;">
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: #111827; text-transform: uppercase; letter-spacing: 0.05em;">
+              On This Page
+            </h3>
+            <nav id="toc" style="font-size: 0.875rem;">
+              <!-- TOC will be populated by JS -->
+            </nav>
+          </div>
+          
+          <div style="margin-top: 2rem; background: white; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; text-align: center;">
+            <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">
+              Find the perfect card for you
+            </p>
+            <a href="/best-credit-cards" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; background: #0284c7; color: white; border-radius: 0.75rem; font-weight: 700; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; width: 100%;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
+              Browse All Cards
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Generate Table of Contents from h2 and h3 elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const article = document.querySelector('article');
+      const toc = document.getElementById('toc');
+      if (!article || !toc) return;
+
+      const headings = article.querySelectorAll('h2, h3');
+      if (headings.length === 0) return;
+
+      const tocList = document.createElement('ul');
+      tocList.style.cssText = 'list-style: none; padding: 0; margin: 0;';
+
+      headings.forEach((heading, index) => {
+        const id = `heading-${index}`;
+        heading.id = id;
+
+        const li = document.createElement('li');
+        li.style.cssText = 'margin-bottom: 0.75rem;';
+        if (heading.tagName === 'H3') {
+          li.style.paddingLeft = '1rem';
         }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-        
-        .meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-        
-        h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #2a2a2a;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-        
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        th {
-            background-color: #f5f5f5;
-            font-weight: 600;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #0066cc;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 1rem 0;
-            font-weight: 600;
-        }
-        
-        .cta-button:hover {
-            background-color: #0052a3;
-        }
-        
-        .disclosure {
-            background-color: #f9f9f9;
-            padding: 1rem;
-            border-left: 4px solid #0066cc;
-            margin: 2rem 0;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .methodology {
-            background-color: #fafafa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        
-        .methodology ol {
-            margin-left: 1.5rem;
-        }
-        
-        .faq {
-            margin-top: 2rem;
-        }
-        
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-        
-        .faq-question {
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 0.5rem;
-        }
-        
-        .faq-answer {
-            color: #444;
-        }
-    </style>
-</head>
-<body>
-    <article>
-        <slot />
-    </article>
-</body>
-</html>
+
+        const link = document.createElement('a');
+        link.href = `#${id}`;
+        link.textContent = heading.textContent;
+        link.style.cssText = 'color: #6b7280; text-decoration: none; transition: color 0.2s; display: block;';
+        link.onmouseover = () => link.style.color = '#0284c7';
+        link.onmouseout = () => link.style.color = '#6b7280';
+
+        li.appendChild(link);
+        tocList.appendChild(li);
+      });
+
+      toc.appendChild(tocList);
+    });
+  </script>
+
+  <style>
+    @media (max-width: 1024px) {
+      article {
+        grid-template-columns: 1fr !important;
+      }
+      aside {
+        display: none;
+      }
+    }
+  </style>
+</BaseLayout>
