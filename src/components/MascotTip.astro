@@ -30,7 +30,7 @@ const config = {
 const { emoji, defaultTitle, bgColor, borderColor } = config[type];
 ---
 
-<div class="mascot-tip" style={`background: ${bgColor}; border-left: 4px solid ${borderColor}; padding: 1.5rem; margin: 2rem 0; border-radius: 0.5rem;`}>
+<div class="mascot-tip" style={`background: ${bgColor}; border-left: 4px solid ${borderColor}; padding: 1.5rem; margin: 2rem 0; border-radius: var(--radius-md);`}>
   <div style="display: flex; align-items: flex-start; gap: 1rem;">
     <div class="mascot-spot" style="font-size: 1.5rem; flex-shrink: 0;">
       <span class="mascot-emoji">{emoji}</span>

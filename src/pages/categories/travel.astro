@@ -14,19 +14,19 @@ const reviews = [];
 >
   <div class="container-custom" style="padding: 8rem 0 6rem;">
     <div style="max-width: 56rem; margin: 0 auto;">
-      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: #111827;">
+      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--color-text);">
         Best {categoryName} Credit Cards
       </h1>
       
-      <p style="font-size: 1.25rem; color: #6b7280; line-height: 1.6; margin-bottom: 3rem;">
+      <p style="font-size: 1.25rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 3rem;">
         {description}
       </p>
       
-      <div style="background: #eff6ff; border-left: 4px solid #0284c7; padding: 2rem; margin-bottom: 4rem; border-radius: 0.5rem;">
-        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #0369a1;">
+      <div style="background-color: var(--color-secondary-bg); border-left: 4px solid #0284c7; padding: 2rem; margin-bottom: 4rem; border-radius: var(--radius-md);">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-secondary-dark);">
           What to Look For
         </h2>
-        <ul style="color: #0369a1; padding-left: 1.5rem;">
+        <ul style="color: var(--color-secondary-dark); padding-left: 1.5rem;">
           <li style="margin-bottom: 0.5rem;">Points/miles earning rates on travel and everyday spending</li>
           <li style="margin-bottom: 0.5rem;">Transfer partner airlines and hotels</li>
           <li style="margin-bottom: 0.5rem;">Annual travel credits and perks</li>
@@ -35,30 +35,30 @@ const reviews = [];
         </ul>
       </div>
       
-      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #111827;">
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: var(--color-text);">
         {categoryName} Card Reviews
       </h2>
       
       {reviews.length > 0 ? (
         <div style="display: grid; gap: 1rem;">
           {reviews.map(review => (
-            <a href={review.href} style="background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='white';">
-              <span style="font-size: 1.125rem; font-weight: 600; color: #111827;">{review.title}</span>
-              <svg style="width: 1.25rem; height: 1.25rem; color: #0284c7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href={review.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='white';">
+              <span style="font-size: 1.125rem; font-weight: 600; color: var(--color-text);">{review.title}</span>
+              <svg style="width: 1.25rem; height: 1.25rem; color: var(--color-secondary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </a>
           ))}
         </div>
       ) : (
-        <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 2.5rem; text-align: center;">
-          <p style="color: #6b7280; font-size: 1.125rem; margin-bottom: 1rem;">
+        <div style="background-color: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2.5rem; text-align: center;">
+          <p style="color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: 1rem;">
             Reviews for this category are coming soon.
           </p>
-          <p style="color: #9ca3af; margin-bottom: 1.5rem;">
+          <p style="color: var(--color-text-light); margin-bottom: 1.5rem;">
             Check out our cash back card reviews in the meantime:
           </p>
-          <a href="/categories/cash-back" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; background: #0284c7; color: white; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
+          <a href="/categories/cash-back" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-md); font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
             View Cash Back Cards
           </a>
         </div>

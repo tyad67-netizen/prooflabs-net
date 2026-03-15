@@ -8,7 +8,7 @@ const navLinks = [
 ];
 ---
 
-<header style="background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
+<header style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border-light); position: sticky; top: 0; z-index: 50; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
   <nav class="container-custom" style="padding: 1.25rem 0;">
     <div style="display: flex; align-items: center; justify-content: space-between;">
       <!-- Logo -->
@@ -21,7 +21,7 @@ const navLinks = [
         {navLinks.map(link => (
           <a 
             href={link.href}
-            style="color: #374151; font-weight: 500; font-size: 1rem; text-decoration: none; transition: color 0.2s; white-space: nowrap; display: inline-block;"
+            style="color: var(--color-text-muted); font-weight: 500; font-size: 1rem; text-decoration: none; transition: color 0.2s; white-space: nowrap; display: inline-block;"
             onmouseover="this.style.color='#0284c7';"
             onmouseout="this.style.color='#374151';"
           >
@@ -31,7 +31,7 @@ const navLinks = [
         
         <!-- Search Icon -->
         <button 
-          style="padding: 0.625rem; color: #6b7280; border-radius: 0.5rem; transition: all 0.2s; border: 1px solid #e5e7eb; background: white;"
+          style="padding: 0.625rem; color: var(--color-text-muted); border-radius: var(--radius-md); transition: all 0.2s; border: 1px solid var(--color-border-light); background-color: var(--color-surface);"
           onmouseover="this.style.background='#f9fafb'; this.style.borderColor='#d1d5db';"
           onmouseout="this.style.background='white'; this.style.borderColor='#e5e7eb';"
           aria-label="Search cards"
@@ -45,7 +45,7 @@ const navLinks = [
       <!-- Mobile Menu Button -->
       <button 
         id="mobile-menu-btn"
-        style="display: block; padding: 0.5rem; color: #374151;"
+        style="display: block; padding: 0.5rem; color: var(--color-text-muted);"
         class="md:hidden"
         aria-label="Toggle menu"
       >
@@ -56,11 +56,11 @@ const navLinks = [
     </div>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+    <div id="mobile-menu" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border-light);">
       {navLinks.map(link => (
         <a 
           href={link.href}
-          style="display: block; padding: 0.75rem 0; color: #374151; font-weight: 500; text-decoration: none; transition: color 0.2s;"
+          style="display: block; padding: 0.75rem 0; color: var(--color-text-muted); font-weight: 500; text-decoration: none; transition: color 0.2s;"
           onmouseover="this.style.color='#0284c7';"
           onmouseout="this.style.color='#374151';"
         >
