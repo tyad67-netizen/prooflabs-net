@@ -3,6 +3,8 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
 import FAQSection from '../../components/FAQSection.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import QuickCompare from '../../components/QuickCompare.astro';
 
 const relatedArticles = [];
 ---
@@ -22,6 +24,12 @@ Finding the right credit card for gas can significantly impact your rewards earn
 We analyzed 20+ credit cards to find the best options for gas in 2026. Our data-driven approach evaluates sign-up bonuses, rewards rates, annual fees, and real-world value to help you make an informed decision.
 
 **Bottom line:** Costco Anywhere Visa leads for gas at 4% back (up to $7,000/year). If you're already buying gas at Costco, this is the clear winner. Amex Blue Cash Everyday takes second place at 3% if you want broader everyday rewards without a Costco membership.
+
+<QuickCompare
+  cardIds={['costco-anywhere-visa', 'amex-blue-cash-everyday', 'amex-blue-cash-preferred']}
+  category="gas"
+  highlight="costco-anywhere-visa"
+/>
 
 <ComparisonTable cards={[
   {
@@ -174,6 +182,15 @@ Scores are calculated using publicly available data from issuer websites and agg
 - [Best Credit Card for Costco](/credit-cards/best-credit-card-for-costco)
 - [Amex Blue Cash Everyday vs Costco Anywhere Visa](/credit-cards/amex-blue-cash-everyday-vs-costco-anywhere-visa)
 - [Best Cash Back Cards](/categories/cash-back)
+
+---
+
+<EmailCapture
+  variant="article-end"
+  headline="Want the full strategy?"
+  description="Get Tyler's complete cash back stacking system — the spreadsheet, the card stack recommendations, and weekly deals."
+  buttonText="Get free access"
+/>
 
 ---
 

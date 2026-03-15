@@ -5,6 +5,8 @@ import AffiliateCTA from '../../components/AffiliateCTA.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import MascotTip from '../../components/MascotTip.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import QuickCompare from '../../components/QuickCompare.astro';
 
 const relatedArticles = [];
 ---
@@ -26,6 +28,12 @@ Finding the right credit card for groceries can significantly impact your reward
 We analyzed 20+ credit cards to find the best options for groceries in 2026. Our data-driven approach evaluates sign-up bonuses, rewards rates, annual fees, and real-world value to help you make an informed decision.
 
 **Bottom line:** American Express Blue Cash Everyday tops our rankings for groceries with 3% at US supermarkets (up to $6K/year), 3% on gas, 3% on online retail, 1% on everything else, but the best card for you depends on your specific spending patterns and goals.
+
+<QuickCompare
+  cardIds={['amex-blue-cash-everyday', 'amex-blue-cash-preferred', 'amex-gold']}
+  category="groceries"
+  highlight="amex-blue-cash-everyday"
+/>
 
 <ComparisonTable cards={[
   {
@@ -187,6 +195,15 @@ Scores are calculated using publicly available data from issuer websites and agg
 - [Best Credit Card for Online Shopping](/credit-cards/best-credit-card-for-online-shopping)
 - [Amex Blue Cash Everyday vs Blue Cash Preferred](/credit-cards/amex-blue-cash-everyday-vs-amex-blue-cash-preferred)
 - [Best Cash Back Cards](/categories/cash-back)
+
+---
+
+<EmailCapture
+  variant="article-end"
+  headline="Want the full strategy?"
+  description="Get Tyler's complete cash back stacking system — the spreadsheet, the card stack recommendations, and weekly deals."
+  buttonText="Get free access"
+/>
 
 ---
 

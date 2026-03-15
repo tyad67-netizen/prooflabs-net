@@ -1,33 +1,56 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const title = "Find Your Perfect Card";
-const description = "Interactive tool to find the best credit card for your spending. Coming soon.";
+import CardStackBuilder from '../components/CardStackBuilder.jsx';
+import MascotTip from '../components/MascotTip.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 ---
 
-<BaseLayout title={title} description={description}>
-  <div style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 4rem 1rem;">
-    <div style="max-width: 42rem; text-align: center;">
-      <div class="mascot-spot mascot-researching" aria-hidden="true" style="margin: 0 auto 2rem; font-size: 4rem;">
-        <span class="mascot-emoji">🦔</span>
-        <!-- MASCOT: Proof sitting on stack of books with reading glasses, "researching" pose -->
-      </div>
-      
-      <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-text);">
-        {title}
+<BaseLayout
+  title="Card Stack Builder — Find Your Optimal Credit Card Combo | ProofLabs"
+  description="Enter your monthly spending and get a personalized credit card stack recommendation. See exactly how much you'll earn with the optimal 2-3 card combination."
+>
+  <div class="container-custom" style="padding: 8rem 0 6rem;">
+    <div style="max-width: 56rem; margin: 0 auto;">
+      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; color: var(--color-text);">
+        Find Your Perfect Card Stack
       </h1>
       
-      <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
-        {description}
+      <AuthorByline date="March 15, 2026" />
+
+      <p style="font-size: 1.25rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem; margin-top: 2rem;">
+        Enter your actual monthly spending below. The tool calculates the optimal 1, 2, and 3-card combination to maximize your total annual rewards — based on the same math Tyler uses for his own stack.
       </p>
-      
-      <p style="color: var(--color-text-light); margin-bottom: 2.5rem;">
-        This guide is being researched and written by Tyler using real spending data and hands-on testing.
-      </p>
-      
-      <a href="/" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-md); font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
-        ← Back to Home
-      </a>
+
+      <MascotTip type="tip">
+        <p>Most people only use one card for everything and miss out on hundreds per year. A simple 2-3 card stack usually earns 40-60% more than any single card alone.</p>
+      </MascotTip>
+
+      <!-- React island: loads immediately since it's the main feature of the page -->
+      <CardStackBuilder client:load />
+
+      <EmailCapture
+        variant="inline"
+        headline="Get your results + weekly card deals"
+        description="Enter your email to save your stack recommendation and get notified about new sign-up bonuses."
+        buttonText="Save my results"
+      />
+
+      <MascotTip type="pick">
+        <p>Tyler's actual stack: BILT 2.0 for rent, Costco Anywhere Visa for gas + Costco, BILT Palladium for everything else. Plus Rakuten on every online purchase. Total: $3,500+/year.</p>
+      </MascotTip>
+
+      <section style="margin-top: 3rem;">
+        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-text);">
+          How This Tool Works
+        </h2>
+        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1rem;">
+          The Card Stack Builder tests every possible combination of cards in our database against your spending. For each combo, it assigns each spending category to whichever card gives you the highest return, then calculates total annual rewards minus any annual fees. The result is your net annual value — the actual money back in your pocket.
+        </p>
+        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7;">
+          This is the same math Tyler uses in his <a href="/methodology" style="color: var(--color-secondary); text-decoration: underline;">methodology</a> — no proprietary scores, just straightforward dollars and cents.
+        </p>
+      </section>
     </div>
   </div>
 </BaseLayout>
