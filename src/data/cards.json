@@ -1,0 +1,213 @@
+[
+  {
+    "id": "bilt-mastercard",
+    "name": "BILT Mastercard",
+    "issuer": "Wells Fargo",
+    "network": "Mastercard",
+    "annualFee": 0,
+    "signUpBonus": { "description": "None", "value": 0 },
+    "rewardRates": [
+      { "category": "rent", "rate": 0.01, "unit": "point", "pointValue": 0.02, "cap": null, "note": "1x point per dollar on rent (no fee)" },
+      { "category": "dining", "rate": 0.03, "unit": "point", "pointValue": 0.02, "cap": null },
+      { "category": "travel", "rate": 0.02, "unit": "point", "pointValue": 0.02, "cap": null },
+      { "category": "other", "rate": 0.01, "unit": "point", "pointValue": 0.02, "cap": null }
+    ],
+    "highlights": ["Only card that earns points on rent with no fee", "Transfer to airlines/hotels"],
+    "url": "https://www.bfrg.com/p/credit-cards/bilt-credit-card/",
+    "tylerUses": true,
+    "tylerNote": "This is one of my rent cards. 30K BILT points/year just from rent."
+  },
+  {
+    "id": "costco-anywhere-visa",
+    "name": "Costco Anywhere Visa",
+    "issuer": "Citi",
+    "network": "Visa",
+    "annualFee": 0,
+    "annualFeeNote": "Requires Costco membership ($65-$130/year)",
+    "signUpBonus": { "description": "$40 Costco Shop Card", "value": 40 },
+    "rewardRates": [
+      { "category": "gas", "rate": 0.04, "unit": "cashback", "cap": 7000, "capPeriod": "year" },
+      { "category": "dining", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "travel", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "costco", "rate": 0.02, "unit": "cashback", "cap": null },
+      { "category": "other", "rate": 0.01, "unit": "cashback", "cap": null }
+    ],
+    "highlights": ["4% gas (best in class)", "No annual fee with Costco membership"],
+    "url": "https://www.citi.com/credit-cards/citi-costco-anywhere-visa-credit-card",
+    "tylerUses": true,
+    "tylerNote": "My Costco card. 4% on gas + 2% at Costco adds up fast."
+  },
+  {
+    "id": "bilt-palladium",
+    "name": "BILT Palladium",
+    "issuer": "Wells Fargo",
+    "network": "Mastercard",
+    "annualFee": 0,
+    "signUpBonus": { "description": "Invite only", "value": 0 },
+    "rewardRates": [
+      { "category": "rent", "rate": 0.01, "unit": "point", "pointValue": 0.02, "cap": null, "note": "1x on rent" },
+      { "category": "dining", "rate": 0.03, "unit": "point", "pointValue": 0.02, "cap": null },
+      { "category": "travel", "rate": 0.02, "unit": "point", "pointValue": 0.02, "cap": null },
+      { "category": "groceries", "rate": 0.02, "unit": "point", "pointValue": 0.02, "cap": null },
+      { "category": "other", "rate": 0.01, "unit": "point", "pointValue": 0.02, "cap": null }
+    ],
+    "highlights": ["No annual fee", "Cell phone protection", "Points on everything"],
+    "url": "https://www.bfrg.com/p/credit-cards/bilt-credit-card/",
+    "tylerUses": true,
+    "tylerNote": "My everyday card. No fee, earns on everything."
+  },
+  {
+    "id": "amex-blue-cash-everyday",
+    "name": "Amex Blue Cash Everyday",
+    "issuer": "American Express",
+    "network": "Amex",
+    "annualFee": 0,
+    "signUpBonus": { "description": "$200 after $2K in 6 months", "value": 200 },
+    "rewardRates": [
+      { "category": "groceries", "rate": 0.03, "unit": "cashback", "cap": 6000, "capPeriod": "year" },
+      { "category": "gas", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "online", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "other", "rate": 0.01, "unit": "cashback", "cap": null }
+    ],
+    "highlights": ["No annual fee", "$200 sign-up bonus", "3% on 3 everyday categories"],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
+    "tylerUses": false
+  },
+  {
+    "id": "amex-blue-cash-preferred",
+    "name": "Amex Blue Cash Preferred",
+    "issuer": "American Express",
+    "network": "Amex",
+    "annualFee": 95,
+    "signUpBonus": { "description": "$350 after $3K in 6 months", "value": 350 },
+    "rewardRates": [
+      { "category": "groceries", "rate": 0.06, "unit": "cashback", "cap": 6000, "capPeriod": "year" },
+      { "category": "streaming", "rate": 0.06, "unit": "cashback", "cap": null },
+      { "category": "gas", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "transit", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "other", "rate": 0.01, "unit": "cashback", "cap": null }
+    ],
+    "highlights": ["6% groceries (best rate)", "6% streaming", "$350 bonus"],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+    "tylerUses": false
+  },
+  {
+    "id": "chase-freedom-unlimited",
+    "name": "Chase Freedom Unlimited",
+    "issuer": "Chase",
+    "network": "Visa",
+    "annualFee": 0,
+    "signUpBonus": { "description": "$300 after $500 in 3 months", "value": 300 },
+    "rewardRates": [
+      { "category": "travel", "rate": 0.05, "unit": "cashback", "cap": null, "note": "Via Chase Travel portal" },
+      { "category": "dining", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "drugstores", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "other", "rate": 0.015, "unit": "cashback", "cap": null }
+    ],
+    "highlights": ["1.5% floor on everything", "3% dining", "$300 bonus"],
+    "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+    "tylerUses": false
+  },
+  {
+    "id": "citi-double-cash",
+    "name": "Citi Double Cash",
+    "issuer": "Citi",
+    "network": "Mastercard",
+    "annualFee": 0,
+    "signUpBonus": { "description": "$200 after $1.5K in 6 months", "value": 200 },
+    "rewardRates": [
+      { "category": "other", "rate": 0.02, "unit": "cashback", "cap": null, "note": "2% flat on everything" }
+    ],
+    "highlights": ["Simple 2% on everything", "No categories to track", "$200 bonus"],
+    "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+    "tylerUses": false
+  },
+  {
+    "id": "discover-it-cashback",
+    "name": "Discover it Cash Back",
+    "issuer": "Discover",
+    "network": "Discover",
+    "annualFee": 0,
+    "signUpBonus": { "description": "Cashback Match (doubles all year 1 cashback)", "value": 0, "note": "Variable — matches everything" },
+    "rewardRates": [
+      { "category": "rotating", "rate": 0.05, "unit": "cashback", "cap": 1500, "capPeriod": "quarter", "note": "Categories change quarterly, must activate" },
+      { "category": "other", "rate": 0.01, "unit": "cashback", "cap": null }
+    ],
+    "highlights": ["Year-one Cashback Match doubles everything", "5% rotating categories", "No annual fee"],
+    "url": "https://www.discover.com/credit-cards/cash-back/it-card.html",
+    "tylerUses": false
+  },
+  {
+    "id": "amazon-prime-rewards",
+    "name": "Amazon Prime Rewards Visa",
+    "issuer": "Chase",
+    "network": "Visa",
+    "annualFee": 0,
+    "annualFeeNote": "Requires Prime membership ($139/year)",
+    "signUpBonus": { "description": "$200 Amazon gift card", "value": 200 },
+    "rewardRates": [
+      { "category": "amazon", "rate": 0.05, "unit": "cashback", "cap": null },
+      { "category": "wholefoods", "rate": 0.05, "unit": "cashback", "cap": null },
+      { "category": "gas", "rate": 0.02, "unit": "cashback", "cap": null },
+      { "category": "dining", "rate": 0.02, "unit": "cashback", "cap": null },
+      { "category": "drugstores", "rate": 0.02, "unit": "cashback", "cap": null },
+      { "category": "other", "rate": 0.01, "unit": "cashback", "cap": null }
+    ],
+    "highlights": ["5% at Amazon + Whole Foods", "$200 gift card bonus", "No card annual fee"],
+    "url": "https://www.amazon.com/dp/BT00LN946S",
+    "tylerUses": false
+  },
+  {
+    "id": "wells-fargo-active-cash",
+    "name": "Wells Fargo Active Cash",
+    "issuer": "Wells Fargo",
+    "network": "Visa",
+    "annualFee": 0,
+    "signUpBonus": { "description": "$200 after $500 in 3 months", "value": 200 },
+    "rewardRates": [
+      { "category": "other", "rate": 0.02, "unit": "cashback", "cap": null, "note": "2% flat on everything" }
+    ],
+    "highlights": ["2% flat on everything", "Low minimum spend for bonus", "Cell phone protection"],
+    "url": "https://creditcards.wellsfargo.com/active-cash-credit-card",
+    "tylerUses": false
+  },
+  {
+    "id": "capital-one-savor-one",
+    "name": "Capital One SavorOne",
+    "issuer": "Capital One",
+    "network": "Mastercard",
+    "annualFee": 0,
+    "signUpBonus": { "description": "$200 after $500 in 3 months", "value": 200 },
+    "rewardRates": [
+      { "category": "dining", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "entertainment", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "streaming", "rate": 0.03, "unit": "cashback", "cap": null },
+      { "category": "groceries", "rate": 0.03, "unit": "cashback", "cap": null, "note": "Excludes Walmart/Target" },
+      { "category": "other", "rate": 0.01, "unit": "cashback", "cap": null }
+    ],
+    "highlights": ["3% on dining, entertainment, streaming, groceries", "No annual fee", "$200 bonus"],
+    "url": "https://www.capitalone.com/credit-cards/savorone-dining-rewards/",
+    "tylerUses": false
+  },
+  {
+    "id": "amex-gold",
+    "name": "American Express Gold Card",
+    "issuer": "American Express",
+    "network": "Amex",
+    "annualFee": 325,
+    "signUpBonus": { "description": "60K points after $6K in 6 months", "value": 600 },
+    "rewardRates": [
+      { "category": "dining", "rate": 0.04, "unit": "point", "pointValue": 0.01, "cap": null },
+      { "category": "groceries", "rate": 0.04, "unit": "point", "pointValue": 0.01, "cap": 25000, "capPeriod": "year" },
+      { "category": "travel", "rate": 0.03, "unit": "point", "pointValue": 0.01, "cap": null, "note": "Flights booked directly or via Amex Travel" },
+      { "category": "other", "rate": 0.01, "unit": "point", "pointValue": 0.01, "cap": null }
+    ],
+    "highlights": ["4x dining + groceries", "$120 dining credit", "$120 Uber Cash", "Transfer to airlines"],
+    "credits": [
+      { "name": "Dining credit", "annual": 120, "note": "$10/month" },
+      { "name": "Uber Cash", "annual": 120, "note": "$10/month" }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+    "tylerUses": false
+  }
+]
