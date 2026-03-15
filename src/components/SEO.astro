@@ -1,0 +1,112 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  article?: {
+    datePublished: string;
+    dateModified: string;
+    author?: string;
+  };
+  faq?: Array<{ question: string; answer: string }>;
+  breadcrumbs?: Array<{ name: string; url?: string }>;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.url.href,
+  ogImage = '/og-default.png',
+  article,
+  faq,
+  breadcrumbs
+} = Astro.props;
+
+const siteName = 'ProofLabs';
+const fullTitle = `${title} | ${siteName}`;
+const siteUrl = 'https://prooflabs.net';
+
+const schemas: Record<string, unknown>[] = [];
+
+// Organization — always present
+schemas.push({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ProofLabs",
+  "url": siteUrl,
+  "logo": `${siteUrl}/logo.svg`,
+  "description": "Data-driven credit card reviews and personal finance optimization strategies",
+  "founder": { "@type": "Person", "name": "Tyler" }
+});
+
+// Article
+if (article) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "datePublished": article.datePublished,
+    "dateModified": article.dateModified,
+    "author": {
+      "@type": "Person",
+      "name": article.author || "Tyler",
+      "url": `${siteUrl}/about`,
+      "jobTitle": "Founder of ProofLabs"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ProofLabs",
+      "logo": { "@type": "ImageObject", "url": `${siteUrl}/logo.svg` }
+    },
+    "description": description
+  });
+}
+
+// FAQ
+if (faq && faq.length > 0) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+    }))
+  });
+}
+
+// Breadcrumbs
+if (breadcrumbs && breadcrumbs.length > 0) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": crumb.name,
+      ...(crumb.url ? { "item": `${siteUrl}${crumb.url}` } : {})
+    }))
+  });
+}
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:type" content={article ? 'article' : 'website'} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:image" content={`${siteUrl}${ogImage}`} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+{schemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}
