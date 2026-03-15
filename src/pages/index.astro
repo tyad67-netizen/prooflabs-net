@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SEO from '../components/SEO.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 
 const stats = [
   { value: '$3,500+', label: 'Earned per year' },
@@ -197,6 +198,20 @@ const featuredContent = [
             <p style="color: var(--color-text-muted); line-height: 1.7; font-size: 0.9375rem;">Small optimizations in multiple areas compound to thousands per year. Credit card cash back + HYSA interest + investing bonuses + portal rewards = real money.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Capture -->
+  <section style="background-color: var(--color-surface);">
+    <div class="container-custom" style="padding: 5rem 0;">
+      <div style="max-width: 48rem; margin: 0 auto;">
+        <EmailCapture
+          variant="hero"
+          headline="Get Tyler's Cash Back Tracking Spreadsheet"
+          description="The same Google Sheets template I use to track my $3,500+/year in rewards. Plug in your own cards and spending to see your total."
+          buttonText="Send me the spreadsheet"
+        />
       </div>
     </div>
   </section>

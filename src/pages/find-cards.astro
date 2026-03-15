@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CardStackBuilder from '../components/CardStackBuilder.jsx';
 import MascotTip from '../components/MascotTip.astro';
 import AuthorByline from '../components/AuthorByline.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 ---
 
 <BaseLayout
@@ -27,6 +28,13 @@ import AuthorByline from '../components/AuthorByline.astro';
 
       <!-- React island: loads immediately since it's the main feature of the page -->
       <CardStackBuilder client:load />
+
+      <EmailCapture
+        variant="inline"
+        headline="Get your results + weekly card deals"
+        description="Enter your email to save your stack recommendation and get notified about new sign-up bonuses."
+        buttonText="Save my results"
+      />
 
       <MascotTip type="pick">
         <p>Tyler's actual stack: BILT 2.0 for rent, Costco Anywhere Visa for gas + Costco, BILT Palladium for everything else. Plus Rakuten on every online purchase. Total: $3,500+/year.</p>
