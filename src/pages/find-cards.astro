@@ -1,53 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CardStackBuilder from '../components/CardStackBuilder.jsx';
 import MascotTip from '../components/MascotTip.astro';
-import AuthorByline from '../components/AuthorByline.astro';
-import EmailCapture from '../components/EmailCapture.astro';
 ---
 
 <BaseLayout
-  title="Card Stack Builder — Find Your Optimal Credit Card Combo"
-  description="Enter your monthly spending and get a personalized credit card stack recommendation. See exactly how much you'll earn with the optimal 2-3 card combination."
+  title="Card Stack Guide — How to Build Your Own"
+  description="Learn how to build a 2-3 card stack that maximizes rewards across all your spending categories. Tyler's real-world approach explained."
 >
-  <div class="container-custom" style="padding: 8rem 0 6rem;">
-    <div style="max-width: 56rem; margin: 0 auto;">
-      <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; color: var(--color-text);">
-        Find Your Perfect Card Stack
+  <div style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 4rem 1rem;">
+    <div style="max-width: 48rem; text-align: center;">
+      <div class="mascot-spot mascot-researching" aria-hidden="true" style="margin: 0 auto 2rem; font-size: 4rem;">
+        <span class="mascot-emoji">🦔</span>
+      </div>
+      
+      <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--color-text);">
+        Card Stack Calculator Coming Soon
       </h1>
       
-      <AuthorByline date="March 15, 2026" />
-
-      <p style="font-size: 1.25rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem; margin-top: 2rem;">
-        Enter your actual monthly spending below. The tool calculates the optimal 1, 2, and 3-card combination to maximize your total annual rewards — based on the same math Tyler uses for his own stack.
+      <p style="font-size: 1.25rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem;">
+        I'm building a tool to help you find the optimal card combination for your spending. But first, I'm verifying every calculation against real statements to make sure the math is accurate.
       </p>
+      
+      <p style="color: var(--color-text-light); margin-bottom: 3rem;">
+        In the meantime, check out my actual card stack and how I built it.
+      </p>
+      
+      <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; text-align: left; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text);">Tyler's Real Stack (2026)</h3>
+        <div style="font-family: monospace; font-size: 0.9375rem; line-height: 2;">
+          <div>🏠 Rent → <strong>BILT 2.0</strong> (30,000 points/year)</div>
+          <div>🛒 Costco → <strong>Costco Visa</strong> ($600-800/year cash back)</div>
+          <div>💳 Everything else → <strong>BILT Palladium</strong> (points on all spend)</div>
+          <div>🔄 Online → <strong>Rakuten</strong> ($1,000/year cash back)</div>
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); font-weight: 700;">
+            Total: $3,500+/year
+          </div>
+        </div>
+      </div>
 
-      <MascotTip type="tip">
-        <p>Most people only use one card for everything and miss out on hundreds per year. A simple 2-3 card stack usually earns 40-60% more than any single card alone.</p>
-      </MascotTip>
+      <a href="/strategies/secret-sauce" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-md); font-weight: 600; text-decoration: none; transition: background 0.2s; margin-right: 1rem;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
+        Read my full strategy
+      </a>
 
-      <!-- React island: loads immediately since it's the main feature of the page -->
-      <CardStackBuilder client:load />
-
-      <EmailCapture
-        variant="inline"
-        headline="Get your results + weekly card deals"
-        description="Enter your email to save your stack recommendation and get notified about new sign-up bonuses."
-        buttonText="Save my results"
-      />
-
-      <MascotTip type="pick">
-        <p>Tyler's actual stack: BILT 2.0 for rent, Costco Anywhere Visa for gas + Costco, BILT Palladium for everything else. Plus Rakuten on every online purchase. Total: $3,500+/year.</p>
-      </MascotTip>
-
-      <section style="margin-top: 3rem;">
-        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-text);">
-          How This Tool Works
-        </h2>
-        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1rem;">
-          The Card Stack Builder tests every possible combination of cards in our database against your spending. For each combo, it assigns each spending category to whichever card gives you the highest return, then calculates total annual rewards minus any annual fees. The result is your net annual value — the actual money back in your pocket.
-        </p>
-        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7;">
+      <a href="/" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; background-color: var(--color-surface); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-weight: 600; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--color-border)'; this.style.backgroundColor='var(--color-bg-alt)';" onmouseout="this.style.borderColor='var(--color-border)'; this.style.backgroundColor='var(--color-surface)';">
+        ← Back to home
+      </a>
+    </div>
+  </div>
+</BaseLayout>
           This is the same math Tyler uses in his <a href="/methodology" style="color: var(--color-secondary); text-decoration: underline;">methodology</a> — no proprietary scores, just straightforward dollars and cents.
         </p>
       </section>
