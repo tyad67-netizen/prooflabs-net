@@ -76,13 +76,25 @@ const featuredContent = [
   <section style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border-light);">
     <div class="container-custom" style="padding: 5rem 0 6rem;">
       <div style="max-width: 52rem; margin: 0 auto; text-align: center;">
+        <!-- Mascot -->
+        <div style="margin-bottom: 2rem;">
+          <img src="/proof-happy.png" alt="Proof the Hedgehog" style="width: 120px; height: auto; margin: 0 auto; display: block;" />
+        </div>
+        
         <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; color: var(--color-text); letter-spacing: -0.025em;">
           I earn $3,500+/year with 2 credit cards and a browser extension
         </h1>
         
-        <p style="font-size: 1.25rem; color: var(--color-text-muted); margin-bottom: 3rem; max-width: 44rem; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        <p style="font-size: 1.25rem; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 44rem; margin-left: auto; margin-right: auto; line-height: 1.7;">
           Same spending. Same lifestyle. Better returns. Here's how I stack BILT Palladium, Costco Visa, and Rakuten to turn everyday purchases into thousands per year.
         </p>
+        
+        <!-- Proof Screenshot -->
+        <div style="margin-bottom: 3rem; padding: 1.5rem; background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-md); max-width: 32rem; margin-left: auto; margin-right: auto;">
+          <p style="font-size: 0.875rem; font-weight: 600; color: var(--color-secondary); margin-bottom: 0.75rem;">My Rakuten Earnings (Real Screenshot)</p>
+          <img src="/proof-rakuten-1.jpg" alt="Tyler's Rakuten earnings showing $467.50" style="width: 100%; height: auto; border-radius: var(--radius-sm);" />
+          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.75rem;">$467.50 from Rakuten referrals alone. Plus my own cashback.</p>
+        </div>
         
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
           <a href="/strategies/secret-sauce" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-sm); font-weight: 600; font-size: 1rem; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.backgroundColor='var(--color-accent-dark)';" onmouseout="this.style.backgroundColor='var(--color-accent)';">
@@ -208,11 +220,14 @@ const featuredContent = [
 
         <!-- Tyler's Stack Example -->
         <div style="margin-top: 3rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2rem;">
-          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.75rem;">
-            My actual card stack (2026)
-          </h3>
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+            <img src="/proof-thinking.png" alt="Proof" style="width: 48px; height: auto;" />
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin: 0;">
+              My actual card stack (2026)
+            </h3>
+          </div>
           <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
-            This is what I personally use. Proof coming soon—I'm adding screenshots from my actual statements.
+            This is what I personally use. Proof screenshots included above—real earnings, real strategy.
           </p>
           <div style="font-family: monospace; font-size: 0.9375rem; line-height: 2; color: var(--color-text);">
             <div>🏠 Rent → <strong>BILT 2.0</strong></div>
@@ -232,7 +247,7 @@ const featuredContent = [
 
   <!-- Email Capture -->
   <section style="background-color: var(--color-surface);">
-    <div class="container-custom" style="padding: 5rem 0;">
+    <div class="container-custom" style="padding: 5rem 0 3rem;">
       <div style="max-width: 48rem; margin: 0 auto;">
         <EmailCapture
           variant="hero"
@@ -240,6 +255,13 @@ const featuredContent = [
           description="The same Google Sheets template I use to track my $3,500+/year in rewards. Plug in your own cards and spending to see your total."
           buttonText="Send me the spreadsheet"
         />
+      </div>
+      
+      <!-- Last Updated -->
+      <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border-light);">
+        <p style="font-size: 0.875rem; color: var(--color-text-light);">
+          Last updated: March 22, 2026
+        </p>
       </div>
     </div>
   </section>
