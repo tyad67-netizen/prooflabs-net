@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import MascotTip from '../../components/MascotTip.astro';
+
+const title = "Chase Sapphire Preferred Break-Even: The Real Math on $95";
+const description = "We ran the numbers on the Chase Sapphire Preferred $95 annual fee. Here's exactly what you need to spend to break even—and whether it's worth it.";
+const publishDate = "2026-03-24";
+---
+
+<BaseLayout title={title} description={description}>
+  <article style="max-width: 48rem; margin: 0 auto; padding: 8rem 0 4rem;">
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; color: var(--color-text); line-height: 1.1;">
+      {title}
+    </h1>
+
+    <AuthorByline date={publishDate} />
+
+    <div style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-muted); margin-top: 3rem;">
+      <p>The Chase Sapphire Preferred charges $95 a year. You're paying for the privilege of using it. The question isn't whether it's a "good card"—the question is whether the math works for YOUR spending.</p>
+
+<p>Most people apply for cards based on signup bonuses and brand reputation. That's backwards. The signup bonus is a one-time event. The annual fee is forever. If you can't break even on the fee through everyday spend, you're subsidizing Chase's profit margin.</p>
+
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">What You're Actually Paying For</h2>
+
+<p>The Chase Sapphire Preferred earns:
+<li><strong>2X points</strong> on travel and dining</li>
+<li><strong>1X points</strong> on everything else</li>
+<li>Points are worth <strong>1.25 cents each</strong> when redeemed through Chase Travel</li></p>
+
+<p>That 1.25-cent redemption rate is the key. It turns the card's earn rates into:
+<li><strong>2.5% back</strong> on travel and dining (2 points × 1.25¢)</li>
+<li><strong>1.25% back</strong> on everything else (1 point × 1.25¢)</li></p>
+
+<p>If you redeem points for cash back or transfer them to partners, the value changes. But Chase Travel redemption is the baseline the card is designed around.</p>
+
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Break-Even Calculation</h2>
+
+<p>To justify a $95 annual fee, you need to earn at least $95 more with this card than you would with a no-annual-fee alternative.</p>
+
+<p>Let's compare to a flat <strong>2% cashback card</strong> (like the Citi Double Cash or Wells Fargo Active Cash):</p>
+
+<p><table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Spending Category</th>
+      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">CSP Earn Rate</th>
+      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">2% Card Earn Rate</th>
+      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">CSP Advantage</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+|</p>
+    </div>
+  </article>
+</BaseLayout>
