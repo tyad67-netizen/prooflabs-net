@@ -1,11 +1,37 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
-import MascotTip from '../../components/MascotTip.astro';
 
 const title = "Chase Sapphire Preferred Break-Even: The Real Math on $95";
 const description = "We ran the numbers on the Chase Sapphire Preferred $95 annual fee. Here's exactly what you need to spend to break even—and whether it's worth it.";
 const publishDate = "2026-03-24";
+
+// Article content as markdown string
+const markdownContent = `The Chase Sapphire Preferred charges \$95 a year. You're paying for the privilege of using it. The question isn't whether it's a "good card"—the question is whether the math works for YOUR spending.
+
+Most people apply for cards based on signup bonuses and brand reputation. That's backwards. The signup bonus is a one-time event. The annual fee is forever. If you can't break even on the fee through everyday spend, you're subsidizing Chase's profit margin.
+
+## What You're Actually Paying For
+
+The Chase Sapphire Preferred earns:
+- **2X points** on travel and dining
+- **1X points** on everything else
+- Points are worth **1.25 cents each** when redeemed through Chase Travel
+
+That 1.25-cent redemption rate is the key. It turns the card's earn rates into:
+- **2.5% back** on travel and dining (2 points × 1.25¢)
+- **1.25% back** on everything else (1 point × 1.25¢)
+
+If you redeem points for cash back or transfer them to partners, the value changes. But Chase Travel redemption is the baseline the card is designed around.
+
+## The Break-Even Calculation
+
+To justify a \$95 annual fee, you need to earn at least \$95 more with this card than you would with a no-annual-fee alternative.
+
+Let's compare to a flat **2% cashback card** (like the Citi Double Cash or Wells Fargo Active Cash):
+
+| Spending Category | CSP Earn Rate | 2% Card Earn Rate | CSP Advantage |
+|`;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,43 +42,57 @@ const publishDate = "2026-03-24";
 
     <AuthorByline date={publishDate} />
 
-    <div style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-muted); margin-top: 3rem;">
-      <p>The Chase Sapphire Preferred charges $95 a year. You're paying for the privilege of using it. The question isn't whether it's a "good card"—the question is whether the math works for YOUR spending.</p>
-
-<p>Most people apply for cards based on signup bonuses and brand reputation. That's backwards. The signup bonus is a one-time event. The annual fee is forever. If you can't break even on the fee through everyday spend, you're subsidizing Chase's profit margin.</p>
-
-<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">What You're Actually Paying For</h2>
-
-<p>The Chase Sapphire Preferred earns:
-<li><strong>2X points</strong> on travel and dining</li>
-<li><strong>1X points</strong> on everything else</li>
-<li>Points are worth <strong>1.25 cents each</strong> when redeemed through Chase Travel</li></p>
-
-<p>That 1.25-cent redemption rate is the key. It turns the card's earn rates into:
-<li><strong>2.5% back</strong> on travel and dining (2 points × 1.25¢)</li>
-<li><strong>1.25% back</strong> on everything else (1 point × 1.25¢)</li></p>
-
-<p>If you redeem points for cash back or transfer them to partners, the value changes. But Chase Travel redemption is the baseline the card is designed around.</p>
-
-<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Break-Even Calculation</h2>
-
-<p>To justify a $95 annual fee, you need to earn at least $95 more with this card than you would with a no-annual-fee alternative.</p>
-
-<p>Let's compare to a flat <strong>2% cashback card</strong> (like the Citi Double Cash or Wells Fargo Active Cash):</p>
-
-<p><table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
-  <thead>
-    <tr>
-      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Spending Category</th>
-      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">CSP Earn Rate</th>
-      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">2% Card Earn Rate</th>
-      <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">CSP Advantage</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-|</p>
+    <div style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-muted); margin-top: 3rem;" set:html={markdownContent.split('\n\n').map(para => {
+      // Handle headers
+      if (para.startsWith('## ')) {
+        const text = para.substring(3);
+        return `<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">${text}</h2>`;
+      }
+      if (para.startsWith('### ')) {
+        const text = para.substring(4);
+        return `<h3 style="font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--color-text);">${text}</h3>`;
+      }
+      
+      // Handle tables
+      if (para.includes('|') && para.split('\n').length > 2) {
+        const rows = para.split('\n').filter(r => r.trim());
+        const headers = rows[0].split('|').map(h => h.trim()).filter(Boolean);
+        const dataRows = rows.slice(2).map(row => row.split('|').map(cell => cell.trim()).filter(Boolean));
+        
+        let table = '<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;"><thead><tr>';
+        headers.forEach(h => {
+          table += `<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">${h}</th>`;
+        });
+        table += '</tr></thead><tbody>';
+        dataRows.forEach(row => {
+          table += '<tr>';
+          row.forEach(cell => {
+            // Convert **bold** in cells
+            const formatted = cell.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            table += `<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">${formatted}</td>`;
+          });
+          table += '</tr>';
+        });
+        table += '</tbody></table>';
+        return table;
+      }
+      
+      // Handle lists
+      if (para.match(/^- /m)) {
+        const items = para.split('\n').filter(line => line.startsWith('- ')).map(line => {
+          const text = line.substring(2).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+          return `<li style="margin: 0.5rem 0;">${text}</li>`;
+        }).join('');
+        return `<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">${items}</ul>`;
+      }
+      
+      // Regular paragraphs with inline formatting
+      const formatted = para
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .split('\n').filter(Boolean).map(line => `<p style="margin: 1rem 0;">${line}</p>`).join('');
+      return formatted;
+    }).join('')}>
     </div>
   </article>
 </BaseLayout>
