@@ -2,19 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EmailCapture from '../components/EmailCapture.astro';
 
-const stats = [
-  { value: '2 cards', label: 'My actual stack' },
-  { value: '$3,500+', label: 'Annual return' },
-  { value: 'No churning', label: 'Long-term holds' },
-];
+// Stats removed per Tyler's request
 
 const publishingSchedule = [
-  { day: 'Monday', theme: 'Credit Cards', color: '#3b82f6', description: 'Reviews, comparisons, and stacking strategies' },
-  { day: 'Tuesday', theme: 'Cashback', color: '#10b981', description: 'Portals, browser extensions, and stacking tricks' },
-  { day: 'Wednesday', theme: 'Credit Scores', color: '#8b5cf6', description: 'Building, protecting, and leveraging your score' },
-  { day: 'Thursday', theme: 'Investing', color: '#f59e0b', description: 'Platform bonuses, HYSA rates, and free money' },
-  { day: 'Friday', theme: 'Savings', color: '#14b8a6', description: 'High-yield accounts, rate comparisons, and optimization' },
-  { day: 'Saturday', theme: 'Editorial', color: '#6b7280', description: 'Deep dives, opinion pieces, and weekly recaps' },
+  { day: 'Monday', theme: 'Maximize Monday', category: 'Credit Cards', color: '#3b82f6', description: 'Single-card deep dives and maximization strategies' },
+  { day: 'Tuesday', theme: 'Tactics Tuesday', category: 'Cashback', color: '#10b981', description: 'Multi-card stacking and workflow optimization' },
+  { day: 'Wednesday', theme: 'Wealth Wednesday', category: 'Credit & Finance', color: '#8b5cf6', description: 'Credit scores, banking, and personal finance' },
+  { day: 'Thursday', theme: 'Thrive Thursday', category: 'Investing', color: '#f59e0b', description: 'Building your future with smart investments' },
+  { day: 'Friday', theme: 'Freedom Friday', category: 'Savings', color: '#14b8a6', description: 'High-yield savings and financial independence' },
+  { day: 'Saturday', theme: 'Saturday Stories', category: 'Editorial', color: '#6b7280', description: 'Deep dives, opinion pieces, and weekly recaps' },
 ];
 
 const featuredContent = [
@@ -69,31 +65,13 @@ const featuredContent = [
           Same purchases. Same lifestyle. Better returns. Learn how to stack credit cards and cashback portals to turn everyday spending into serious annual rewards.
         </p>
 
-        <!-- Proof Screenshot -->
-        <div style="margin-bottom: 2.5rem; padding: 1.25rem; background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-md); max-width: 30rem; margin-left: auto; margin-right: auto;">
-          <p style="font-size: 0.95rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.4rem;">My personal results: $3,500+/year</p>
-          <p style="font-size: 0.825rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Using the same strategies I share on this site:</p>
-          <img src="/proof-rakuten-1.jpg" alt="Tyler's Rakuten earnings showing $467.50" style="width: 100%; height: auto; border-radius: var(--radius-sm);" />
-          <p style="font-size: 0.825rem; color: var(--color-text-muted); margin-top: 0.5rem;">$467.50 from Rakuten referrals alone.</p>
-        </div>
-
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
           <a href="/strategies/secret-sauce" class="btn-primary">
             Read my strategy
           </a>
           <a href="/strategies" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2rem; background-color: var(--color-surface); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-full); font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.backgroundColor='var(--color-bg-alt)';" onmouseout="this.style.backgroundColor='var(--color-surface)';">
             Browse all strategies
           </a>
-        </div>
-
-        <!-- Stats -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 44rem; margin: 0 auto; padding-top: 2.5rem; border-top: 1px solid var(--color-border-light);">
-          {stats.map((stat) => (
-            <div style="text-align: center;">
-              <div style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--color-text);">{stat.value}</div>
-              <div style="font-size: 0.85rem; color: var(--color-text-muted);">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </div>
@@ -111,12 +89,13 @@ const featuredContent = [
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; max-width: 52rem; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; max-width: 56rem; margin: 0 auto;">
         {publishingSchedule.map(item => (
-          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.25rem; text-align: center;">
-            <div style={`width: 2.5rem; height: 3px; background: ${item.color}; border-radius: 2px; margin: 0 auto 0.75rem;`}></div>
-            <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.25rem;">{item.day}</div>
-            <div style={`font-size: 0.95rem; font-weight: 700; color: ${item.color};`}>{item.theme}</div>
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; transition: all 0.2s;" onmouseover={`this.style.borderColor='${item.color}'; this.style.transform='translateY(-2px)';`} onmouseout="this.style.borderColor='var(--color-border-light)'; this.style.transform='translateY(0)';"> 
+            <div style={`width: 3rem; height: 4px; background: ${item.color}; border-radius: 2px; margin: 0 auto 1rem;`}></div>
+            <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.5rem;">{item.day}</div>
+            <div style={`font-size: 1.05rem; font-weight: 700; color: ${item.color}; margin-bottom: 0.5rem;`}>{item.theme}</div>
+            <div style="font-size: 0.825rem; color: var(--color-text-muted); line-height: 1.5;">{item.description}</div>
           </div>
         ))}
       </div>
@@ -185,23 +164,4 @@ const featuredContent = [
     </div>
   </section>
 
-  <!-- Email Capture -->
-  <section style="background-color: var(--color-surface);">
-    <div class="container-custom" style="padding: 4rem 0 2.5rem;">
-      <div style="max-width: 44rem; margin: 0 auto;">
-        <EmailCapture
-          variant="hero"
-          headline="Get Tyler's Cash Back Tracking Spreadsheet"
-          description="The same Google Sheets template I use to track my $3,500+/year in rewards. Plug in your own cards and spending to see your total."
-          buttonText="Send me the spreadsheet"
-        />
-      </div>
-
-      <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border-light);">
-        <p style="font-size: 0.825rem; color: var(--color-text-light);">
-          Last updated: March 22, 2026
-        </p>
-      </div>
-    </div>
-  </section>
 </BaseLayout>
