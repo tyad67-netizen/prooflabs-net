@@ -1,33 +1,95 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "All Optimization Strategies";
-const description = "Guides for credit card stacking, cashback portals, HYSA maximization, and investing bonuses.";
+const title = "Optimization Strategies";
+const description = "Real strategies from real spending. Tested by Tyler, backed by math.";
+
+const strategies = [
+  {
+    title: "Tyler's Secret Sauce: The Complete Strategy",
+    description: 'The full breakdown of how I earn $3,500+/year from money I was already spending. Every card, every portal, every trick.',
+    href: '/strategies/secret-sauce',
+    readTime: '15 min',
+    tag: 'Start Here',
+    featured: true,
+  },
+  {
+    title: 'Why I Pay $495/Year for the BILT Palladium',
+    description: "The annual fee sounds insane \u2014 until you see the rent day multipliers and Rakuten stacking.",
+    href: '/strategies/bilt-palladium-deep-dive',
+    readTime: '12 min',
+    tag: 'Deep Dive',
+  },
+  {
+    title: 'BILT Rent Day: The 4x Multiplier Strategy',
+    description: 'On the 1st of every month, 2x becomes 4x and 4% becomes 8%. Plan your spending around it.',
+    href: '/strategies/rent-day-optimization',
+    readTime: '11 min',
+    tag: 'Strategy',
+  },
+  {
+    title: 'Stacking Rakuten with BILT for 17%+ Returns',
+    description: "Rakuten cashback converts to BILT points. Add rent day multipliers and you're earning 17\u201325% on everyday purchases.",
+    href: '/strategies/rakuten-bilt-stacking',
+    readTime: '13 min',
+    tag: 'Advanced',
+  },
+  {
+    title: 'The Costco Stack: 6% on Groceries',
+    description: 'Executive membership + Costco Visa = 6% total return. Plus the shop card hack.',
+    href: '/strategies/costco-executive-visa-stack',
+    readTime: '10 min',
+    tag: 'Strategy',
+  },
+  {
+    title: 'Credit Card Stacking Explained',
+    description: 'The foundational concept: how combining 2\u20133 cards covers every category at the highest rate.',
+    href: '/strategies/credit-card-stacking',
+    readTime: '10 min',
+    tag: 'Fundamentals',
+  },
+  {
+    title: 'How to Pay Rent with a Credit Card',
+    description: 'Step-by-step guide to earning points on rent payments you already make every month.',
+    href: '/strategies/how-to-pay-rent-with-credit-card',
+    readTime: '8 min',
+    tag: 'Guide',
+  },
+];
 ---
 
 <BaseLayout title={title} description={description}>
-  <div style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 4rem 1rem;">
-    <div style="max-width: 42rem; text-align: center;">
-      <div class="mascot-spot mascot-researching" aria-hidden="true" style="margin: 0 auto 2rem; font-size: 4rem;">
-        <span class="mascot-emoji">🦔</span>
-        <!-- MASCOT: Proof sitting on stack of books with reading glasses, "researching" pose -->
+  <div class="container-custom" style="padding: 5rem 0 6rem;">
+    <div style="max-width: 52rem; margin: 0 auto;">
+      <!-- Header -->
+      <div style="margin-bottom: 3rem;">
+        <h1 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 0.75rem; color: var(--color-text);">
+          {title}
+        </h1>
+        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7;">
+          {description}
+        </p>
       </div>
-      
-      <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-text);">
-        {title}
-      </h1>
-      
-      <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
-        {description}
-      </p>
-      
-      <p style="color: var(--color-text-light); margin-bottom: 2.5rem;">
-        This guide is being researched and written by Tyler using real spending data and hands-on testing.
-      </p>
-      
-      <a href="/" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-md); font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#0369a1';" onmouseout="this.style.background='#0284c7';">
-        ← Back to Home
-      </a>
+
+      <!-- Strategy Cards -->
+      <div style="display: grid; gap: 1.25rem;">
+        {strategies.map(article => (
+          <a href={article.href} style={`background-color: var(--color-surface); border: 1px solid ${article.featured ? 'var(--color-primary)' : 'var(--color-border-light)'}; border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: inherit; transition: border-color 0.2s, box-shadow 0.2s;${article.featured ? ' border-width: 2px;' : ''}`} onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)';" onmouseout="this.style.boxShadow='none';">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <span style={`font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: 4px; ${article.featured ? 'color: white; background: var(--color-primary);' : 'color: var(--color-primary); background: var(--color-primary-bg);'}`}>
+                {article.tag}
+              </span>
+              <span style="font-size: 0.8rem; color: var(--color-text-light);">{article.readTime}</span>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.35rem; line-height: 1.3;">
+              {article.title}
+            </h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9375rem; line-height: 1.6; margin: 0;">
+              {article.description}
+            </p>
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </BaseLayout>

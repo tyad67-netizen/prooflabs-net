@@ -2,15 +2,15 @@
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
-  'Credit Cards': [
-    { label: 'Best Cash Back Cards', href: '/categories/cash-back' },
-    { label: 'Best Travel Cards', href: '/categories/travel' },
-    { label: 'Best Balance Transfer', href: '/categories/balance-transfer' },
-    { label: 'All Reviews', href: '/best-credit-cards' },
+  'Explore': [
+    { label: 'Strategies', href: '/strategies' },
+    { label: 'Credit Cards', href: '/best-credit-cards' },
+    { label: 'Savings', href: '/banking/high-yield-savings' },
+    { label: 'Cash Back Cards', href: '/categories/cash-back' },
   ],
   'Resources': [
     { label: 'Methodology', href: '/methodology' },
-    { label: 'About Us', href: '/about' },
+    { label: 'About Tyler', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ],
   'Legal': [
@@ -29,20 +29,18 @@ const footerLinks = {
       <div class="col-span-1">
         <img src="/logo.svg" alt="ProofLabs" style="height: 40px; margin-bottom: 1rem; filter: brightness(0) invert(1);" />
         <p class="text-sm text-gray-400 mb-4">
-          Data-driven credit card reviews and comparisons to help you make informed financial decisions.
+          Maximize every dollar you spend. Real strategies, real numbers, real results.
         </p>
-        <p class="text-xs text-gray-500" style="display: flex; align-items: center; gap: 0.5rem;">
-          <span>
-            © {currentYear} ProofLabs.<br/>
-            All recommendations are based on independent analysis.
-          </span>
-          <span class="mascot-spot mascot-footer" aria-hidden="true" style="font-size: 1.2rem;">
-            <span class="mascot-emoji">🦔</span>
-            <!-- MASCOT: Proof sleeping, curled up -->
-          </span>
+        <!-- Twitter/X Link -->
+        <a href="https://x.com/praboratory" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #9ca3af; font-size: 0.875rem; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#e5e7eb';" onmouseout="this.style.color='#9ca3af';">
+          <svg style="width: 1.1rem; height: 1.1rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span>Follow on X</span>
+        </a>
+        <p class="text-xs text-gray-500" style="margin-top: 1rem;">
+          &copy; {currentYear} ProofLabs. All recommendations based on independent analysis.
         </p>
       </div>
-      
+
       <!-- Link Columns -->
       {Object.entries(footerLinks).map(([category, links]) => (
         <div>
@@ -59,7 +57,7 @@ const footerLinks = {
         </div>
       ))}
     </div>
-    
+
     <!-- Disclosure -->
     <div class="mt-12 pt-8 border-t border-gray-800">
       <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
@@ -69,7 +67,7 @@ const footerLinks = {
           </svg>
           <div>
             <p style="font-size: 0.875rem; color: #d1d5db; line-height: 1.6;">
-              <strong style="color: #e5e7eb;">Affiliate Disclosure:</strong> ProofLabs may earn a commission when you apply for credit cards through links on this site. This compensation helps support our research and editorial work. Our reviews and rankings are based on objective analysis and are not influenced by affiliate relationships. We prioritize accuracy and reader value in all our recommendations.
+              <strong style="color: #e5e7eb;">Affiliate Disclosure:</strong> ProofLabs may earn a commission when you sign up for products through links on this site. This includes credit cards, savings accounts, investing platforms, and cashback services. Our rankings are based on real usage and math, not commissions. See our <a href="/how-we-make-money" style="color: #60a5fa; text-decoration: underline;">full explanation</a>.
             </p>
           </div>
         </div>

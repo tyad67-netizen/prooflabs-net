@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SEO from '../components/SEO.astro';
 import EmailCapture from '../components/EmailCapture.astro';
 
 const stats = [
@@ -9,61 +8,43 @@ const stats = [
   { value: 'No churning', label: 'Long-term holds' },
 ];
 
-const pillars = [
-  {
-    title: 'Credit Card Stacking',
-    description: 'Combine multiple cards to maximize rewards across all spending categories',
-    icon: '💳',
-    href: '/strategies',
-  },
-  {
-    title: 'High-Yield Savings',
-    description: 'Earn 4-5% APY on your cash with top-rated savings accounts',
-    icon: '💰',
-    href: '/banking/high-yield-savings',
-  },
-  {
-    title: 'Cash Back Portals',
-    description: 'Stack Rakuten, credit cards, and browser extensions for triple rewards',
-    icon: '🔄',
-    href: '/strategies/cashback-stacking',
-  },
-  {
-    title: 'Investing Platforms',
-    description: 'Get sign-up bonuses and better rates with optimized brokerage accounts',
-    icon: '📈',
-    href: '/investing/platform-bonuses',
-  },
+const publishingSchedule = [
+  { day: 'Monday', theme: 'Credit Cards', color: '#3b82f6', description: 'Reviews, comparisons, and stacking strategies' },
+  { day: 'Tuesday', theme: 'Cashback', color: '#10b981', description: 'Portals, browser extensions, and stacking tricks' },
+  { day: 'Wednesday', theme: 'Credit Scores', color: '#8b5cf6', description: 'Building, protecting, and leveraging your score' },
+  { day: 'Thursday', theme: 'Investing', color: '#f59e0b', description: 'Platform bonuses, HYSA rates, and free money' },
+  { day: 'Friday', theme: 'Savings', color: '#14b8a6', description: 'High-yield accounts, rate comparisons, and optimization' },
+  { day: 'Saturday', theme: 'Editorial', color: '#6b7280', description: 'Deep dives, opinion pieces, and weekly recaps' },
 ];
 
 const featuredContent = [
   {
-    title: 'Why I Pay $500/Year for a Credit Card',
-    description: "The BILT Palladium fee sounds insane—until you see the rent day multipliers, Rakuten stacking, and arbitrage plays. Here's how I turn $500 into $2,000.",
+    title: 'Why I Pay $495/Year for a Credit Card',
+    description: "The BILT Palladium fee sounds insane\u2014until you see the rent day multipliers and Rakuten stacking.",
     href: '/strategies/bilt-palladium-deep-dive',
     category: 'Deep Dive',
-    readTime: '12 min read'
+    readTime: '12 min'
   },
   {
     title: 'BILT Rent Day: The 4x Multiplier',
-    description: 'On the 1st of every month, everything doubles. 2x becomes 4x, 4% becomes 8%. Learn how to plan your spending to capture 12% returns.',
+    description: 'On the 1st of every month, everything doubles. 2x becomes 4x, 4% becomes 8%.',
     href: '/strategies/rent-day-optimization',
     category: 'Strategy',
-    readTime: '11 min read'
+    readTime: '11 min'
   },
   {
     title: 'Stacking Rakuten with BILT for 17%+',
-    description: 'Rakuten cashback converts to BILT points. Add rent day multipliers and you\'re earning 17-25% on everyday purchases.',
+    description: "Rakuten cashback converts to BILT points. Add rent day multipliers and you're earning 17\u201325%.",
     href: '/strategies/rakuten-bilt-stacking',
     category: 'Advanced',
-    readTime: '13 min read'
+    readTime: '13 min'
   },
   {
     title: 'The Costco Stack: 6% on Groceries',
-    description: 'Executive membership + Costco Visa = 6% total return. Plus a potential shop card hack that could push it even higher.',
+    description: 'Executive membership + Costco Visa = 6% total return. Plus the shop card hack.',
     href: '/strategies/costco-executive-visa-stack',
     category: 'Strategy',
-    readTime: '10 min read'
+    readTime: '10 min'
   },
 ];
 ---
@@ -74,44 +55,43 @@ const featuredContent = [
 >
   <!-- Hero Section -->
   <section style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border-light);">
-    <div class="container-custom" style="padding: 5rem 0 6rem;">
+    <div class="container-custom" style="padding: 4rem 0 5rem;">
       <div style="max-width: 52rem; margin: 0 auto; text-align: center;">
-        <!-- Mascot -->
-        <div style="margin-bottom: 2rem;">
-          <img src="/proof-happy.png" alt="Proof the Hedgehog" style="width: 120px; height: auto; margin: 0 auto; display: block;" />
+        <div style="margin-bottom: 1.5rem;">
+          <img src="/proof-happy.png" alt="Proof the Hedgehog" style="width: 110px; height: auto; margin: 0 auto; display: block;" />
         </div>
-        
-        <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; color: var(--color-text); letter-spacing: -0.025em;">
+
+        <h1 style="font-size: 2.75rem; font-weight: 700; margin-bottom: 1.25rem; line-height: 1.2; color: var(--color-text); letter-spacing: -0.025em;">
           Maximize cash back from the spending you already do
         </h1>
-        
-        <p style="font-size: 1.25rem; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 44rem; margin-left: auto; margin-right: auto; line-height: 1.7;">
+
+        <p style="font-size: 1.2rem; color: var(--color-text-muted); margin-bottom: 2rem; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.7;">
           Same purchases. Same lifestyle. Better returns. Learn how to stack credit cards and cashback portals to turn everyday spending into serious annual rewards.
         </p>
-        
+
         <!-- Proof Screenshot -->
-        <div style="margin-bottom: 3rem; padding: 1.5rem; background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-md); max-width: 32rem; margin-left: auto; margin-right: auto;">
-          <p style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">My personal results: $3,500+/year</p>
-          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Using the same strategies I share on this site. Here's proof:</p>
+        <div style="margin-bottom: 2.5rem; padding: 1.25rem; background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-md); max-width: 30rem; margin-left: auto; margin-right: auto;">
+          <p style="font-size: 0.95rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.4rem;">My personal results: $3,500+/year</p>
+          <p style="font-size: 0.825rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Using the same strategies I share on this site:</p>
           <img src="/proof-rakuten-1.jpg" alt="Tyler's Rakuten earnings showing $467.50" style="width: 100%; height: auto; border-radius: var(--radius-sm);" />
-          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.75rem;">$467.50 from Rakuten referrals alone (just one part of my total earnings).</p>
+          <p style="font-size: 0.825rem; color: var(--color-text-muted); margin-top: 0.5rem;">$467.50 from Rakuten referrals alone.</p>
         </div>
-        
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
-          <a href="/strategies/secret-sauce" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-sm); font-weight: 600; font-size: 1rem; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.backgroundColor='var(--color-accent-dark)';" onmouseout="this.style.backgroundColor='var(--color-accent)';">
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+          <a href="/strategies/secret-sauce" class="btn-primary">
             Read my strategy
           </a>
-          <a href="/strategies/credit-card-stacking" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2rem; background-color: var(--color-surface); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--color-border)'; this.style.backgroundColor='var(--color-bg-alt)';" onmouseout="this.style.borderColor='var(--color-border)'; this.style.backgroundColor='var(--color-surface)';">
-            Learn card stacking
+          <a href="/strategies" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2rem; background-color: var(--color-surface); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-full); font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.backgroundColor='var(--color-bg-alt)';" onmouseout="this.style.backgroundColor='var(--color-surface)';">
+            Browse all strategies
           </a>
         </div>
-        
+
         <!-- Stats -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; max-width: 48rem; margin: 0 auto; padding-top: 3rem; border-top: 1px solid var(--color-border-light);">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 44rem; margin: 0 auto; padding-top: 2.5rem; border-top: 1px solid var(--color-border-light);">
           {stats.map((stat) => (
             <div style="text-align: center;">
-              <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">{stat.value}</div>
-              <div style="font-size: 0.875rem; color: var(--color-text-muted);">{stat.label}</div>
+              <div style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--color-text);">{stat.value}</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -119,69 +99,55 @@ const featuredContent = [
     </div>
   </section>
 
-  <!-- Featured Content -->
+  <!-- 6-Day Publishing Schedule -->
   <section style="background-color: var(--color-bg-alt); border-bottom: 1px solid var(--color-border-light);">
-    <div class="container-custom" style="padding: 5rem 0;">
-      <div style="max-width: 52rem; margin: 0 auto 3rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text);">
-          Start here
+    <div class="container-custom" style="padding: 4rem 0;">
+      <div style="max-width: 52rem; margin: 0 auto 2rem;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">
+          New articles 6 days a week
         </h2>
-        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7;">
-          Real strategies from someone actually doing this. No fluff, no theory—just what works.
+        <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7;">
+          Every day has a theme. Every article is backed by real data.
         </p>
       </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 72rem; margin: 0 auto;">
-        {featuredContent.map(article => (
-          <a href={article.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); overflow: hidden; text-decoration: none; color: inherit; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#d1d5db';" onmouseout="this.style.borderColor='#e5e7eb';">
-            <div style="padding: 2rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                <span style="font-size: 0.875rem; font-weight: 600; color: var(--color-secondary);">
-                  {article.category}
-                </span>
-                <span style="color: #d1d5db;">·</span>
-                <span style="font-size: 0.875rem; color: var(--color-text-light);">
-                  {article.readTime}
-                </span>
-              </div>
-              
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.75rem; line-height: 1.4;">
-                {article.title}
-              </h3>
-              <p style="color: var(--color-text-muted); line-height: 1.6; font-size: 0.9375rem;">
-                {article.description}
-              </p>
-            </div>
-          </a>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; max-width: 52rem; margin: 0 auto;">
+        {publishingSchedule.map(item => (
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.25rem; text-align: center;">
+            <div style={`width: 2.5rem; height: 3px; background: ${item.color}; border-radius: 2px; margin: 0 auto 0.75rem;`}></div>
+            <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.25rem;">{item.day}</div>
+            <div style={`font-size: 0.95rem; font-weight: 700; color: ${item.color};`}>{item.theme}</div>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Financial Optimization Pillars -->
-  <section style="background-color: var(--color-surface);">
-    <div class="container-custom" style="padding: 5rem 0;">
-      <div style="max-width: 52rem; margin: 0 auto 3rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text);">
-          Four ways to maximize your money
+  <!-- Featured Content -->
+  <section style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border-light);">
+    <div class="container-custom" style="padding: 4rem 0;">
+      <div style="max-width: 52rem; margin: 0 auto 2rem;">
+        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">
+          Start here
         </h2>
-        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7;">
-          Stack multiple strategies to compound your annual returns. Most people only use one—you'll use all four.
+        <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7;">
+          Real strategies from someone actually doing this. No fluff, no theory.
         </p>
       </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 72rem; margin: 0 auto;">
-        {pillars.map(pillar => (
-          <a href={pillar.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem; text-decoration: none; color: inherit; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#d1d5db';" onmouseout="this.style.borderColor='#e5e7eb';">
-            <div style="font-size: 2rem; margin-bottom: 1rem;">
-              {pillar.icon}
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; max-width: 52rem; margin: 0 auto;">
+        {featuredContent.map(article => (
+          <a href={article.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: inherit; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#d1d5db';" onmouseout="this.style.borderColor='var(--color-border-light)';">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-secondary);">{article.category}</span>
+              <span style="color: #d1d5db;">&middot;</span>
+              <span style="font-size: 0.8rem; color: var(--color-text-light);">{article.readTime}</span>
             </div>
-            
-            <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">
-              {pillar.title}
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem; line-height: 1.35;">
+              {article.title}
             </h3>
-            <p style="color: var(--color-text-muted); font-size: 0.9375rem; line-height: 1.6;">
-              {pillar.description}
+            <p style="color: var(--color-text-muted); line-height: 1.6; font-size: 0.9rem; margin: 0;">
+              {article.description}
             </p>
           </a>
         ))}
@@ -189,56 +155,29 @@ const featuredContent = [
     </div>
   </section>
 
-  <!-- Why This Works -->
+  <!-- Tyler's Stack -->
   <section style="background-color: var(--color-bg-alt);">
-    <div class="container-custom" style="padding: 5rem 0;">
+    <div class="container-custom" style="padding: 4rem 0;">
       <div style="max-width: 52rem; margin: 0 auto;">
-        <div style="margin-bottom: 3rem;">
-          <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text);">
-            Why this approach works
-          </h2>
-          <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7;">
-            Most people leave thousands on the table by only optimizing one area. Stack all four pillars and compound your returns.
-          </p>
-        </div>
-        
-        <div style="display: grid; gap: 2rem;">
-          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem;">
-            <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">Tested on real spending</h3>
-            <p style="color: var(--color-text-muted); line-height: 1.7; font-size: 0.9375rem;">Every strategy is based on actual results from my own spending patterns. I'm not recommending theory—this is what I actually do and the returns I actually see.</p>
-          </div>
-          
-          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem;">
-            <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">No lifestyle changes required</h3>
-            <p style="color: var(--color-text-muted); line-height: 1.7; font-size: 0.9375rem;">You don't need to change what you buy or where you shop. These strategies optimize the money you're already spending—same life, better returns.</p>
-          </div>
-          
-          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 2rem;">
-            <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">Compounds over time</h3>
-            <p style="color: var(--color-text-muted); line-height: 1.7; font-size: 0.9375rem;">Small optimizations in multiple areas compound to thousands per year. Credit card cash back + HYSA interest + investing bonuses + portal rewards = real money.</p>
-          </div>
-        </div>
-
-        <!-- Tyler's Stack Example -->
-        <div style="margin-top: 3rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2rem;">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
-            <img src="/proof-thinking.png" alt="Proof" style="width: 48px; height: auto;" />
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin: 0;">
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2rem;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <img src="/proof-thinking.png" alt="Proof" style="width: 44px; height: auto;" />
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--color-text); margin: 0;">
               My actual card stack (2026)
-            </h3>
+            </h2>
           </div>
-          <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
-            This is what I personally use. Proof screenshots included above—real earnings, real strategy.
+          <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">
+            This is what I personally use. Real earnings, real strategy.
           </p>
           <div style="font-family: monospace; font-size: 0.9375rem; line-height: 2; color: var(--color-text);">
-            <div>🏠 Rent → <strong>BILT 2.0</strong></div>
-            <div>🛒 Costco → <strong>Costco Anywhere Visa</strong></div>
-            <div>💳 Everything else → <strong>BILT Palladium</strong></div>
-            <div>🔄 Online purchases → <strong>Rakuten</strong></div>
+            <div>&#x1F3E0; Rent &#x2192; <strong>BILT 2.0</strong></div>
+            <div>&#x1F6D2; Costco &#x2192; <strong>Costco Anywhere Visa</strong></div>
+            <div>&#x1F4B3; Everything else &#x2192; <strong>BILT Palladium</strong></div>
+            <div>&#x1F504; Online purchases &#x2192; <strong>Rakuten</strong></div>
           </div>
-          <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+          <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border);">
             <a href="/strategies/secret-sauce" style="color: var(--color-secondary); text-decoration: underline; font-weight: 600;">
-              Read the full breakdown →
+              Read the full breakdown &#x2192;
             </a>
           </div>
         </div>
@@ -248,8 +187,8 @@ const featuredContent = [
 
   <!-- Email Capture -->
   <section style="background-color: var(--color-surface);">
-    <div class="container-custom" style="padding: 5rem 0 3rem;">
-      <div style="max-width: 48rem; margin: 0 auto;">
+    <div class="container-custom" style="padding: 4rem 0 2.5rem;">
+      <div style="max-width: 44rem; margin: 0 auto;">
         <EmailCapture
           variant="hero"
           headline="Get Tyler's Cash Back Tracking Spreadsheet"
@@ -257,10 +196,9 @@ const featuredContent = [
           buttonText="Send me the spreadsheet"
         />
       </div>
-      
-      <!-- Last Updated -->
-      <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border-light);">
-        <p style="font-size: 0.875rem; color: var(--color-text-light);">
+
+      <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border-light);">
+        <p style="font-size: 0.825rem; color: var(--color-text-light);">
           Last updated: March 22, 2026
         </p>
       </div>
