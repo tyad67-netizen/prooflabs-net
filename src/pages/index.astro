@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EmailCapture from '../components/EmailCapture.astro';
+import latestArticles from '../data/latest-articles.json';
 
 // Stats removed per Tyler's request
+
+const dayMap = {
+  'Monday': 'monday',
+  'Tuesday': 'tuesday', 
+  'Wednesday': 'wednesday',
+  'Thursday': 'thursday',
+  'Friday': 'friday',
+  'Saturday': 'saturday'
+};
 
 const publishingSchedule = [
   { 
@@ -11,7 +21,7 @@ const publishingSchedule = [
     category: 'Credit Cards', 
     color: '#3b82f6', 
     description: 'Single-card deep dives and maximization strategies',
-    featured: { title: 'BILT Palladium: The $495 Breakdown', href: '/strategies/bilt-palladium-deep-dive', readTime: '12 min' }
+    featured: latestArticles.monday
   },
   { 
     day: 'Tuesday', 
@@ -19,7 +29,7 @@ const publishingSchedule = [
     category: 'Cashback', 
     color: '#10b981', 
     description: 'Multi-card stacking and workflow optimization',
-    featured: { title: 'Rakuten + BILT = 17%+ Returns', href: '/strategies/rakuten-bilt-stacking', readTime: '13 min' }
+    featured: latestArticles.tuesday
   },
   { 
     day: 'Wednesday', 
@@ -27,7 +37,7 @@ const publishingSchedule = [
     category: 'Credit & Finance', 
     color: '#8b5cf6', 
     description: 'Credit scores, banking, and personal finance',
-    featured: null
+    featured: latestArticles.wednesday
   },
   { 
     day: 'Thursday', 
@@ -35,7 +45,7 @@ const publishingSchedule = [
     category: 'Investing', 
     color: '#f59e0b', 
     description: 'Building your future with smart investments',
-    featured: null
+    featured: latestArticles.thursday
   },
   { 
     day: 'Friday', 
@@ -43,7 +53,7 @@ const publishingSchedule = [
     category: 'Savings', 
     color: '#14b8a6', 
     description: 'High-yield savings and financial independence',
-    featured: null
+    featured: latestArticles.friday
   },
   { 
     day: 'Saturday', 
@@ -51,7 +61,7 @@ const publishingSchedule = [
     category: 'Editorial', 
     color: '#6b7280', 
     description: 'Deep dives, opinion pieces, and weekly recaps',
-    featured: { title: 'The Secret Sauce Strategy', href: '/strategies/secret-sauce', readTime: '15 min' }
+    featured: latestArticles.saturday
   },
 ];
 ---

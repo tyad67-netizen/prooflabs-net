@@ -1,0 +1,23 @@
+{
+  "monday": {
+    "title": "BILT Palladium: The $495 Breakdown",
+    "href": "/strategies/bilt-palladium-deep-dive",
+    "readTime": "12 min",
+    "publishDate": null
+  },
+  "tuesday": {
+    "title": "Rakuten + BILT = 17%+ Returns",
+    "href": "/strategies/rakuten-bilt-stacking",
+    "readTime": "13 min",
+    "publishDate": null
+  },
+  "wednesday": null,
+  "thursday": null,
+  "friday": null,
+  "saturday": {
+    "title": "The Secret Sauce Strategy",
+    "href": "/strategies/secret-sauce",
+    "readTime": "15 min",
+    "publishDate": null
+  }
+}
