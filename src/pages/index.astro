@@ -5,12 +5,54 @@ import EmailCapture from '../components/EmailCapture.astro';
 // Stats removed per Tyler's request
 
 const publishingSchedule = [
-  { day: 'Monday', theme: 'Maximize Monday', category: 'Credit Cards', color: '#3b82f6', description: 'Single-card deep dives and maximization strategies' },
-  { day: 'Tuesday', theme: 'Tactics Tuesday', category: 'Cashback', color: '#10b981', description: 'Multi-card stacking and workflow optimization' },
-  { day: 'Wednesday', theme: 'Wealth Wednesday', category: 'Credit & Finance', color: '#8b5cf6', description: 'Credit scores, banking, and personal finance' },
-  { day: 'Thursday', theme: 'Thrive Thursday', category: 'Investing', color: '#f59e0b', description: 'Building your future with smart investments' },
-  { day: 'Friday', theme: 'Freedom Friday', category: 'Savings', color: '#14b8a6', description: 'High-yield savings and financial independence' },
-  { day: 'Saturday', theme: 'Saturday Stories', category: 'Editorial', color: '#6b7280', description: 'Deep dives, opinion pieces, and weekly recaps' },
+  { 
+    day: 'Monday', 
+    theme: 'Maximize Monday', 
+    category: 'Credit Cards', 
+    color: '#3b82f6', 
+    description: 'Single-card deep dives and maximization strategies',
+    featured: { title: 'BILT Palladium: The $495 Breakdown', href: '/strategies/bilt-palladium-deep-dive', readTime: '12 min' }
+  },
+  { 
+    day: 'Tuesday', 
+    theme: 'Tactics Tuesday', 
+    category: 'Cashback', 
+    color: '#10b981', 
+    description: 'Multi-card stacking and workflow optimization',
+    featured: { title: 'Rakuten + BILT = 17%+ Returns', href: '/strategies/rakuten-bilt-stacking', readTime: '13 min' }
+  },
+  { 
+    day: 'Wednesday', 
+    theme: 'Wealth Wednesday', 
+    category: 'Credit & Finance', 
+    color: '#8b5cf6', 
+    description: 'Credit scores, banking, and personal finance',
+    featured: null
+  },
+  { 
+    day: 'Thursday', 
+    theme: 'Thrive Thursday', 
+    category: 'Investing', 
+    color: '#f59e0b', 
+    description: 'Building your future with smart investments',
+    featured: null
+  },
+  { 
+    day: 'Friday', 
+    theme: 'Freedom Friday', 
+    category: 'Savings', 
+    color: '#14b8a6', 
+    description: 'High-yield savings and financial independence',
+    featured: null
+  },
+  { 
+    day: 'Saturday', 
+    theme: 'Saturday Stories', 
+    category: 'Editorial', 
+    color: '#6b7280', 
+    description: 'Deep dives, opinion pieces, and weekly recaps',
+    featured: { title: 'The Secret Sauce Strategy', href: '/strategies/secret-sauce', readTime: '15 min' }
+  },
 ];
 
 const featuredContent = [
@@ -77,58 +119,42 @@ const featuredContent = [
     </div>
   </section>
 
-  <!-- 6-Day Publishing Schedule -->
+  <!-- Publishing Schedule + Start Here (Combined) -->
   <section style="background-color: var(--color-bg-alt); border-bottom: 1px solid var(--color-border-light);">
     <div class="container-custom" style="padding: 4rem 0;">
-      <div style="max-width: 52rem; margin: 0 auto 2rem;">
-        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">
-          New articles 6 days a week
+      <div style="max-width: 64rem; margin: 0 auto 3rem; text-align: center;">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text);">
+          Start here: 6 themes, daily publishing
         </h2>
-        <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7;">
-          Every day has a theme. Every article is backed by real data.
+        <p style="font-size: 1.125rem; color: var(--color-text-muted); line-height: 1.7;">
+          Every day has a theme. Every article is backed by real data. New content Monday–Saturday at 6 AM PST.
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; max-width: 56rem; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 64rem; margin: 0 auto;">
         {publishingSchedule.map(item => (
-          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; transition: all 0.2s;" onmouseover={`this.style.borderColor='${item.color}'; this.style.transform='translateY(-2px)';`} onmouseout="this.style.borderColor='var(--color-border-light)'; this.style.transform='translateY(0)';"> 
-            <div style={`width: 3rem; height: 4px; background: ${item.color}; border-radius: 2px; margin: 0 auto 1rem;`}></div>
-            <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.5rem;">{item.day}</div>
-            <div style={`font-size: 1.05rem; font-weight: 700; color: ${item.color}; margin-bottom: 0.5rem;`}>{item.theme}</div>
-            <div style="font-size: 0.825rem; color: var(--color-text-muted); line-height: 1.5;">{item.description}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Content -->
-  <section style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border-light);">
-    <div class="container-custom" style="padding: 4rem 0;">
-      <div style="max-width: 52rem; margin: 0 auto 2rem;">
-        <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text);">
-          Start here
-        </h2>
-        <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7;">
-          Real strategies from someone actually doing this. No fluff, no theory.
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; max-width: 52rem; margin: 0 auto;">
-        {featuredContent.map(article => (
-          <a href={article.href} style="background-color: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: inherit; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#d1d5db';" onmouseout="this.style.borderColor='var(--color-border-light)';">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-              <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-secondary);">{article.category}</span>
-              <span style="color: #d1d5db;">&middot;</span>
-              <span style="font-size: 0.8rem; color: var(--color-text-light);">{article.readTime}</span>
+          <div style={`background: var(--color-surface); border: 2px solid ${item.color}20; border-radius: var(--radius-lg); padding: 1.75rem; transition: all 0.2s;`} onmouseover={`this.style.borderColor='${item.color}'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)';`} onmouseout={`this.style.borderColor='${item.color}20'; this.style.transform='translateY(0)'; this.style.boxShadow='none';`}>
+            
+            {/* Header */}
+            <div style="margin-bottom: 1.25rem;">
+              <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.5rem;">{item.day}</div>
+              <div style={`font-size: 1.25rem; font-weight: 700; color: ${item.color}; margin-bottom: 0.5rem;`}>{item.theme}</div>
+              <div style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5;">{item.description}</div>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem; line-height: 1.35;">
-              {article.title}
-            </h3>
-            <p style="color: var(--color-text-muted); line-height: 1.6; font-size: 0.9rem; margin: 0;">
-              {article.description}
-            </p>
-          </a>
+
+            {/* Featured Article or Coming Soon */}
+            {item.featured ? (
+              <a href={item.featured.href} style="display: block; background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1rem; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='var(--color-surface)';" onmouseout="this.style.background='var(--color-bg-alt)';">
+                <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-text-light); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Featured Strategy</div>
+                <div style="font-size: 0.95rem; font-weight: 600; color: var(--color-text); margin-bottom: 0.25rem; line-height: 1.3;">{item.featured.title}</div>
+                <div style="font-size: 0.75rem; color: var(--color-text-light);">{item.featured.readTime} read</div>
+              </a>
+            ) : (
+              <div style="background: var(--color-bg-alt); border: 1px dashed var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; text-align: center;">
+                <div style="font-size: 0.875rem; color: var(--color-text-light);">First article publishes Monday, March 24</div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </div>
