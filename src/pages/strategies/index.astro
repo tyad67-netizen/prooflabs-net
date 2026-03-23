@@ -11,6 +11,7 @@ const strategies = [
     href: '/strategies/secret-sauce',
     readTime: '15 min',
     tag: 'Start Here',
+    hedgehog: '/proof-celebrating.png',
     featured: true,
   },
   {
@@ -19,6 +20,7 @@ const strategies = [
     href: '/strategies/bilt-palladium-deep-dive',
     readTime: '12 min',
     tag: 'Deep Dive',
+    hedgehog: '/proof-thinking.png',
   },
   {
     title: 'BILT Rent Day: The 4x Multiplier Strategy',
@@ -26,6 +28,7 @@ const strategies = [
     href: '/strategies/rent-day-optimization',
     readTime: '11 min',
     tag: 'Strategy',
+    hedgehog: '/proof-surprised.png',
   },
   {
     title: 'Stacking Rakuten with BILT for 17%+ Returns',
@@ -33,6 +36,7 @@ const strategies = [
     href: '/strategies/rakuten-bilt-stacking',
     readTime: '13 min',
     tag: 'Advanced',
+    hedgehog: '/proof-surprised.png',
   },
   {
     title: 'The Costco Stack: 6% on Groceries',
@@ -40,6 +44,7 @@ const strategies = [
     href: '/strategies/costco-executive-visa-stack',
     readTime: '10 min',
     tag: 'Strategy',
+    hedgehog: '/proof-happy-clean.png',
   },
   {
     title: 'Credit Card Stacking Explained',
@@ -47,6 +52,7 @@ const strategies = [
     href: '/strategies/credit-card-stacking',
     readTime: '10 min',
     tag: 'Fundamentals',
+    hedgehog: '/proof-thinking.png',
   },
   {
     title: 'How to Pay Rent with a Credit Card',
@@ -54,6 +60,7 @@ const strategies = [
     href: '/strategies/how-to-pay-rent-with-credit-card',
     readTime: '8 min',
     tag: 'Guide',
+    hedgehog: '/proof-happy-clean.png',
   },
 ];
 ---
@@ -75,9 +82,12 @@ const strategies = [
       <div style="display: grid; gap: 1.25rem;">
         {strategies.map(article => (
           <a href={article.href} style={`background-color: var(--color-surface); border: 1px solid ${article.featured ? 'var(--color-primary)' : 'var(--color-border-light)'}; border-radius: var(--radius-md); padding: 1.5rem; text-decoration: none; color: inherit; transition: border-color 0.2s, box-shadow 0.2s;${article.featured ? ' border-width: 2px;' : ''}`} onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)';" onmouseout="this.style.boxShadow='none';">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-              <span style={`font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: 4px; ${article.featured ? 'color: white; background: var(--color-primary);' : 'color: var(--color-primary); background: var(--color-primary-bg);'}`}>
-                {article.tag}
+            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem;">
+              <img src={article.hedgehog} alt="" style="width: 42px; height: auto; flex-shrink: 0; margin-top: 0.25rem;" />
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <span style={`font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: 4px; ${article.featured ? 'color: white; background: var(--color-primary);' : 'color: var(--color-primary); background: var(--color-primary-bg);'}`}>
+                    {article.tag}
               </span>
               <span style="font-size: 0.8rem; color: var(--color-text-light);">{article.readTime}</span>
             </div>

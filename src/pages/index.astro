@@ -20,6 +20,7 @@ const publishingSchedule = [
     category: 'Credit Cards', 
     color: '#3b82f6', 
     description: 'Single-card deep dives and maximization strategies',
+    hedgehog: '/proof-thinking.png',
     featured: latestArticles.monday
   },
   { 
@@ -28,6 +29,7 @@ const publishingSchedule = [
     category: 'Cashback', 
     color: '#10b981', 
     description: 'Multi-card stacking and workflow optimization',
+    hedgehog: '/proof-celebrating.png',
     featured: latestArticles.tuesday
   },
   { 
@@ -36,6 +38,7 @@ const publishingSchedule = [
     category: 'Credit & Finance', 
     color: '#8b5cf6', 
     description: 'Credit scores, banking, and personal finance',
+    hedgehog: '/proof-surprised.png',
     featured: latestArticles.wednesday
   },
   { 
@@ -44,6 +47,7 @@ const publishingSchedule = [
     category: 'Investing', 
     color: '#f59e0b', 
     description: 'Building your future with smart investments',
+    hedgehog: '/proof-happy-clean.png',
     featured: latestArticles.thursday
   },
   { 
@@ -52,6 +56,7 @@ const publishingSchedule = [
     category: 'Savings', 
     color: '#14b8a6', 
     description: 'High-yield savings and financial independence',
+    hedgehog: '/proof-happy-clean.png',
     featured: latestArticles.friday
   },
   { 
@@ -60,6 +65,7 @@ const publishingSchedule = [
     category: 'Editorial', 
     color: '#6b7280', 
     description: 'Deep dives, opinion pieces, and weekly recaps',
+    hedgehog: '/proof-thinking.png',
     featured: latestArticles.saturday
   },
 ];
@@ -113,10 +119,15 @@ const publishingSchedule = [
         {publishingSchedule.map(item => (
           <div style={`background: var(--color-surface); border: 2px solid ${item.color}20; border-radius: var(--radius-lg); padding: 1.75rem; transition: all 0.2s;`} onmouseover={`this.style.borderColor='${item.color}'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)';`} onmouseout={`this.style.borderColor='${item.color}20'; this.style.transform='translateY(0)'; this.style.boxShadow='none';`}>
             
-            {/* Header */}
+            {/* Header with Hedgehog */}
             <div style="margin-bottom: 1.25rem;">
-              <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.5rem;">{item.day}</div>
-              <div style={`font-size: 1.25rem; font-weight: 700; color: ${item.color}; margin-bottom: 0.5rem;`}>{item.theme}</div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                <img src={item.hedgehog} alt={item.theme} style="width: 40px; height: auto;" />
+                <div style="flex: 1;">
+                  <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.25rem;">{item.day}</div>
+                  <div style={`font-size: 1.25rem; font-weight: 700; color: ${item.color};`}>{item.theme}</div>
+                </div>
+              </div>
               <div style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5;">{item.description}</div>
             </div>
 
