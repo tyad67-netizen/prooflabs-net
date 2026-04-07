@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const title = "The 3-Card Stack That Maxes Every Spending Category";
+const description = "Three credit cards, zero annual fees, maximum rewards on every purchase. Here's the exact stack and how to use it.";
+const publishDate = "2026-04-07";
+const ogImage = "/images/og/monday-credit-cards.png";
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <article style="max-width: 48rem; margin: 0 auto; padding: 8rem 0 4rem;">
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; color: var(--color-text); line-height: 1.1;">
+      {title}
+    </h1>
+
+    <AuthorByline date={publishDate} />
+
+    <div style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-muted); margin-top: 3rem;" set:html={`<p style="margin: 1rem 0;">You&#39;re leaving money on the table if you&#39;re using one card for everything. The highest-earning setup isn&#39;t a single &quot;best card&quot;—it&#39;s a 3-card stack that covers every spending category at maximum rates.</p>
+<p style="margin: 1rem 0;">This isn&#39;t complicated. Three cards. Zero annual fees. Each one handles the categories it&#39;s best at. You&#39;ll earn 3-5% on nearly everything you buy, and it takes about 20 minutes to set up.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Stack</h2>
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Card</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">What It Covers</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Earn Rate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Citi Custom Cash</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Your highest monthly category (up to \$500/month)</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">5%</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Chase Freedom Unlimited</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Dining, travel booked through Chase, drugstores</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">3-5%</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Citi Double Cash</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Everything else</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">2%</td>
+</tr>
+</tbody></table>
+<p style="margin: 1rem 0;"><strong>Total annual fees:</strong> \$0</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Card 1: Citi Custom Cash (The Category Killer)</h2>
+<p style="margin: 1rem 0;"><strong>Earn rate:</strong> 5% cashback on your top spending category each month (up to \$500), then 1% after</p>
+<p style="margin: 1rem 0;"><strong>Eligible categories:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Restaurants</li>
+<li style="margin: 0.5rem 0;">Gas stations</li>
+<li style="margin: 0.5rem 0;">Grocery stores</li>
+<li style="margin: 0.5rem 0;">Home improvement stores</li>
+<li style="margin: 0.5rem 0;">Fitness clubs</li>
+<li style="margin: 0.5rem 0;">Live entertainment</li>
+<li style="margin: 0.5rem 0;">Drugstores</li>
+<li style="margin: 0.5rem 0;">Transit</li>
+</ul>
+<p style="margin: 1rem 0;">The card <strong>automatically</strong> selects your highest category each month. You don&#39;t pick—it just gives you 5% on whichever one you spent the most in.</p>
+<p style="margin: 1rem 0;"><strong>How to use it:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Front-load one category per month (e.g., buy \$500 in groceries in the first week)</li>
+<li style="margin: 0.5rem 0;">Once you hit \$500, switch to another card</li>
+<li style="margin: 0.5rem 0;">Rotate categories month-to-month based on what you need (January = groceries, February = gas, etc.)</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Annual value (assuming \$500/month at 5%):</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">\$500 × 5% = \$25/month</li>
+<li style="margin: 0.5rem 0;"><strong>\$300/year</strong></li>
+</ul>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Card 2: Chase Freedom Unlimited (The Travel &amp; Dining Card)</h2>
+<p style="margin: 1rem 0;"><strong>Earn rate:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">5% on travel booked through Chase Travel</li>
+<li style="margin: 0.5rem 0;">3% on dining and drugstores</li>
+<li style="margin: 0.5rem 0;">1.5% on everything else</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Why it&#39;s in the stack:</strong>
+Dining is a huge spending category for most people, and 3% with no annual fee is hard to beat. The 5% on Chase Travel also applies to hotels and rental cars, which makes it competitive with premium travel cards.</p>
+<p style="margin: 1rem 0;"><strong>How to use it:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">All restaurant purchases</li>
+<li style="margin: 0.5rem 0;">All travel bookings (through Chase Travel portal for 5%, direct bookings for 3%)</li>
+<li style="margin: 0.5rem 0;">Drugstores (unless you&#39;re maxing the Citi Custom Cash that month)</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Annual value (assuming \$400/month dining, \$200/month travel):</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Dining: \$400 × 3% = \$12/month = \$144/year</li>
+<li style="margin: 0.5rem 0;">Travel: \$200 × 5% = \$10/month = \$120/year</li>
+<li style="margin: 0.5rem 0;"><strong>\$264/year</strong></li>
+</ul>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Card 3: Citi Double Cash (The Default Card)</h2>
+<p style="margin: 1rem 0;"><strong>Earn rate:</strong> 2% on everything (1% when you buy, 1% when you pay)</p>
+<p style="margin: 1rem 0;"><strong>Why it&#39;s in the stack:</strong>
+This is your catch-all. Anything that doesn&#39;t fit into the 5% or 3% categories goes here. It&#39;s simple, it&#39;s flat-rate, and it&#39;s better than 90% of other cards for non-bonus spending.</p>
+<p style="margin: 1rem 0;"><strong>How to use it:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Amazon purchases</li>
+<li style="margin: 0.5rem 0;">Utilities</li>
+<li style="margin: 0.5rem 0;">Insurance</li>
+<li style="margin: 0.5rem 0;">Subscriptions</li>
+<li style="margin: 0.5rem 0;">Any category not covered by the other two cards</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Annual value (assuming \$1,000/month on misc spend):</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">\$1,000 × 2% = \$20/month</li>
+<li style="margin: 0.5rem 0;"><strong>\$240/year</strong></li>
+</ul>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Full System in Action</h2>
+<p style="margin: 1rem 0;">Let&#39;s run a realistic monthly budget through this stack:</p>
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Category</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Monthly Spend</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Card Used</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Earn Rate</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Monthly Cashback</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Groceries</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$500</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Citi Custom Cash</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">5%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$25</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Dining</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$400</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Freedom Unlimited</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">3%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$12</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Gas</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$200</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Double Cash (over \$500 Custom Cash limit)</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">2%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$4</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Travel</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$200</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Freedom Unlimited</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">5%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$10</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Amazon</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$150</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Double Cash</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">2%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$3</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Utilities</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$200</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Double Cash</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">2%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$4</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Subscriptions</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$100</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Double Cash</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">2%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$2</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Misc</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$250</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Double Cash</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">2%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$5</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>TOTAL</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>\$2,000</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>\$65/month</strong></td>
+</tr>
+</tbody></table>
+<p style="margin: 1rem 0;"><strong>Annual cashback: \$780</strong></p>
+<p style="margin: 1rem 0;">Compare that to using a single 2% card on everything:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">\$2,000 × 2% = \$40/month = <strong>\$480/year</strong></li>
+</ul>
+<p style="margin: 1rem 0;"><strong>The 3-card stack earns you an extra \$300/year.</strong></p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">How to Actually Use This (Step-by-Step)</h2>
+<p style="margin: 1rem 0;"><strong>1. Apply for all three cards</strong></p>
+<p style="margin: 1rem 0;">Do this within a 30-day window to minimize the credit inquiry impact. Your score will drop 5-10 points temporarily, then recover within 2-3 months.</p>
+<p style="margin: 1rem 0;">Apply in this order:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Citi Custom Cash</li>
+<li style="margin: 0.5rem 0;">Citi Double Cash (apply same day as Custom Cash to combine hard pulls)</li>
+<li style="margin: 0.5rem 0;">Chase Freedom Unlimited (separate pull, but Chase is generally approval-friendly)</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>2. Add them to your phone&#39;s wallet</strong></p>
+<p style="margin: 1rem 0;">Put all three in Apple Pay or Google Pay. You&#39;ll swap between them at checkout based on category.</p>
+<p style="margin: 1rem 0;"><strong>3. Set spending alerts</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Citi Custom Cash: Set an alert when you hit \$500 in spend each month</li>
+<li style="margin: 0.5rem 0;">Freedom Unlimited: No threshold to track</li>
+<li style="margin: 0.5rem 0;">Double Cash: No threshold to track</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>4. Create a mental (or actual) map</strong></p>
+<p style="margin: 1rem 0;">Print this and stick it to your fridge:</p>
+<pre><code>GROCERIES (first \$500/month) → Citi Custom Cash
+DINING → Chase Freedom Unlimited
+TRAVEL → Chase Freedom Unlimited (book through Chase portal when possible)
+EVERYTHING ELSE → Citi Double Cash
+</code></pre>
+<p style="margin: 1rem 0;"><strong>5. Pay them off in full every month</strong></p>
+<p style="margin: 1rem 0;">This system only works if you&#39;re not paying interest. If you carry a balance, the interest will eat your rewards. Set up autopay for the full statement balance.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Time Investment</h2>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;"><strong>Setup:</strong> 20 minutes (applications + adding to wallet)</li>
+<li style="margin: 0.5rem 0;"><strong>Monthly management:</strong> 5 minutes (checking that you hit the \$500 Custom Cash threshold)</li>
+<li style="margin: 0.5rem 0;"><strong>Ongoing usage:</strong> Automatic once you memorize which card goes where</li>
+</ul>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Common Mistakes to Avoid</h2>
+<p style="margin: 1rem 0;"><strong>Mistake #1: Using the wrong card out of habit</strong></p>
+<p style="margin: 1rem 0;">You&#39;ll forget which card to pull out. It happens. Don&#39;t stress. Over a year, even if you mess up 10% of transactions, you&#39;re still earning \$700+ instead of \$480.</p>
+<p style="margin: 1rem 0;"><strong>Mistake #2: Overthinking the Custom Cash</strong></p>
+<p style="margin: 1rem 0;">Don&#39;t micromanage it. Just use it for your highest category until you hit \$500, then forget about it for the rest of the month.</p>
+<p style="margin: 1rem 0;"><strong>Mistake #3: Booking travel directly instead of through Chase</strong></p>
+<p style="margin: 1rem 0;">If you&#39;re booking a hotel or flight, check the Chase Travel portal first. Same price = 5% vs. 3%. That&#39;s a 67% boost for two extra clicks.</p>
+<p style="margin: 1rem 0;"><strong>Mistake #4: Applying for all three at once if your credit score is below 700</strong></p>
+<p style="margin: 1rem 0;">If your score is under 700, start with the Citi Double Cash (easiest approval), wait 3 months, then apply for the others.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Optimizations (Advanced)</h2>
+<p style="margin: 1rem 0;">Once you&#39;re comfortable with the 3-card stack, you can level up:</p>
+<p style="margin: 1rem 0;"><strong>Optimization #1: Add a rotating 5% card</strong></p>
+<p style="margin: 1rem 0;">The <strong>Chase Freedom Flex</strong> (no annual fee) gives you 5% on rotating quarterly categories (gas, groceries, Amazon, etc.). If the quarterly category overlaps with your Custom Cash category, use the Flex first to get \$75 (5% on \$1,500 limit), then switch to Custom Cash.</p>
+<p style="margin: 1rem 0;"><strong>Optimization #2: Use a 5% Amazon card</strong></p>
+<p style="margin: 1rem 0;">If you spend \$100+/month on Amazon, the <strong>Amazon Prime Visa</strong> gives you 5% on Amazon and Whole Foods (if you have Prime). Swap it in for the Double Cash on Amazon purchases.</p>
+<p style="margin: 1rem 0;"><strong>Optimization #3: Stack with Chase Ultimate Rewards</strong></p>
+<p style="margin: 1rem 0;">If you later add a <strong>Chase Sapphire Preferred</strong> or <strong>Reserve</strong>, you can transfer the Freedom Unlimited points to airline partners. This converts your 3% dining cashback into potentially 4-6 cents per point in travel value.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Bottom Line</h2>
+<p style="margin: 1rem 0;">The 3-card stack works because:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Zero annual fees = no break-even threshold to hit</li>
+<li style="margin: 0.5rem 0;">You&#39;re earning 2-5% on literally everything</li>
+<li style="margin: 0.5rem 0;">It&#39;s simple enough to actually execute (unlike 8-card stacks that fall apart in real life)</li>
+<li style="margin: 0.5rem 0;">You&#39;re extracting \$300+/year in extra value with near-zero effort</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>If you only do one thing from this article:</strong> Get the Citi Custom Cash. It&#39;s the highest single-card return on a major spending category with no annual fee. Then build out from there.</p>
+<p style="margin: 1rem 0;">[AFFILIATE: Citi Custom Cash—5% rotating category card, no annual fee]<br>[AFFILIATE: Chase Freedom Unlimited—3% dining, 5% Chase Travel, no annual fee]<br>[AFFILIATE: Citi Double Cash—Flat 2% on everything, no annual fee]</p>
+`}>
+    </div>
+  </article>
+</BaseLayout>
