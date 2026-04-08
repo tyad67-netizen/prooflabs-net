@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const title = "High-Yield Savings Accounts: The $400/Year You're Missing";
+const description = "Your savings account is earning 0.01% APY while high-yield accounts pay 4.5%. Here's the math on what you're losing and how to fix it in 10 minutes.";
+const publishDate = "2026-04-08";
+const ogImage = "/images/og/tuesday-cashback.png";
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <article style="max-width: 48rem; margin: 0 auto; padding: 8rem 0 4rem;">
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; color: var(--color-text); line-height: 1.1;">
+      {title}
+    </h1>
+
+    <AuthorByline date={publishDate} />
+
+    <div style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-muted); margin-top: 3rem;" set:html={`<p style="margin: 1rem 0;">If your savings account is at a traditional bank, you&#39;re losing \$400+ per year. Not in fees—in interest you&#39;re not earning.</p>
+<p style="margin: 1rem 0;">Most people keep their emergency fund and short-term savings at the same bank where they have checking. That&#39;s costing you about a dollar a day. Every day. For doing nothing differently except parking your money somewhere that actually pays you.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Interest Rate Gap</h2>
+<p style="margin: 1rem 0;">Here&#39;s what major banks are currently paying on savings accounts:</p>
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Bank</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Savings APY</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Chase</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">0.01%</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Bank of America</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">0.01%</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Wells Fargo</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">0.15%</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>High-Yield Savings</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>4.25-4.50%</strong></td>
+</tr>
+</tbody></table>
+<p style="margin: 1rem 0;">That&#39;s not a typo. Traditional banks pay you <strong>0.01%</strong>. High-yield savings accounts (HYSAs) pay <strong>4.25-4.50%</strong>—about <strong>400 times more</strong>.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">What This Means in Real Money</h2>
+<p style="margin: 1rem 0;">Let&#39;s say you keep \$10,000 in savings (a modest emergency fund):</p>
+<p style="margin: 1rem 0;"><strong>At Chase (0.01% APY):</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Annual interest: \$10,000 × 0.01% = <strong>\$1</strong></li>
+</ul>
+<p style="margin: 1rem 0;"><strong>At a high-yield account (4.5% APY):</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Annual interest: \$10,000 × 4.5% = <strong>\$450</strong></li>
+</ul>
+<p style="margin: 1rem 0;"><strong>You&#39;re leaving \$449/year on the table.</strong></p>
+<p style="margin: 1rem 0;">If you have \$20,000 in savings, that&#39;s <strong>\$898/year</strong>.<br>If you have \$30,000, that&#39;s <strong>\$1,347/year</strong>.</p>
+<p style="margin: 1rem 0;">This is passive income. You do nothing. The money just shows up.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Why Traditional Banks Pay Nothing</h2>
+<p style="margin: 1rem 0;">Traditional banks don&#39;t need to compete on interest rates. They have:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Physical branches (expensive overhead)</li>
+<li style="margin: 0.5rem 0;">Brand recognition (people trust &quot;the bank my parents used&quot;)</li>
+<li style="margin: 0.5rem 0;">Inertia (most people never switch)</li>
+</ul>
+<p style="margin: 1rem 0;">They pay 0.01% because they can. You keep your money there, they lend it out at 7-18% (credit cards, personal loans, mortgages), and they keep the spread.</p>
+<p style="margin: 1rem 0;">High-yield accounts are different. They&#39;re offered by online banks or traditional banks&#39; online-only divisions. No branches = lower costs = they can pay you more.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">How High-Yield Accounts Work</h2>
+<p style="margin: 1rem 0;">A high-yield savings account functions exactly like a regular savings account:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">FDIC insured up to \$250,000 (same protection as Chase or Bank of America)</li>
+<li style="margin: 0.5rem 0;">Accessible within 1-2 business days (transfer to checking, then spend)</li>
+<li style="margin: 0.5rem 0;">No fees (most charge \$0 monthly maintenance)</li>
+<li style="margin: 0.5rem 0;">No minimum balance requirements (some have minimums, but many don&#39;t)</li>
+</ul>
+<p style="margin: 1rem 0;">The only difference: they pay you 4-5% instead of 0.01%.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Catch (There Isn&#39;t One)</h2>
+<p style="margin: 1rem 0;">People assume there&#39;s a catch. There isn&#39;t. The &quot;downsides&quot; are:</p>
+<p style="margin: 1rem 0;"><strong>1. No physical branches</strong></p>
+<p style="margin: 1rem 0;">You can&#39;t walk into a branch and withdraw cash. You have to transfer money to your checking account first (takes 1-2 days).</p>
+<p style="margin: 1rem 0;"><strong>Is this actually a problem?</strong> Not for an emergency fund. If you need cash instantly, that&#39;s what your checking account is for. Keep \$500-1,000 in checking for immediate needs, and park the rest in high-yield.</p>
+<p style="margin: 1rem 0;"><strong>2. The rate can change</strong></p>
+<p style="margin: 1rem 0;">High-yield rates aren&#39;t fixed. When the Federal Reserve cuts rates, HYSA rates drop. When the Fed raises rates, HYSA rates go up.</p>
+<p style="margin: 1rem 0;">Right now (March 2026), the Fed rate is high, so HYSAs are paying 4.25-4.50%. If the Fed cuts rates to near-zero again (like in 2020-2021), HYSAs could drop to 0.50-1.00%.</p>
+<p style="margin: 1rem 0;"><strong>Is this actually a problem?</strong> No, because traditional banks pay even less in that scenario. The gap shrinks, but HYSAs always pay more.</p>
+<p style="margin: 1rem 0;"><strong>3. Some accounts have transfer limits</strong></p>
+<p style="margin: 1rem 0;">Federal Regulation D used to limit savings account withdrawals to 6 per month. That rule was suspended in 2020, but some banks still enforce a limit as a policy.</p>
+<p style="margin: 1rem 0;"><strong>Is this actually a problem?</strong> Not for an emergency fund or savings goal. You&#39;re not day-trading with a savings account. If you need to move money back and forth constantly, that&#39;s what checking is for.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Which High-Yield Account to Use</h2>
+<p style="margin: 1rem 0;">The best HYSA is the one with:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">The highest current APY (rates change monthly, so check before opening)</li>
+<li style="margin: 0.5rem 0;">No monthly fees</li>
+<li style="margin: 0.5rem 0;">No minimum balance</li>
+<li style="margin: 0.5rem 0;">Easy transfers to/from your checking account</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Top options as of March 2026:</strong></p>
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Bank</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">APY</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Min Balance</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Monthly Fee</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Marcus by Goldman Sachs</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">4.40%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Ally Bank</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">4.35%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>American Express Personal Savings</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">4.30%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Discover Online Savings</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">4.25%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Capital One 360 Performance Savings</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">4.25%</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$0</td>
+</tr>
+</tbody></table>
+<p style="margin: 1rem 0;">Any of these works. The APY differences are minimal (4.25% vs. 4.40% on \$10,000 = \$15/year). Pick the one with the cleanest interface or the one you already have a relationship with.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">How to Switch (10-Minute Process)</h2>
+<p style="margin: 1rem 0;"><strong>Step 1: Open a high-yield account (5 minutes)</strong></p>
+<p style="margin: 1rem 0;">Go to Marcus, Ally, or Amex. Click &quot;Open Account.&quot; Provide:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Name, address, SSN</li>
+<li style="margin: 0.5rem 0;">Funding source (your current checking account routing/account numbers)</li>
+</ul>
+<p style="margin: 1rem 0;">You&#39;ll get approved instantly (soft credit pull, doesn&#39;t affect your score).</p>
+<p style="margin: 1rem 0;"><strong>Step 2: Transfer your savings (2 minutes)</strong></p>
+<p style="margin: 1rem 0;">Link your current bank to the new HYSA. Initiate a transfer for however much you want to move (\$5,000? \$10,000? All of it?).</p>
+<p style="margin: 1rem 0;"><strong>Step 3: Wait 2-3 business days</strong></p>
+<p style="margin: 1rem 0;">The transfer clears. Your money is now earning 4.5% instead of 0.01%.</p>
+<p style="margin: 1rem 0;"><strong>Step 4: Set up recurring deposits (3 minutes)</strong></p>
+<p style="margin: 1rem 0;">If you auto-save each month (\$200? \$500?), update your direct deposit or auto-transfer to route into the HYSA instead of your old savings.</p>
+<p style="margin: 1rem 0;">Done. You&#39;re now earning \$400+/year more than you were last week.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">What to Do With the Extra Interest</h2>
+<p style="margin: 1rem 0;">If you&#39;re earning an extra \$400/year from a \$10,000 balance, here&#39;s what you can do with it:</p>
+<p style="margin: 1rem 0;"><strong>Option 1: Let it compound</strong></p>
+<p style="margin: 1rem 0;">Leave the interest in the account. Next year, you&#39;re earning 4.5% on \$10,450 instead of \$10,000. Over 10 years, that&#39;s an extra \$5,500 in interest (vs. \$10 at Chase).</p>
+<p style="margin: 1rem 0;"><strong>Option 2: Use it to fund another goal</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">\$400/year = \$33/month, which covers a cheap gym membership</li>
+<li style="margin: 0.5rem 0;">Or a monthly subscription service (Netflix, Spotify, etc.)</li>
+<li style="margin: 0.5rem 0;">Or an extra debt payment</li>
+<li style="margin: 0.5rem 0;">Or an annual Roth IRA contribution boost</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Option 3: Reinvest it</strong></p>
+<p style="margin: 1rem 0;">Take the \$400 and drop it into an index fund. Over 30 years at 8% average returns, that single \$400 becomes \$4,200.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Advanced Move: Stacking HYSAs With Credit Cards</h2>
+<p style="margin: 1rem 0;">This is where it gets interesting.</p>
+<p style="margin: 1rem 0;">If you&#39;re using a 2% cashback card for all your spending, here&#39;s the cycle:</p>
+<ol>
+<li style="margin: 0.5rem 0;">Spend \$2,000/month on your 2% card → earn \$40/month cashback</li>
+<li style="margin: 0.5rem 0;">Pay off the card from your high-yield savings (keeps your checking clean)</li>
+<li style="margin: 0.5rem 0;">Cashback accumulates in the HYSA, earning 4.5%</li>
+<li style="margin: 0.5rem 0;">At the end of the year, you&#39;ve earned \$480 in cashback PLUS \$20+ in interest on the cashback balance</li>
+</ol>
+<p style="margin: 1rem 0;">You&#39;re earning interest on your cashback. It&#39;s a small optimization, but it&#39;s free.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">When NOT to Use a High-Yield Account</h2>
+<p style="margin: 1rem 0;">There are exactly two scenarios where a traditional savings account makes sense:</p>
+<p style="margin: 1rem 0;"><strong>1. You need instant cash access multiple times per week</strong></p>
+<p style="margin: 1rem 0;">If you&#39;re constantly moving money in and out, a HYSA&#39;s 1-2 day transfer time is annoying. But this describes almost no one&#39;s actual emergency fund usage.</p>
+<p style="margin: 1rem 0;"><strong>2. You have under \$1,000 in savings</strong></p>
+<p style="margin: 1rem 0;">At \$1,000, the difference between 0.01% and 4.5% is \$45/year. Still worth it, but if the mental overhead of managing another account isn&#39;t worth \$45 to you, fine.</p>
+<p style="margin: 1rem 0;">If you have \$1,000 or less, your priority should be building the emergency fund to \$3,000-6,000, not optimizing interest. But once you&#39;re there, move it.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Psychology of Seeing Your Money Grow</h2>
+<p style="margin: 1rem 0;">Here&#39;s an underrated benefit of HYSAs: you can <em>watch</em> your money grow.</p>
+<p style="margin: 1rem 0;">At Chase, your \$10,000 earns \$0.08/month. You don&#39;t notice it.</p>
+<p style="margin: 1rem 0;">At a HYSA, your \$10,000 earns \$37.50/month. You see it. It&#39;s tangible. Every month, there&#39;s free money showing up.</p>
+<p style="margin: 1rem 0;">This creates a positive feedback loop. You&#39;re more likely to keep saving when you see the balance grow faster than your contributions alone.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Bottom Line</h2>
+<p style="margin: 1rem 0;">If your savings are sitting in a traditional bank account earning 0.01%, you&#39;re giving the bank a \$400+/year gift. They&#39;re lending your money out at 7-18% and paying you nothing.</p>
+<p style="margin: 1rem 0;">High-yield accounts pay 4.25-4.50%. Same FDIC insurance. Same safety. Same accessibility (with a 1-2 day transfer delay).</p>
+<p style="margin: 1rem 0;"><strong>The fix takes 10 minutes. You&#39;ll never think about it again. And you&#39;ll earn an extra \$400-1,000/year depending on your balance.</strong></p>
+<p style="margin: 1rem 0;">If you do one thing this week, move your emergency fund to a high-yield account.</p>
+<p style="margin: 1rem 0;">[AFFILIATE: Marcus by Goldman Sachs—4.40% APY, no fees, no minimums]<br>[AFFILIATE: Ally Bank—4.35% APY, easy interface, strong customer service]<br>[AFFILIATE: American Express Personal Savings—4.30% APY, integrates with Amex cards]</p>
+`}>
+    </div>
+  </article>
+</BaseLayout>
