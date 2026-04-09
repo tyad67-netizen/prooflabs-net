@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const title = "Roth IRA vs. Traditional IRA: The $100K Decision";
+const description = "Roth or Traditional IRA? The wrong choice costs you $100K+ over 30 years. Here's the math on which one wins based on your income and tax situation.";
+const publishDate = "2026-04-09";
+const ogImage = "/images/og/wednesday-credit-scores.png";
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <article style="max-width: 48rem; margin: 0 auto; padding: 8rem 0 4rem;">
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; color: var(--color-text); line-height: 1.1;">
+      {title}
+    </h1>
+
+    <AuthorByline date={publishDate} />
+
+    <div style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-muted); margin-top: 3rem;" set:html={`<p style="margin: 1rem 0;">You&#39;re deciding whether to pay taxes now or later. The difference is six figures over your lifetime.</p>
+<p style="margin: 1rem 0;">The Roth vs. Traditional IRA decision is the single most important tax optimization most people will make. Get it right and you could save \$100,000+ in taxes by retirement. Get it wrong and you&#39;re handing the IRS money you didn&#39;t need to.</p>
+<p style="margin: 1rem 0;">This isn&#39;t about &quot;preference&quot; or &quot;what feels right.&quot; It&#39;s pure math based on your current tax rate vs. your expected retirement tax rate.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">What&#39;s the Difference?</h2>
+<p style="margin: 1rem 0;">Both accounts let you invest for retirement with tax advantages. The difference is <em>when</em> you pay taxes.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Feature</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Traditional IRA</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--color-border); font-weight: 700;">Roth IRA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Tax treatment on contributions</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Tax-deductible NOW (lowers your taxable income)</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">NOT tax-deductible (you pay taxes before contributing)</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Tax treatment on withdrawals</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">TAXED in retirement (as ordinary income)</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">TAX-FREE in retirement</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Contribution limit (2026)</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$7,000/year (\$8,000 if 50+)</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">\$7,000/year (\$8,000 if 50+)</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Income limits</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">None (anyone can contribute)</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Phaseout starts at \$146K single, \$230K married</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);"><strong>Required withdrawals</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">Yes, starting at age 73 (RMDs)</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border-light);">No RMDs during your lifetime</td>
+</tr>
+</tbody></table>
+<p style="margin: 1rem 0;">The core tradeoff:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;"><strong>Traditional IRA:</strong> Pay taxes later (in retirement)</li>
+<li style="margin: 0.5rem 0;"><strong>Roth IRA:</strong> Pay taxes now</li>
+</ul>
+<p style="margin: 1rem 0;">Which is better depends on whether your tax rate is higher NOW or higher in RETIREMENT.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Tax Bracket Question</h2>
+<p style="margin: 1rem 0;">If you&#39;re in a <strong>higher tax bracket now</strong> than you&#39;ll be in retirement → <strong>Traditional IRA wins</strong></p>
+<p style="margin: 1rem 0;">If you&#39;re in a <strong>lower tax bracket now</strong> than you&#39;ll be in retirement → <strong>Roth IRA wins</strong></p>
+<p style="margin: 1rem 0;">If your tax rate is the same → it&#39;s mathematically identical (but Roth still wins for other reasons we&#39;ll cover)</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Example 1: Traditional IRA Wins (High Earner Now)</h2>
+<p style="margin: 1rem 0;"><strong>Your situation:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Age 35</li>
+<li style="margin: 0.5rem 0;">Income: \$150,000/year</li>
+<li style="margin: 0.5rem 0;">Current tax bracket: 24%</li>
+<li style="margin: 0.5rem 0;">Expected retirement income: \$60,000/year</li>
+<li style="margin: 0.5rem 0;">Expected retirement tax bracket: 12%</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>If you contribute \$7,000 to a Traditional IRA:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Tax savings NOW: \$7,000 × 24% = <strong>\$1,680</strong></li>
+<li style="margin: 0.5rem 0;">After 30 years at 8% returns: \$7,000 grows to <strong>\$70,567</strong></li>
+<li style="margin: 0.5rem 0;">You withdraw it in retirement and pay 12% tax: \$70,567 × 12% = <strong>\$8,468 in taxes</strong></li>
+<li style="margin: 0.5rem 0;"><strong>Net in your pocket: \$62,099</strong></li>
+</ul>
+<p style="margin: 1rem 0;"><strong>If you contribute \$7,000 to a Roth IRA:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Tax savings NOW: \$0 (you pay \$1,680 in taxes upfront)</li>
+<li style="margin: 0.5rem 0;">After 30 years at 8% returns: \$7,000 grows to <strong>\$70,567</strong></li>
+<li style="margin: 0.5rem 0;">You withdraw it tax-free in retirement: <strong>\$0 in taxes</strong></li>
+<li style="margin: 0.5rem 0;"><strong>Net in your pocket: \$70,567</strong></li>
+</ul>
+<p style="margin: 1rem 0;">Wait—the Roth wins here, right?</p>
+<p style="margin: 1rem 0;">No. Because with the Traditional IRA, you saved \$1,680 in taxes upfront. If you invest that \$1,680 in a taxable account at 8% for 30 years:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">\$1,680 grows to <strong>\$16,937</strong></li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Traditional IRA total: \$62,099 + \$16,937 = \$79,036</strong><br><strong>Roth IRA total: \$70,567</strong></p>
+<p style="margin: 1rem 0;"><strong>Traditional wins by \$8,469</strong> in this scenario.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">Example 2: Roth IRA Wins (Low Earner Now)</h2>
+<p style="margin: 1rem 0;"><strong>Your situation:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Age 25</li>
+<li style="margin: 0.5rem 0;">Income: \$45,000/year</li>
+<li style="margin: 0.5rem 0;">Current tax bracket: 12%</li>
+<li style="margin: 0.5rem 0;">Expected retirement income: \$80,000/year (from IRA + Social Security + pension)</li>
+<li style="margin: 0.5rem 0;">Expected retirement tax bracket: 22%</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>If you contribute \$7,000 to a Traditional IRA:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Tax savings NOW: \$7,000 × 12% = <strong>\$840</strong></li>
+<li style="margin: 0.5rem 0;">After 40 years at 8% returns: \$7,000 grows to <strong>\$152,203</strong></li>
+<li style="margin: 0.5rem 0;">You withdraw it in retirement and pay 22% tax: \$152,203 × 22% = <strong>\$33,485 in taxes</strong></li>
+<li style="margin: 0.5rem 0;"><strong>Net in your pocket: \$118,718</strong></li>
+</ul>
+<p style="margin: 1rem 0;"><strong>If you contribute \$7,000 to a Roth IRA:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Tax savings NOW: \$0 (you pay \$840 in taxes upfront)</li>
+<li style="margin: 0.5rem 0;">After 40 years at 8% returns: \$7,000 grows to <strong>\$152,203</strong></li>
+<li style="margin: 0.5rem 0;">You withdraw it tax-free in retirement: <strong>\$0 in taxes</strong></li>
+<li style="margin: 0.5rem 0;"><strong>Net in your pocket: \$152,203</strong></li>
+</ul>
+<p style="margin: 1rem 0;">Even if you invested the \$840 tax savings from the Traditional IRA:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">\$840 grows to <strong>\$18,243</strong> in a taxable account</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Traditional IRA total: \$118,718 + \$18,243 = \$136,961</strong><br><strong>Roth IRA total: \$152,203</strong></p>
+<p style="margin: 1rem 0;"><strong>Roth wins by \$15,242</strong> in this scenario.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Rule of Thumb</h2>
+<p style="margin: 1rem 0;">Use this decision tree:</p>
+<p style="margin: 1rem 0;"><strong>Choose Traditional IRA if:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">You&#39;re currently in the 24% tax bracket or higher (\$100K+ single, \$200K+ married)</li>
+<li style="margin: 0.5rem 0;">You expect your retirement income to be significantly lower than now</li>
+<li style="margin: 0.5rem 0;">You want to reduce your taxable income this year (e.g., to qualify for a tax credit or lower AGI)</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>Choose Roth IRA if:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">You&#39;re currently in the 12% or 22% tax bracket (\$45K-\$100K single, \$90K-\$190K married)</li>
+<li style="margin: 0.5rem 0;">You&#39;re early in your career and expect income to rise</li>
+<li style="margin: 0.5rem 0;">You expect tax rates to increase in the future (likely, given federal debt levels)</li>
+<li style="margin: 0.5rem 0;">You want tax-free withdrawals in retirement (no RMDs, no taxes ever)</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>If you&#39;re in the 22% bracket AND expect to stay there in retirement:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Roth still wins because of RMD flexibility and estate planning benefits</li>
+</ul>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Hidden Advantages of a Roth IRA</h2>
+<p style="margin: 1rem 0;">Beyond the tax math, Roth IRAs have strategic benefits:</p>
+<p style="margin: 1rem 0;"><strong>1. No Required Minimum Distributions (RMDs)</strong></p>
+<p style="margin: 1rem 0;">With a Traditional IRA, the IRS forces you to start withdrawing money at age 73—whether you need it or not. This creates taxable income you might not want.</p>
+<p style="margin: 1rem 0;">With a Roth, you can leave the money untouched forever. If you don&#39;t need it, it keeps growing tax-free and passes to your heirs.</p>
+<p style="margin: 1rem 0;"><strong>2. Tax diversification in retirement</strong></p>
+<p style="margin: 1rem 0;">If ALL your retirement money is in Traditional 401(k)/IRA accounts, you&#39;ll be forced to pay taxes on every dollar you withdraw. Having Roth money gives you flexibility to manage your tax bracket in retirement.</p>
+<p style="margin: 1rem 0;">Example: You need \$70,000 in a given year. You could:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Withdraw \$70,000 from Traditional (all taxable) → higher tax bracket</li>
+<li style="margin: 0.5rem 0;">OR withdraw \$40,000 from Traditional + \$30,000 from Roth (only \$40K taxable) → lower tax bracket</li>
+</ul>
+<p style="margin: 1rem 0;"><strong>3. Early withdrawal flexibility (if needed)</strong></p>
+<p style="margin: 1rem 0;">With a Roth, you can withdraw your <em>contributions</em> (not earnings) at any time, tax-free and penalty-free. This makes it a pseudo-emergency fund if you&#39;re young and still building savings.</p>
+<p style="margin: 1rem 0;">Traditional IRA: Withdrawals before 59.5 = 10% penalty + income tax<br>Roth IRA: Contribution withdrawals anytime = \$0 penalty, \$0 tax</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">What If You&#39;re Over the Roth IRA Income Limit?</h2>
+<p style="margin: 1rem 0;">The Roth IRA has income limits:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Single: Phaseout starts at \$146,000, completely unavailable at \$161,000</li>
+<li style="margin: 0.5rem 0;">Married: Phaseout starts at \$230,000, completely unavailable at \$240,000</li>
+</ul>
+<p style="margin: 1rem 0;">If you&#39;re over the limit, you can still get Roth money via the <strong>Backdoor Roth IRA</strong>:</p>
+<p style="margin: 1rem 0;"><strong>Step 1:</strong> Contribute \$7,000 to a Traditional IRA (non-deductible contribution)<br><strong>Step 2:</strong> Immediately convert it to a Roth IRA<br><strong>Result:</strong> You&#39;ve funded a Roth despite being over the income limit</p>
+<p style="margin: 1rem 0;">This is 100% legal and IRS-approved. The only catch: if you have OTHER pre-tax money in Traditional IRAs, the conversion gets complicated (pro-rata rule). Most high earners don&#39;t have this issue.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Biggest Mistake: Doing Nothing</h2>
+<p style="margin: 1rem 0;">The worst choice isn&#39;t picking Traditional over Roth or vice versa. It&#39;s <strong>not contributing at all</strong>.</p>
+<p style="margin: 1rem 0;">If you contribute \$7,000/year from age 25 to 65 (40 years) at 8% average returns:</p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;"><strong>Total contributions:</strong> \$280,000</li>
+<li style="margin: 0.5rem 0;"><strong>Ending balance:</strong> \$1,950,000</li>
+</ul>
+<p style="margin: 1rem 0;">If you don&#39;t contribute anything, you have \$0.</p>
+<p style="margin: 1rem 0;">The Traditional vs. Roth decision might cost you \$50,000-100,000 in suboptimal tax treatment. Not contributing at all costs you \$1.95 million.</p>
+<p style="margin: 1rem 0;">Start contributing. Optimize the account type later if you need to.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">How to Open an IRA (5 Minutes)</h2>
+<p style="margin: 1rem 0;"><strong>Step 1:</strong> Go to Fidelity, Vanguard, or Schwab<br><strong>Step 2:</strong> Click &quot;Open an IRA&quot;<br><strong>Step 3:</strong> Choose Traditional or Roth based on the decision tree above<br><strong>Step 4:</strong> Fund it (link your bank account, transfer \$7,000 or whatever you&#39;re contributing)<br><strong>Step 5:</strong> Invest it (don&#39;t let it sit as cash—buy an index fund like VTI or FXAIX)</p>
+<p style="margin: 1rem 0;">You can change your mind next year. If you open a Roth this year and realize Traditional is better, just open a Traditional next year and contribute there instead.</p>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">What to Invest In Once You Open the Account</h2>
+<p style="margin: 1rem 0;">The account type (Roth or Traditional) is just the wrapper. You still need to invest the money inside it.</p>
+<p style="margin: 1rem 0;"><strong>Simple default:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">100% in a total stock market index fund (VTI at Vanguard, FXAIX at Fidelity, SWTSX at Schwab)</li>
+</ul>
+<p style="margin: 1rem 0;">This gives you exposure to the entire U.S. stock market. Over 30-40 years, it averages 8-10% returns.</p>
+<p style="margin: 1rem 0;"><strong>Slightly more advanced:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">80% total stock market (VTI)</li>
+<li style="margin: 0.5rem 0;">20% total international (VXUS)</li>
+</ul>
+<p style="margin: 1rem 0;">This adds global diversification.</p>
+<p style="margin: 1rem 0;"><strong>Don&#39;t:</strong></p>
+<ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+<li style="margin: 0.5rem 0;">Pick individual stocks (you&#39;re not beating the market)</li>
+<li style="margin: 0.5rem 0;">Let the money sit as cash (it won&#39;t grow)</li>
+<li style="margin: 0.5rem 0;">Buy high-fee actively managed funds (expense ratios over 0.20% are a rip-off)</li>
+</ul>
+<h2 style="font-size: 2rem; font-weight: 800; margin: 3rem 0 1.5rem; color: var(--color-text);">The Bottom Line</h2>
+<p style="margin: 1rem 0;">If you&#39;re in the 12% tax bracket now and expect to be in the 22%+ bracket in retirement → <strong>Roth IRA</strong></p>
+<p style="margin: 1rem 0;">If you&#39;re in the 24%+ tax bracket now and expect to be in the 12-22% bracket in retirement → <strong>Traditional IRA</strong></p>
+<p style="margin: 1rem 0;">If you&#39;re unsure → <strong>Roth IRA</strong> (because tax-free growth, no RMDs, and flexibility usually win long-term)</p>
+<p style="margin: 1rem 0;">The Roth vs. Traditional decision can swing your retirement balance by \$50,000-100,000+ depending on how much you contribute over your lifetime. But the most important decision is just to <strong>start contributing</strong>.</p>
+<p style="margin: 1rem 0;">\$7,000/year, every year, from age 25 to 65, turns into \$1.95 million. The account type optimization is worth \$100K. Not doing it at all costs you \$1.95M.</p>
+<p style="margin: 1rem 0;">Open the account this week. Contribute what you can. Adjust the strategy as you learn more.</p>
+<p style="margin: 1rem 0;">[AFFILIATE: Fidelity IRA—No fees, excellent platform, easy to use]<br>[AFFILIATE: Vanguard IRA—Low-cost index funds, gold standard for retirement accounts]<br>[AFFILIATE: Schwab IRA—Great mobile app, strong customer service]</p>
+`}>
+    </div>
+  </article>
+</BaseLayout>
