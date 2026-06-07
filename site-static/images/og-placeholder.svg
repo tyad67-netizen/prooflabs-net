@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- PLACEHOLDER — replace with licensed photo (1200x630 appetizing food/interior hero). -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Macaluso's — placeholder image">
-  <rect width="1200" height="630" fill="#420a12"/>
-  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#c89b46" stroke-width="2" opacity="0.5"/>
-  <text x="600" y="290" fill="#fbf7f0" font-family="Georgia, serif" font-size="64" text-anchor="middle">Macaluso's</text>
-  <text x="600" y="350" fill="#d7b46a" font-family="Arial, sans-serif" font-size="26" letter-spacing="3" text-anchor="middle">UPSCALE ITALIAN — RUSTON, WA</text>
-  <text x="600" y="420" fill="#f5ece0" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" opacity="0.7">Placeholder — replace with licensed photo</text>
-</svg>
