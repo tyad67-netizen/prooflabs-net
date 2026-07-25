@@ -1,2 +1,17 @@
-/wine /menu/#wine 301
-/wine/ /menu/#wine 301
+# Cloudflare Pages reads this from the deploy root. Anything in public/ is copied
+# to dist/ verbatim by Astro, so this ships in the zip.
+#
+# Why this file exists: the outgoing WordPress site's sitemap contains exactly two
+# indexed URLs, "/" and "/our-menu/" (verified 2026-07-24 against
+# https://macalusositalianrestaurant.com/page-sitemap1.xml). "/our-menu/" is the menu,
+# which is the single highest-intent page a restaurant has, and it is linked from the
+# Google Business Profile and the social bios. Without this line it 404s the moment the
+# nameservers flip and its accumulated ranking signal is thrown away instead of passed on.
+#
+# Note on fragments: the old page used #main-course, #brunch and #wine-cocktail. Fragments
+# are never sent to the server, so they ride along to the new URL. "#brunch" happens to
+# exist on the new menu page; the other two do not, so those visitors land at the top of
+# the menu. That is acceptable. Do not try to redirect fragments here.
+
+/our-menu     /menu/     301
+/our-menu/    /menu/     301
