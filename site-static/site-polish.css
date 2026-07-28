@@ -1,0 +1,10 @@
+/*
+ * Launch polish: preserve the generous mobile wordmark while preventing the
+ * 1200px cap from appearing oversized on common laptop and desktop viewports.
+ */
+@media (min-width: 768px) {
+  .curtain img[src*="logo-white"] {
+    width: min(70vw, 1000px);
+    max-width: 1000px;
+  }
+}
